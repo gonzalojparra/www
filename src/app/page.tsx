@@ -1,7 +1,7 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <main>Holis</main>
+    <div className='flex flex-col'>
+      Holis
+    </div>
   );
 }
