@@ -1,5 +1,11 @@
 import type { Metadata } from 'next';
+import { ThemeProvider } from '@/components/theme-provider';
+
+import { Header } from '@/components/header';
+import { Footer } from '@/components/footer';
+
 import './globals.css';
+import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: 'Gonzalo Parra | Portfolio',
@@ -12,9 +18,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
+    <html
+      lang='en'
+      className={cn(
+        'min-h-screen bg-background font-sans antialiased',
+      )}
+      suppressHydrationWarning
+    >
       <body>
-        {children}
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='system'
+          enableSystem
+        >
+          <main className='flex flex-col items-center justify-center min-h-screen pt-24 pb-8 px-4'>
+            <Header />
+            {children}
+            <Footer />
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );
