@@ -1,5 +1,5 @@
-import { cn } from "@/lib/utils";
-import Link from "next/link";
+import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 export function Footer() {
   const year = new Date().getFullYear();
