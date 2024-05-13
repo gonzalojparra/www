@@ -1,7 +1,9 @@
 import { NextJSIcon } from '@/components/icons/tags/nextjs';
 import { ReactIcon } from '@/components/icons/tags/react';
+import { LaravelIcon } from '@/components/icons/tags/laravel';
 import { TypeScriptIcon } from '@/components/icons/tags/typescript';
 import { JavaScriptIcon } from '@/components/icons/tags/javascript';
+import { PHPIcon } from '@/components/icons/tags/php';
 import { HTMLIcon } from '@/components/icons/tags/html';
 import { CSSIcon } from '@/components/icons/tags/css';
 import { ViteIcon } from '@/components/icons/tags/vite';
@@ -39,20 +41,8 @@ export const CAREER = [
     start: 'July 2021',
     end: 'December 2023',
     description:
-      'Developed and maintained web applications for my university career. Worked on the frontend and backend, using technologies like React, Laravel, and MySQL.'
+      "While studying for my bachelor's in software and web development, I developed and maintained web applications for my university career. I worked on the front and back end, using technologies like React, Laravel, and MySQL."
   },
-];
-
-export const PROJECTS = [
-  {
-    title: 'A project',
-    tags: [
-
-    ],
-    description: 'A project description',
-    link: 'https://google.com',
-    image: 'https://via.placeholder.com/150',
-  }
 ];
 
 const TAGS = {
@@ -64,6 +54,10 @@ const TAGS = {
     name: 'React',
     icon: ReactIcon
   },
+  LARAVEL: {
+    name: 'Laravel',
+    icon: LaravelIcon
+  },
   TYPESCRIPT: {
     name: 'TypeScript',
     icon: TypeScriptIcon
@@ -71,6 +65,10 @@ const TAGS = {
   JAVASCRIPT: {
     name: 'JavaScript',
     icon: JavaScriptIcon
+  },
+  PHP: {
+    name: 'PHP',
+    icon: PHPIcon
   },
   HTML: {
     name: 'HTML',
@@ -97,3 +95,36 @@ const TAGS = {
     icon: NodeJSIcon
   },
 };
+
+export const PROJECTS = [
+  {
+    title: 'Ehwaz',
+    tags: [
+      TAGS.REACT,
+      TAGS.NEXT,
+      TAGS.LARAVEL,
+      TAGS.JAVASCRIPT,
+      TAGS.PHP,
+      TAGS.TAILWIND,
+      TAGS.SHADCN,
+    ],
+    description: 'A full-stack personal trainers system that allows trainers to manage their clients, workouts, and nutrition plans. It also allows clients to track their progress and communicate with their trainers.',
+    link: {
+      github: 'https://github.com/gonzalojparra/ehwaz-front'
+    },
+    image: '/assets/projects/ehwaz.png',
+  },
+  {
+    title: 'Zen-Kicks',
+    tags: [
+      TAGS.LARAVEL,
+      TAGS.PHP,
+      TAGS.TAILWIND
+    ],
+    description: 'A full-stack taekwondo tournaments administrator system. It allows administrators to manage tournaments, categories, competitors and judges. It also allows competitors to register for tournaments.',
+    link: {
+      github: 'https://github.com/gonzalojparra/zen-kicks'
+    },
+    image: '/assets/projects/zen-kicks.png',
+  }
+];

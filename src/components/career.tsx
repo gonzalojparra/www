@@ -1,5 +1,7 @@
-import { data } from '@/constants';
+import { CareerItem } from '@/components/career-item';
 import { LaptopIcon } from 'lucide-react';
+
+import { data } from '@/constants';
 
 export function Career() {
   const { career } = data;
@@ -11,7 +13,7 @@ export function Career() {
       </h2>
 
       <ol className='relative border-s dark:border-neutral-600 border-neutral-400 ml-[11.5px] flex flex-col gap-8'>
-        {career.map((item, index) => (
+        {Array.isArray(career) && career.map((item, index) => (
           <li key={index} className='ms-7'>
             <CareerItem {...item} />
           </li>

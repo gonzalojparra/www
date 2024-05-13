@@ -6,6 +6,7 @@ import { Footer } from '@/components/footer';
 
 import './globals.css';
 import { cn } from '@/lib/utils';
+import { TooltipProvider } from '@/components/ui/tooltip';
 
 export const metadata: Metadata = {
   title: 'Gonzalo Parra | Portfolio',
@@ -31,11 +32,13 @@ export default function RootLayout({
           defaultTheme='system'
           enableSystem
         >
-          <main className='flex flex-col items-center justify-center min-h-screen pt-24 pb-8 px-4'>
-            <Header />
-            {children}
-            <Footer />
-          </main>
+          <TooltipProvider>
+            <main className='flex flex-col items-center justify-center min-h-screen pt-24 pb-8 px-4'>
+              <Header />
+              {children}
+              <Footer />
+            </main>
+          </TooltipProvider>
         </ThemeProvider>
       </body>
     </html>

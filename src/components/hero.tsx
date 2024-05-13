@@ -3,8 +3,10 @@ import Link from 'next/link';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
+import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
 
 import { data } from '@/constants';
+import { BadgeCheckIcon } from 'lucide-react';
 
 export function Hero() {
   const { avatar, about, links } = data;
@@ -19,8 +21,10 @@ export function Hero() {
           className='rounded-full'
         >
           <Avatar className='size-28 shadow border'>
-            <AvatarImage alt={avatar.name} src='https://avatars.githubusercontent.com/u/93682630?v=4' />
-            <AvatarFallback className='font-mono font-bold'>{avatar.initials}</AvatarFallback>
+            <AvatarImage alt={avatar.name} src='/assets/avatar.png' />
+            <AvatarFallback className='font-mono font-bold'>
+              {avatar.initials}
+            </AvatarFallback>
           </Avatar>
         </Link>
       </div>
@@ -40,6 +44,22 @@ export function Hero() {
             Open to work
           </Badge>
         </Link>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Link
+              href='https://www.linkedin.com/in/gonzalojparra/'
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label='Open to work'
+              className='md:hidden flex rounded-full hover:scale-105 transition-all ease-in-out duration-300'
+            >
+              <BadgeCheckIcon className='size-6 fill-secondary' />
+            </Link>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>Open to work</p>
+          </TooltipContent>
+        </Tooltip>
       </div>
 
       <div className='flex flex-col font-mono gap-4 dark:text-neutral-200 text-neutral-800 text-pretty'>
@@ -48,7 +68,7 @@ export function Hero() {
       </div>
 
       <nav className='flex gap-x-4 pt-4'>
-        {links.map((link) => (
+        {Array.isArray(links) && links.map((link) => (
           <Button
             variant='secondary'
             size='default'
