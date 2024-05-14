@@ -3,10 +3,12 @@ import { ThemeProvider } from '@/components/theme-provider';
 
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-
-import './globals.css';
-import { cn } from '@/lib/utils';
 import { TooltipProvider } from '@/components/ui/tooltip';
+import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
+
+import { cn } from '@/lib/utils';
+import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Gonzalo Parra | Portfolio',
@@ -22,7 +24,9 @@ export default function RootLayout({
     <html
       lang='en'
       className={cn(
-        'min-h-screen bg-background font-sans antialiased',
+        'min-h-screen bg-background font-sans antialiased overflow-y-scroll',
+        GeistSans.variable,
+        GeistMono.variable
       )}
       suppressHydrationWarning
     >
