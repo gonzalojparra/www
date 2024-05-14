@@ -20,7 +20,7 @@ export const AVATAR = {
 };
 
 export const ABOUT = {
-  title: `Frontend Developer, Committed to creating innovative and user-centered solutions.
+  title: `Front end Developer, Committed to creating innovative and user-centered solutions.
   Based in Neuquén, Argentina 🇦🇷`,
   description: `Passionate about web technologies. I enjoy creating accessible, performant, and delightful experiences for users. I'm always looking to learn new things and improve my skills.`
 };
@@ -34,10 +34,20 @@ export const LINKS = [
 
 export const CAREER = [
   {
+    company: 'Runas Software',
+    link: 'https://runas-software.com/',
+    badges: ['Intern'],
+    title: 'Software Developer',
+    start: 'August 2023',
+    end: 'Present',
+    description:
+      "I'm currently working as a software developer intern at Runas Software. I work on the front end, using technologies like React, Next.js and TypeScript. I also work on the back end, using technologies like Laravel and Node.js."
+  },
+  {
     company: 'National University of Comahue',
     link: 'https://www.uncoma.edu.ar/',
     badges: ['Student'],
-    title: 'Software Developer',
+    title: 'Full Stack Developer',
     start: 'July 2021',
     end: 'December 2023',
     description:

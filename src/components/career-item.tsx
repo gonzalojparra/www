@@ -1,8 +1,9 @@
+import Link from 'next/link';
+
 import { Button } from '@/components/ui/button';
 import { ArrowRightIcon } from 'lucide-react';
 
 import { type CareerProps } from '@/types';
-import Link from 'next/link';
 
 export function CareerItem({
   link,
