@@ -70,7 +70,7 @@ export function Hero() {
       <nav className='flex gap-x-4 pt-4'>
         {Array.isArray(links) && links.map((link) => (
           <Button
-            variant='secondary'
+            variant='ghost'
             size='default'
             key={link.title}
             className='px-2 shadow rounded-lg'
