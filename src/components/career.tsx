@@ -9,7 +9,7 @@ export function Career() {
   return (
     <>
       <h2 className='flex gap-x-4 items-center text-3xl font-bold text-balance'>
-        <LaptopIcon className='size-6' /> Career
+        <LaptopIcon className='size-6' /> Career & Works
       </h2>
 
       <ol className='relative border-s dark:border-neutral-600 border-neutral-400 ml-[11.5px] flex flex-col gap-8'>

@@ -20,7 +20,7 @@ export function Projects() {
     <>
       <h2 className='flex gap-x-4 items-center text-3xl font-bold text-balance'>
         <CodeIcon className='size-6' />
-        Projects
+        Projects & Apps
       </h2>
 
       <div className='flex flex-col gap-y-4'>

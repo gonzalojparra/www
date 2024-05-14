@@ -98,6 +98,23 @@ const TAGS = {
 
 export const PROJECTS = [
   {
+    title: 'Jotter',
+    tags: [
+      TAGS.REACT,
+      TAGS.NEXT,
+      TAGS.NODE,
+      TAGS.TYPESCRIPT,
+      TAGS.TAILWIND,
+      TAGS.SHADCN,
+    ],
+    description: 'A full-stack note-taking app that allows users to create, edit, and delete notes. It also allows users to categorize notes into notebooks and search for notes.',
+    link: {
+      github: 'https://github.com/gonzalojparra/jotter',
+      preview: 'https://jotter-gonzalojparra.vercel.app/'
+    },
+    image: '/assets/projects/jotter.png',
+  },
+  {
     title: 'Ehwaz',
     tags: [
       TAGS.REACT,
