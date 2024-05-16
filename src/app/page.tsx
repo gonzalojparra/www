@@ -2,6 +2,7 @@ import { Section } from '@/components/ui/section';
 import { Hero } from '@/components/hero';
 import { Career } from '@/components/career';
 import { Projects } from '@/components/projects';
+import { Contact } from '@/components/contact';
 
 export default function Home() {
   return (
@@ -16,6 +17,10 @@ export default function Home() {
 
       <Section id='projects' className='pb-24'>
         <Projects />
+      </Section>
+
+      <Section id='contact' className='pb-24'>
+        <Contact />
       </Section>
     </div>
   );

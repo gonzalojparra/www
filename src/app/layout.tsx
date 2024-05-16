@@ -4,6 +4,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { TooltipProvider } from '@/components/ui/tooltip';
+import { Toaster } from '@/components/ui/toaster';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 
@@ -42,6 +43,7 @@ export default function RootLayout({
               {children}
               <Footer />
             </main>
+            <Toaster />
           </TooltipProvider>
         </ThemeProvider>
       </body>

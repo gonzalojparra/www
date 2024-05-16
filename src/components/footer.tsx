@@ -1,6 +1,3 @@
-import { cn } from '@/lib/utils';
-import Link from 'next/link';
-
 export function Footer() {
   const year = new Date().getFullYear();
 
@@ -14,16 +11,8 @@ export function Footer() {
           <span className='ms-2 me-2'>—</span>
           All rights reserved.
         </p>
-        <div className='flex flex-wrap items-center pt-2 md:pt-0'>
-          <Link
-            id='contact'
-            href='mailto:gonzzaparra@gmail.com'
-            className={cn(
-              'hover:underline hover:underline-offset-4',
-            )}
-          >
-            Get in touch
-          </Link>
+        <div className='flex flex-wrap items-center justify-center pt-2 md:pt-0'>
+          <p>Made with ❤️</p>
         </div>
       </div>
     </footer>
