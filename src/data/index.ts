@@ -12,7 +12,7 @@ import { TailwindCSSIcon } from '@/components/icons/tags/tailwind-css';
 import { NodeJSIcon } from '@/components/icons/tags/nodejs';
 import { GitHubIcon } from '@/components/icons/github';
 import { LinkedInIcon } from '@/components/icons/linkedin';
-import { InstagramIcon, MailIcon } from 'lucide-react';
+import { MailIcon } from 'lucide-react';
 
 export const AVATAR = {
   name: 'Gonzalo Parra',
@@ -22,26 +22,25 @@ export const AVATAR = {
 export const ABOUT = {
   title: `Front end Developer, Committed to creating innovative and user-centered solutions.
   Based in Neuquén, Argentina 🇦🇷`,
-  description: `Passionate about web technologies. I enjoy creating accessible, performant, and delightful experiences for users. I'm always looking to learn new things and improve my skills.`
+  description: `Passionate about web technologies. I aim to create accessible, performant, and delightful experiences for users. I'm always looking to learn new things and improve my skills.`
 };
 
 export const LINKS = [
   { title: 'GitHub', url: 'https://github.com/gonzalojparra', icon: GitHubIcon },
   { title: 'LinkedIn', url: 'https://www.linkedin.com/in/gonzalojparra/', icon: LinkedInIcon },
-  { title: 'Instagram', url: 'https://www.instagram.com/gonzaparra_/', icon: InstagramIcon },
   { title: 'Email', url: 'mailto:gonzzaparra@gmail.com', icon: MailIcon }
 ];
 
 export const CAREER = [
   {
     company: 'Runas Software',
-    link: 'https://runas-software.com/',
+    link: '',
     badges: ['Intern'],
     title: 'Software Developer',
     start: 'August 2023',
     end: 'Present',
     description:
-      "I'm currently working as a software developer intern at Runas Software. I work on the front end, using technologies like React, Next.js and TypeScript. I also work on the back end, using technologies like Laravel and Node.js."
+      "I'm currently working at Runas Software as a side project. I work on the front end, using technologies like React, Next.js, and TypeScript. I also work on the back end, using technologies like Laravel and Node.js."
   },
   {
     company: 'National University of Comahue',
