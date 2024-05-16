@@ -21,7 +21,7 @@ export const AVATAR = {
 };
 
 export const ABOUT = {
-  title: `Front end Developer, Committed to creating innovative and user-centered solutions.
+  title: `Front end developer, committed to creating innovative and user-centered solutions.
   Based in Neuquén, Argentina 🇦🇷`,
   description: `Passionate about web technologies. I aim to create accessible, performant, and delightful experiences for users. I'm always looking to learn new things and improve my skills.`
 };
