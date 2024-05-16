@@ -12,6 +12,7 @@ import { TailwindCSSIcon } from '@/components/icons/tags/tailwind-css';
 import { NodeJSIcon } from '@/components/icons/tags/nodejs';
 import { GitHubIcon } from '@/components/icons/github';
 import { LinkedInIcon } from '@/components/icons/linkedin';
+import { DiscordIcon } from '@/components/icons/discord';
 import { MailIcon } from 'lucide-react';
 
 export const AVATAR = {
@@ -28,7 +29,8 @@ export const ABOUT = {
 export const LINKS = [
   { title: 'GitHub', url: 'https://github.com/gonzalojparra', icon: GitHubIcon },
   { title: 'LinkedIn', url: 'https://www.linkedin.com/in/gonzalojparra/', icon: LinkedInIcon },
-  { title: 'Email', url: 'mailto:gonzzaparra@gmail.com', icon: MailIcon }
+  { title: 'Email', url: 'mailto:gonzzaparra@gmail.com', icon: MailIcon },
+  { title: 'Discord', url: 'https://discordapp.com/users/654163755797577747', icon: DiscordIcon}
 ];
 
 export const CAREER = [
