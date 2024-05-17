@@ -3,6 +3,9 @@ import { NextResponse } from 'next/server';
 
 import { ContactEmailTemplate } from '@/components/contact-email-template';
 
+export const runtime = 'edge';
+export const dynamic = 'force-dynamic';
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
