@@ -10,7 +10,7 @@ import type {
 export const data = {
   avatar: AVATAR as AvatarProps,
   about: ABOUT as AboutProps,
-  links: LINKS as LinksProps,
-  career: CAREER as CareerProps,
+  links: LINKS as unknown as LinksProps,
+  career: CAREER as unknown as CareerProps,
   projects: PROJECTS as ProjectProps[]
 };
