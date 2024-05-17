@@ -14,6 +14,8 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Gonzalo Parra | Portfolio',
   description: 'My personal portfolio, showcasing my work and skills.',
+  creator: 'Gonzalo Parra',
+  keywords: ['portfolio', 'developer', 'web', 'front end', 'react', 'next.js', 'argentina', 'neuquén', 'software', 'engineer', 'design', 'web development', 'runas software', 'national university of comahue']
 };
 
 export default function RootLayout({

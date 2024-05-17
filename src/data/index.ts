@@ -38,7 +38,7 @@ export const CAREER = [
     company: 'Runas Software',
     link: '',
     badges: ['Intern'],
-    title: 'Software Developer',
+    title: 'Software Developer & Co-Creator',
     start: 'August 2023',
     end: 'Present',
     description:
