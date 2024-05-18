@@ -45,7 +45,7 @@ export const CAREER = [
       "I'm currently working at Runas Software as a side project. I work on the front end, using technologies like React, Next.js, and TypeScript. I also work on the back end, using technologies like Laravel and Node.js."
   },
   {
-    company: 'National University of Comahue',
+    company: 'Universidad Nacional del Comahue',
     link: 'https://www.uncoma.edu.ar/',
     badges: ['Student'],
     title: 'Full Stack Developer',
@@ -123,7 +123,7 @@ export const PROJECTS = [
       github: 'https://github.com/gonzalojparra/jotter',
       preview: 'https://jotter-gonzalojparra.vercel.app/'
     },
-    image: '/assets/projects/jotter.png',
+    image: '/assets/projects/jotter.webp',
   },
   {
     title: 'Ehwaz',
@@ -140,7 +140,7 @@ export const PROJECTS = [
     link: {
       github: 'https://github.com/gonzalojparra/ehwaz-front'
     },
-    image: '/assets/projects/ehwaz.png',
+    image: '/assets/projects/ehwaz.webp',
   },
   {
     title: 'Zen-Kicks',
@@ -153,6 +153,6 @@ export const PROJECTS = [
     link: {
       github: 'https://github.com/gonzalojparra/zen-kicks'
     },
-    image: '/assets/projects/zen-kicks.png',
+    image: '/assets/projects/zen-kicks.webp',
   }
 ];

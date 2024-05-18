@@ -21,7 +21,7 @@ export function Hero() {
           className='rounded-full'
         >
           <Avatar className='size-28 shadow border'>
-            <AvatarImage alt={avatar.name} src='/assets/avatar.png' />
+            <AvatarImage alt={avatar.name} src='/assets/avatar.webp' />
             <AvatarFallback className='font-mono font-bold'>
               {avatar.initials}
             </AvatarFallback>
