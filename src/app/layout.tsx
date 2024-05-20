@@ -11,11 +11,38 @@ import { GeistMono } from 'geist/font/mono';
 import { cn } from '@/lib/utils';
 import './globals.css';
 
+const title = 'Gonzalo Parra | Portfolio';
+const description = 'My personal portfolio, showcasing my work and skills.';
+const openGraphImage = 'https://portfolio-gonzalojparra.vercel.app/opengraph-image.png';
+
 export const metadata: Metadata = {
-  title: 'Gonzalo Parra | Portfolio',
-  description: 'My personal portfolio, showcasing my work and skills.',
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    images: [
+      {
+        url: openGraphImage,
+        width: 1200,
+        height: 630,
+        alt: title,
+      }
+    ]
+  },
+  twitter: {
+    title,
+    description,
+    card: 'summary_large_image',
+    creator: '@_gonzaparra',
+    images: [
+      {
+        url: openGraphImage,
+        alt: title,
+      }
+    ]
+  },
   creator: 'Gonzalo Parra',
-  keywords: ['portfolio', 'developer', 'web', 'front end', 'react', 'next.js', 'argentina', 'neuquén', 'software', 'engineer', 'design', 'web development', 'runas software', 'national university of comahue']
 };
 
 export default function RootLayout({
