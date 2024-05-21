@@ -33,7 +33,7 @@ export function CareerItem({
         <Button
           variant='default'
           size='default'
-          className='shadow mt-4 px-2 hover:scale-105 transition-transform duration-300 ease-in-out'
+          className='shadow mt-4 px-2'
         >
           <Link
             href={link}
