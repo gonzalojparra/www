@@ -1,4 +1,5 @@
 import Image from 'next/image';
+
 import {
   Card,
   CardContent,
@@ -98,7 +99,7 @@ export function Projects() {
                     <Button
                       variant='default'
                       size='default'
-                      className='px-2 shadow hover:scale-105 transition-transform duration-300 ease-in-out'
+                      className='px-2 shadow'
                     >
                       <Link
                         href={link.github}
@@ -115,7 +116,7 @@ export function Projects() {
                     <Button
                       variant='default'
                       size='default'
-                      className='px-2 shadow hover:scale-105 transition-transform duration-300 ease-in-out'
+                      className='px-2 shadow'
                     >
                       <Link
                         href={link.preview}

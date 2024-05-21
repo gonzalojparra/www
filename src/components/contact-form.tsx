@@ -11,7 +11,6 @@ import {
   CardContent,
   CardDescription,
   CardHeader,
-  CardTitle
 } from '@/components/ui/card';
 import {
   Form,
@@ -23,7 +22,8 @@ import {
 } from './ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { useToast } from './ui/use-toast';
+import { useToast } from '@/components/ui/use-toast';
+import { Loader2 } from 'lucide-react';
 
 export function ContactForm() {
   const { toast } = useToast();
@@ -31,14 +31,8 @@ export function ContactForm() {
     resolver: zodResolver(formSchema)
   });
 
-  const {
-    handleSubmit,
-    watch,
-    trigger,
-    control,
-    setValue,
-    setFocus
-  } = form;
+  const { handleSubmit, formState, control } = form;
+  const { isSubmitting } = formState;
 
   async function onSubmit(data: FormValues) {
     const formData = new FormData();
@@ -169,7 +163,14 @@ export function ContactForm() {
                   />
                 </div>
               </div>
-              <Button className='w-full mt-6' type='submit'>
+              <Button
+                type='submit'
+                disabled={isSubmitting}
+                className='w-full mt-6'
+              >
+                {isSubmitting && (
+                  <Loader2 className='mr-2 h-4 w-4 animate-spin' />
+                )}
                 Submit
               </Button>
             </form>

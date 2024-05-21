@@ -118,7 +118,7 @@ export const PROJECTS = [
       TAGS.TAILWIND,
       TAGS.SHADCN,
     ],
-    description: 'A full-stack note-taking app that allows users to create, edit, and delete notes. It also allows users to categorize notes into notebooks and search for notes.',
+    description: 'A full-stack note-taking app that allows users to create, edit, delete and share notes. It also allows users to categorize notes into notebooks and search for notes.',
     link: {
       github: 'https://github.com/gonzalojparra/jotter',
       preview: 'https://jotter-gonzalojparra.vercel.app/'
