@@ -10,14 +10,20 @@ A developer portfolio designed to showcase projects, experience and skills that 
 
 ## 🚀 Installation and Usage
 
-To getting started this project you need to follow the next steps:
+To get started on this project you need to follow the next steps:
 
-```sh
-git clone https://github.com/gonzalojparra/portfolio # First clone the repo in your folder of choice.
-cd portfolio # Move into the recently cloned repo.
-npm install # Install dependencies using npm or your favourite package manager.
-npm run dev # Run the development server of the project
+```bash
+git clone https://github.com/gonzalojparra/portfolio
+# First clone the repo in your folder of choice.
+cd portfolio
+# Move into the recently cloned repo.
+npm install
+# Install dependencies using npm or your favourite package manager.
+npm run dev
+# Run the development server of the project.
 ```
+
+
 
 ## 💻 Technologies
 
