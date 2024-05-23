@@ -20,11 +20,11 @@ export const AVATAR = {
   initials: 'GP'
 };
 
-export const ABOUT = {
+/* export const ABOUT = {
   title: `Front end developer, committed to creating innovative and user-centered solutions.
   Based in Neuquén, Argentina 🇦🇷`,
   description: `Passionate about web technologies. I aim to create accessible, performant, and delightful experiences for users. I'm always looking to learn new things and improve my skills.`
-};
+}; */
 
 export const LINKS = [
   { title: 'GitHub', url: 'https://github.com/gonzalojparra', icon: GitHubIcon },
@@ -33,7 +33,7 @@ export const LINKS = [
   { title: 'Discord', url: 'https://discordapp.com/users/654163755797577747', icon: DiscordIcon}
 ];
 
-export const CAREER = [
+/* export const CAREER = [
   {
     company: 'Runas Software',
     link: '',
@@ -54,7 +54,7 @@ export const CAREER = [
     description:
       "While studying for my bachelor's in software and web development, I developed and maintained web applications for my university career. I worked on the front and back end, using technologies like React, Laravel, and MySQL."
   },
-];
+]; */
 
 const TAGS = {
   NEXT: {

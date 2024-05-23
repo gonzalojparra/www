@@ -24,5 +24,23 @@
       }
     },
     "view-more": "View more"
+  },
+  "projects-section": {
+    "title": "Projects & Apps",
+    "projects": {
+      "Jotter": {
+        "description": "A full-stack note-taking app that allows users to create, edit, delete and share notes. It also allows users to categorize notes into notebooks and search for notes."
+      },
+      "Ehwaz": {
+        "description": "A full-stack personal trainers system that allows trainers to manage their clients, workouts, and nutrition plans. It also allows clients to track their progress and communicate with their trainers."
+      },
+      "Zen-Kicks": {
+        "description": "A full-stack taekwondo tournaments administrator system. It allows administrators to manage tournaments, categories, competitors and judges. It also allows competitors to register for tournaments."
+      }
+    }
+  },
+  "contact-section": {
+    "title": "Contact",
+    "description": "Feel free to get in touch with me if you have any questions, project inquiries, or if you would like to discuss a collab!. I'm always open to new opportunities and challenges."
   }
 }

@@ -24,5 +24,23 @@
       }
     },
     "view-more": "Ver más"
+  },
+  "projects-section": {
+    "title": "Proyectos & Apps",
+    "projects": {
+      "Jotter": {
+        "description": "Una aplicación full-stack que permite a los usuarios crear, editar, eliminar y compartir notas. También permite a los usuarios categorizar sus notas y buscarlas por título y contenido."
+      },
+      "Ehwaz": {
+        "description": "Un sistema full-stack para personal trainers que les permite llevar a cabo la administración, asignar entrenamientos y planes de alimentación a sus alumnos. También lesp permite a los alumnos trackear su progreso y comunicarse con sus entrenadores."
+      },
+      "Zen-Kicks": {
+        "description": "Una aplicación full-stack para administrar competencias y torneos de taekwondo. Les permite a los administradores organizar categorias, competidores y jueces."
+      }
+    }
+  },
+  "contact-section": {
+    "title": "Contacto",
+    "description": "Sentite libre de contactarme si tenés alguna pregunta, propuesta de proyecto, o si simplemente querés charlar! Siempre estoy abierto a nuevas oportunidades y desafíos."
   }
 }
