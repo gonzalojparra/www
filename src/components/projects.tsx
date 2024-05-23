@@ -20,6 +20,7 @@ export function Projects() {
       <div className='flex flex-col gap-y-4'>
         {projects.map(({ title, tags, image, video, link }) =>
           <ProjectItem
+            key={title}
             title={title}
             description={projectItems(`${title}.description`)}
             tags={tags}

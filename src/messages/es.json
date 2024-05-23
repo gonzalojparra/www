@@ -41,6 +41,22 @@
   },
   "contact-section": {
     "title": "Contacto",
-    "description": "Sentite libre de contactarme si tenés alguna pregunta, propuesta de proyecto, o si simplemente querés charlar! Siempre estoy abierto a nuevas oportunidades y desafíos."
+    "description": "Sentite libre de contactarme si tenés alguna pregunta, propuesta de proyecto, o si simplemente querés charlar! Siempre estoy abierto a nuevas oportunidades y desafíos.",
+    "form": {
+      "form-description": "Por favor, completá el siguiente formulario y me pondré en contacto con vos lo antes posible.",
+      "first-name-label": "Nombre",
+      "first-name-placeholder": "Tu nombre",
+      "last-name-label": "Apellido",
+      "last-name-placeholder": "Tu apellido",
+      "email-label": "Email",
+      "email-placeholder": "Tu email",
+      "message-label": "Mensaje",
+      "message-placeholder": "Ingresa tu mensaje aquí",
+      "submit-button": "Enviar",
+      "toast-success-title": "Email enviado",
+      "toast-success-description": "Me pondré en contacto con vos lo antes posible!",
+      "toast-error-title": "Error",
+      "toast-error-description": "Hubo un error al enviar el email. Por favor, intentá nuevamente más tarde."
+    }
   }
 }
