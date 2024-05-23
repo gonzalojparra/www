@@ -12,7 +12,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuCheckboxItem
 } from '@/components/ui/dropdown-menu';
-import { GlobeIcon } from 'lucide-react';
+import { EnFlagIcon } from '@/components/icons/en-flag';
+import { ArFlagIcon } from '@/components/icons/ar-flag';
 
 import type { Locale } from '@/i18n';
 
@@ -31,7 +32,12 @@ export function LangSwitcher() {
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant='ghost' size='icon'>
-            <GlobeIcon className='h-[1.2rem] w-[1.2rem]' />
+            {locale === 'en' ? (
+              <EnFlagIcon className='h-[1.5rem] w-[1.5rem]' />
+            ) : (
+              <ArFlagIcon className='h-[1.5rem] w-[1.5rem]' />
+            )}
+            <span className='sr-only'>Language switcher</span>
           </Button>
         </DropdownMenuTrigger>
 
