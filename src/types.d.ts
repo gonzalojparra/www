@@ -17,11 +17,11 @@ export interface LinksProps {
 export interface CareerProps {
   company: string
   link?: string
-  badges: string[]
   title: string
   start: string
   end: string
   description: string
+  viewMore?: string
 }
 
 export interface TagsProps {

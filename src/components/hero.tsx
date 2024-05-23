@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
@@ -7,10 +8,9 @@ import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
 
 import { data } from '@/constants';
 import { BadgeCheckIcon } from 'lucide-react';
-import { useTranslations } from 'next-intl';
 
 export function Hero() {
-  const { avatar, about, links } = data;
+  const { avatar, links } = data;
   const t = useTranslations();
 
   return (

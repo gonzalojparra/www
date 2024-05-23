@@ -4,21 +4,25 @@
     "description": "Passionate about web technologies. I aim to create accessible, performant, and delightful experiences for users. I'm always looking to learn new things and improve my skills."
   },
   "career-section": {
-    "runas-software": {
-      "company": "Runas Software",
-      "link": "",
-      "title": "Software Developer & Co-Creator",
-      "start": "August 2023",
-      "end": "Present",
-      "description": "I'm currently working at Runas Software as a side project. I work on the front end, using technologies like React, Next.js, and TypeScript. I also work on the back end, using technologies like Laravel and Node.js."
+    "title": "Career & Works",
+    "works": {
+      "runas-software": {
+        "company": "Runas Software",
+        "link": "",
+        "title": "Software Developer & Co-Creator",
+        "start": "August 2023",
+        "end": "Present",
+        "description": "I'm currently working at Runas Software as a side project. I work on the front end, using technologies like React, Next.js, and TypeScript. I also work on the back end, using technologies like Laravel and Node.js."
+      },
+      "universidad-nacional-del-comahue": {
+        "company": "Universidad Nacional del Comahue",
+        "link": "https://www.uncoma.edu.ar/",
+        "title": "Full Stack Developer",
+        "start": "July 2021",
+        "end": "December 2023",
+        "description": "While studying for my bachelor's in software and web development, I developed and maintained web applications for my university career. I worked on the front and back end, using technologies like React, Laravel, and MySQL."
+      }
     },
-    "universidad-nacional-del-comahue": {
-      "company": "Universidad Nacional del Comahue",
-      "link": "https://www.uncoma.edu.ar/",
-      "title": "Full Stack Developer",
-      "start": "July 2021",
-      "end": "December 2023",
-      "description": "While studying for my bachelor's in software and web development, I developed and maintained web applications for my university career. I worked on the front and back end, using technologies like React, Laravel, and MySQL."
-    }
+    "view-more": "View more"
   }
 }

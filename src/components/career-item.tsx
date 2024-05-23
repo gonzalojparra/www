@@ -11,7 +11,8 @@ export function CareerItem({
   title,
   start,
   end,
-  description
+  description,
+  viewMore
 }: CareerProps) {
   return (
     <>
@@ -41,7 +42,7 @@ export function CareerItem({
             rel='noopener noreferrer'
             className='flex items-center'
           >
-            <p className='font-medium'>View more</p>
+            <p className='font-medium'>{viewMore}</p>
             <ArrowRightIcon className='size-4 ms-2' />
           </Link>
         </Button>
