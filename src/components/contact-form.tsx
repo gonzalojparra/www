@@ -2,6 +2,7 @@
 
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useTranslations } from 'next-intl';
 
 import { FormValues, formSchema } from '@/lib/validation';
 
@@ -27,6 +28,7 @@ import { Loader2 } from 'lucide-react';
 
 export function ContactForm() {
   const { toast } = useToast();
+  const t = useTranslations();
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema)
   });
@@ -55,15 +57,15 @@ export function ContactForm() {
         .then(response => response.json())
         .then(data => {
           toast({
-            title: 'Email sent',
-            description: 'I will get back to you as soon as possible!',
+            title: t('contact-section.form.toast-success-title'),
+            description: t('contact-section.form.toast-success-description'),
             variant: 'default'
           });
-        })
+        });
     } catch (error) {
       toast({
-        title: 'Error',
-        description: 'An error occurred while sending the email',
+        title: t('contact-section.form.toast-error-title'),
+        description: t('contact-section.form.toast-error-description'),
         variant: 'destructive'
       });
     }
@@ -74,7 +76,7 @@ export function ContactForm() {
       <Card className='w-full max-w-md'>
         <CardHeader>
           <CardDescription className='font-mono text-center'>
-            Please, fill out the form below and I'll get back to you as soon as possible.
+            {t('contact-section.form.form-description')}
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -91,12 +93,14 @@ export function ContactForm() {
                       name='firstName'
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>First Name</FormLabel>
+                          <FormLabel>
+                            {t('contact-section.form.first-name-label')}
+                          </FormLabel>
                           <FormControl>
                             <Input
                               {...field}
                               id='first-name'
-                              placeholder='Your first name'
+                              placeholder={t('contact-section.form.first-name-placeholder')}
                             />
                           </FormControl>
                           <FormMessage />
@@ -110,12 +114,14 @@ export function ContactForm() {
                       name='lastName'
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Last Name</FormLabel>
+                          <FormLabel>
+                            {t('contact-section.form.last-name-label')}
+                          </FormLabel>
                           <FormControl>
                             <Input
                               {...field}
                               id='last-name'
-                              placeholder='Your last name'
+                              placeholder={t('contact-section.form.last-name-placeholder')}
                             />
                           </FormControl>
                           <FormMessage />
@@ -130,12 +136,14 @@ export function ContactForm() {
                     name='email'
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Email</FormLabel>
+                        <FormLabel>
+                          {t('contact-section.form.email-label')}
+                        </FormLabel>
                         <FormControl>
                           <Input
                             {...field}
                             id='email'
-                            placeholder='Your email'
+                            placeholder={t('contact-section.form.email-placeholder')}
                           />
                         </FormControl>
                         <FormMessage />
@@ -149,12 +157,14 @@ export function ContactForm() {
                     name='message'
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Message</FormLabel>
+                        <FormLabel>
+                          {t('contact-section.form.message-label')}
+                        </FormLabel>
                         <FormControl>
                           <Textarea
                             {...field}
                             id='message'
-                            placeholder='Enter your message'
+                            placeholder={t('contact-section.form.message-placeholder')}
                           />
                         </FormControl>
                         <FormMessage />
@@ -171,7 +181,7 @@ export function ContactForm() {
                 {isSubmitting && (
                   <Loader2 className='mr-2 h-4 w-4 animate-spin' />
                 )}
-                Submit
+                {t('contact-section.form.submit-button')}
               </Button>
             </form>
           </Form>

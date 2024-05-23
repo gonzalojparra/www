@@ -20,40 +20,11 @@ export const AVATAR = {
   initials: 'GP'
 };
 
-export const ABOUT = {
-  title: `Front end developer, committed to creating innovative and user-centered solutions.
-  Based in Neuquén, Argentina 🇦🇷`,
-  description: `Passionate about web technologies. I aim to create accessible, performant, and delightful experiences for users. I'm always looking to learn new things and improve my skills.`
-};
-
 export const LINKS = [
   { title: 'GitHub', url: 'https://github.com/gonzalojparra', icon: GitHubIcon },
   { title: 'LinkedIn', url: 'https://www.linkedin.com/in/gonzalojparra/', icon: LinkedInIcon },
   { title: 'Email', url: 'mailto:gonzzaparra@gmail.com', icon: MailIcon },
   { title: 'Discord', url: 'https://discordapp.com/users/654163755797577747', icon: DiscordIcon}
-];
-
-export const CAREER = [
-  {
-    company: 'Runas Software',
-    link: '',
-    badges: ['Intern'],
-    title: 'Software Developer & Co-Creator',
-    start: 'August 2023',
-    end: 'Present',
-    description:
-      "I'm currently working at Runas Software as a side project. I work on the front end, using technologies like React, Next.js, and TypeScript. I also work on the back end, using technologies like Laravel and Node.js."
-  },
-  {
-    company: 'Universidad Nacional del Comahue',
-    link: 'https://www.uncoma.edu.ar/',
-    badges: ['Student'],
-    title: 'Full Stack Developer',
-    start: 'July 2021',
-    end: 'December 2023',
-    description:
-      "While studying for my bachelor's in software and web development, I developed and maintained web applications for my university career. I worked on the front and back end, using technologies like React, Laravel, and MySQL."
-  },
 ];
 
 const TAGS = {
@@ -118,7 +89,6 @@ export const PROJECTS = [
       TAGS.TAILWIND,
       TAGS.SHADCN,
     ],
-    description: 'A full-stack note-taking app that allows users to create, edit, delete and share notes. It also allows users to categorize notes into notebooks and search for notes.',
     link: {
       github: 'https://github.com/gonzalojparra/jotter',
       preview: 'https://jotter-gonzalojparra.vercel.app/'
@@ -136,7 +106,6 @@ export const PROJECTS = [
       TAGS.TAILWIND,
       TAGS.SHADCN,
     ],
-    description: 'A full-stack personal trainers system that allows trainers to manage their clients, workouts, and nutrition plans. It also allows clients to track their progress and communicate with their trainers.',
     link: {
       github: 'https://github.com/gonzalojparra/ehwaz-front'
     },
@@ -149,7 +118,6 @@ export const PROJECTS = [
       TAGS.PHP,
       TAGS.TAILWIND
     ],
-    description: 'A full-stack taekwondo tournaments administrator system. It allows administrators to manage tournaments, categories, competitors and judges. It also allows competitors to register for tournaments.',
     link: {
       github: 'https://github.com/gonzalojparra/zen-kicks'
     },

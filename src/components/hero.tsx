@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
@@ -9,7 +10,8 @@ import { data } from '@/constants';
 import { BadgeCheckIcon } from 'lucide-react';
 
 export function Hero() {
-  const { avatar, about, links } = data;
+  const { avatar, links } = data;
+  const t = useTranslations();
 
   return (
     <>
@@ -63,8 +65,8 @@ export function Hero() {
       </div>
 
       <div className='flex flex-col font-mono gap-4 dark:text-neutral-200 text-neutral-800 text-pretty'>
-        <h2>{about.title}</h2>
-        <p>{about.description}</p>
+        <h2>{t('about-section.title')}</h2>
+        <p>{t('about-section.description')}</p>
       </div>
 
       <nav className='flex gap-x-4 pt-4'>

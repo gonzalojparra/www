@@ -1,0 +1,73 @@
+{
+  "about-section": {
+    "title": "Desarrollador front end, creando soluciones innovadoras centradas en los usuarios. De Neuquén, Argentina 🇦🇷",
+    "description": "Apasionado sobre las tecnologías web. Mi objetivo es crear experiencias de usuario que sean accesibles, performantes, y complacientes. Siempre estoy buscando aprender nuevas tecnologías y mejorar mis habilidades."
+  },
+  "career-section": {
+    "title": "Carrera y Trabajos",
+    "works": {
+      "runas-software": {
+        "company": "Runas Software",
+        "link": "",
+        "title": "Desarrollador de software y Co-fundador",
+        "start": "Agosto 2023",
+        "end": "Presente",
+        "description": "Actualmente me encuentro trabajando en Runas Software como un side project. Trabajo en el front end utilizando tecnologías como React, Next.js y TypeScript. También trabajo en el back end, usando tecnologías como Laravel y Node.js."
+      },
+      "universidad-nacional-del-comahue": {
+        "company": "Universidad Nacional del Comahue",
+        "link": "https://www.uncoma.edu.ar/",
+        "title": "Desarrollador full-stack",
+        "start": "Julio 2021",
+        "end": "Diciembre 2023",
+        "description": "Mientras estudiaba en mi Tecnicatura Universitaria en Desarrollo Web, desarrollé y mantuve aplicaciones web para mi carrera universitaria. Realicé proyectos full-stack, desarrollando en front y back end con tecnologías como React, Laravel y MySQL."
+      }
+    },
+    "view-more": "Ver más"
+  },
+  "projects-section": {
+    "title": "Proyectos & Apps",
+    "projects": {
+      "Jotter": {
+        "description": "Una aplicación full-stack que permite a los usuarios crear, editar, eliminar y compartir notas. También permite a los usuarios categorizar sus notas y buscarlas por título y contenido."
+      },
+      "Ehwaz": {
+        "description": "Un sistema full-stack para personal trainers que les permite llevar a cabo la administración, asignar entrenamientos y planes de alimentación a sus alumnos. También lesp permite a los alumnos trackear su progreso y comunicarse con sus entrenadores."
+      },
+      "Zen-Kicks": {
+        "description": "Una aplicación full-stack para administrar competencias y torneos de taekwondo. Les permite a los administradores organizar categorias, competidores y jueces."
+      }
+    }
+  },
+  "contact-section": {
+    "title": "Contacto",
+    "description": "Sentite libre de contactarme si tenés alguna pregunta, propuesta de proyecto, o si simplemente querés charlar! Siempre estoy abierto a nuevas oportunidades y desafíos.",
+    "form": {
+      "form-description": "Por favor, completá el siguiente formulario y me pondré en contacto con vos lo antes posible.",
+      "first-name-label": "Nombre",
+      "first-name-placeholder": "Tu nombre",
+      "last-name-label": "Apellido",
+      "last-name-placeholder": "Tu apellido",
+      "email-label": "Email",
+      "email-placeholder": "Tu email",
+      "message-label": "Mensaje",
+      "message-placeholder": "Ingresa tu mensaje aquí",
+      "submit-button": "Enviar",
+      "toast-success-title": "Email enviado",
+      "toast-success-description": "Me pondré en contacto con vos lo antes posible!",
+      "toast-error-title": "Error",
+      "toast-error-description": "Hubo un error al enviar el email. Por favor, intentá nuevamente más tarde."
+    }
+  },
+  "footer": {
+    "made-with": "Hecho con",
+    "rights": "Todos los derechos reservados."
+  },
+  "lang-switcher": {
+    "label": "Idioma",
+    "options": {
+      "en": "Inglés",
+      "es": "Español"
+    }
+  }
+}

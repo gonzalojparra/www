@@ -17,11 +17,11 @@ export interface LinksProps {
 export interface CareerProps {
   company: string
   link?: string
-  badges: string[]
   title: string
   start: string
   end: string
   description: string
+  viewMore?: string
 }
 
 export interface TagsProps {
@@ -34,8 +34,10 @@ export interface ProjectLinkProps {
   preview?: string
 }
 
+type ProjectTitle = 'Jotter' | 'Ehwaz' | 'Zen-Kicks'
+
 export interface ProjectProps {
-  title: string
+  title: ProjectTitle
   tags: TagsProps[]
   description: string
   link: ProjectLinkProps

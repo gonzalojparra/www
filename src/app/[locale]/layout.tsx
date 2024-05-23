@@ -1,4 +1,8 @@
-import type { Metadata } from 'next';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
+import { type Metadata } from 'next';
+import { type Locale } from '@/i18n';
+
 import { ThemeProvider } from '@/components/theme-provider';
 
 import { Header } from '@/components/header';
@@ -9,7 +13,14 @@ import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 
 import { cn } from '@/lib/utils';
-import './globals.css';
+import '@/app/globals.css';
+
+type Props = {
+  children: React.ReactNode;
+  params: {
+    locale: Locale
+  };
+};
 
 const title = 'Gonzalo Parra | Portfolio';
 const description = 'My personal portfolio, showcasing my work and skills.';
@@ -45,14 +56,15 @@ export const metadata: Metadata = {
   creator: 'Gonzalo Parra',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+  params: { locale }
+}: Readonly<Props>) {
+  const messages = await getMessages();
+
   return (
     <html
-      lang='en'
+      lang={locale}
       className={cn(
         'min-h-screen bg-background font-sans antialiased overflow-y-scroll scroll-smooth',
         GeistSans.variable,
@@ -61,20 +73,22 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body>
-        <ThemeProvider
-          attribute='class'
-          defaultTheme='system'
-          enableSystem
-        >
-          <TooltipProvider>
-            <main className='flex flex-col items-center justify-center min-h-screen pt-24 pb-8 px-4'>
-              <Header />
-              {children}
-              <Footer />
-            </main>
-            <Toaster />
-          </TooltipProvider>
-        </ThemeProvider>
+        <NextIntlClientProvider messages={messages}>
+          <ThemeProvider
+            attribute='class'
+            defaultTheme='system'
+            enableSystem
+          >
+            <TooltipProvider>
+              <main className='flex flex-col items-center justify-center min-h-screen pt-24 pb-8 px-4'>
+                <Header />
+                {children}
+                <Footer />
+              </main>
+              <Toaster />
+            </TooltipProvider>
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

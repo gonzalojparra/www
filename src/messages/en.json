@@ -1,0 +1,73 @@
+{
+  "about-section": {
+    "title": "Front end developer, committed to creating innovative and user-centered solutions. Based in Neuquén, Argentina 🇦🇷",
+    "description": "Passionate about web technologies. I aim to create accessible, performant, and delightful experiences for users. I'm always looking to learn new things and improve my skills."
+  },
+  "career-section": {
+    "title": "Career & Works",
+    "works": {
+      "runas-software": {
+        "company": "Runas Software",
+        "link": "",
+        "title": "Software Developer & Co-Creator",
+        "start": "August 2023",
+        "end": "Present",
+        "description": "I'm currently working at Runas Software as a side project. I work on the front end, using technologies like React, Next.js, and TypeScript. I also work on the back end, using technologies like Laravel and Node.js."
+      },
+      "universidad-nacional-del-comahue": {
+        "company": "Universidad Nacional del Comahue",
+        "link": "https://www.uncoma.edu.ar/",
+        "title": "Full Stack Developer",
+        "start": "July 2021",
+        "end": "December 2023",
+        "description": "While studying for my bachelor's in software and web development, I developed and maintained web applications for my university career. I worked on the front and back end, using technologies like React, Laravel, and MySQL."
+      }
+    },
+    "view-more": "View more"
+  },
+  "projects-section": {
+    "title": "Projects & Apps",
+    "projects": {
+      "Jotter": {
+        "description": "A full-stack note-taking app that allows users to create, edit, delete and share notes. It also allows users to categorize notes into notebooks and search for notes."
+      },
+      "Ehwaz": {
+        "description": "A full-stack personal trainers system that allows trainers to manage their clients, workouts, and nutrition plans. It also allows clients to track their progress and communicate with their trainers."
+      },
+      "Zen-Kicks": {
+        "description": "A full-stack taekwondo tournaments administrator system. It allows administrators to manage tournaments, categories, competitors and judges. It also allows competitors to register for tournaments."
+      }
+    }
+  },
+  "contact-section": {
+    "title": "Contact",
+    "description": "Feel free to get in touch with me if you have any questions, project inquiries, or if you would like to discuss a collab!. I'm always open to new opportunities and challenges.",
+    "form": {
+      "form-description": "Please, fill out the form below and I'll get back to you as soon as possible.",
+      "first-name-label": "First Name",
+      "first-name-placeholder": "Your first name",
+      "last-name-label": "Last Name",
+      "last-name-placeholder": "Your last name",
+      "email-label": "Email",
+      "email-placeholder": "Your email",
+      "message-label": "Message",
+      "message-placeholder": "Enter your message",
+      "submit-button": "Submit",
+      "toast-success-title": "Email sent",
+      "toast-success-description": "I will get back to you as soon as possible!",
+      "toast-error-title": "Error",
+      "toast-error-description": "An error occurred while sending the email. Please try again later."
+    }
+  },
+  "footer": {
+    "made-with": "Made with",
+    "rights": "All rights reserved."
+  },
+  "lang-switcher": {
+    "label": "Language",
+    "options": {
+      "en": "English",
+      "es": "Spanish"
+    }
+  }
+}
