@@ -2,7 +2,8 @@ import { notFound } from 'next/navigation';
 import { getRequestConfig } from 'next-intl/server';
 
 // Can be imported from a shared config
-const locales = ['en', 'es'];
+export const locales = ['en', 'es'];
+export type Locale = (typeof locales)[number];
 
 export default getRequestConfig(async ({ locale }) => {
   const baseLocale = new Intl.Locale(locale).baseName;
@@ -10,6 +11,11 @@ export default getRequestConfig(async ({ locale }) => {
   if (!locales.includes(baseLocale)) notFound();
 
   return {
-    messages: (await import(`./messages/${baseLocale}.json`)).default
+    messages: (
+      await (locale === 'en'
+        ? // When using Turbopack, this will enable HMR for `en`
+          import('./messages/en.json')
+        : import(`./messages/${locale}.json`))
+    ).default
   };
 });

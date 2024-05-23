@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 import { ThemeToggle } from '@/components/theme-toggle';
+import { LangSwitcher } from '@/components/lang-switcher';
 
 import { cn } from '@/lib/utils';
 
@@ -63,6 +64,7 @@ export function Header() {
         ))}
         <div className='flex items-center ms-1'>
           <ThemeToggle />
+          <LangSwitcher />
         </div>
       </nav>
     </header>

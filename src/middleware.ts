@@ -1,9 +1,11 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { type Locale, locales } from '@/i18n';
 import createMiddleware from 'next-intl/middleware';
+import { type NextRequest, type NextResponse } from 'next/server';
 
 const nextIntlMiddleware = createMiddleware({
-  locales: ['en', 'es'],
-  defaultLocale: 'en',
+  locales,
+  defaultLocale: 'en' satisfies Locale,
+  localePrefix: 'never',
 });
 
 export default function (req: NextRequest): NextResponse {
@@ -11,6 +13,11 @@ export default function (req: NextRequest): NextResponse {
 }
 
 export const config = {
-  // Match only internationalized pathnames
-  matcher: ['/', '/(en|es)/:path*']
-}
+  // match only internationalized pathnames
+  matcher: [
+    // Match all pathnames except for
+    // - … if they start with `/api`, `/_next` or `/_vercel`
+    // - … the ones containing a dot (e.g. `favicon.ico`)
+    "/((?!api|_next|_vercel|.*\\..*).*)",
+  ],
+};

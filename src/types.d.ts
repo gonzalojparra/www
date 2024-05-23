@@ -34,8 +34,10 @@ export interface ProjectLinkProps {
   preview?: string
 }
 
+type ProjectTitle = 'Jotter' | 'Ehwaz' | 'Zen-Kicks'
+
 export interface ProjectProps {
-  title: string
+  title: ProjectTitle
   tags: TagsProps[]
   description: string
   link: ProjectLinkProps

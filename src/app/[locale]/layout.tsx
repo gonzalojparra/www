@@ -1,6 +1,7 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
-import type { Metadata } from 'next';
+import { type Metadata } from 'next';
+import { type Locale } from '@/i18n';
 
 import { ThemeProvider } from '@/components/theme-provider';
 
@@ -17,7 +18,7 @@ import '@/app/globals.css';
 type Props = {
   children: React.ReactNode;
   params: {
-    locale: 'en' | 'es'
+    locale: Locale
   };
 };
 
