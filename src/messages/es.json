@@ -1,0 +1,24 @@
+{
+  "about-section": {
+    "title": "Desarrollador front end, creando soluciones innovadoras centradas en los usuarios. De Neuquén, Argentina 🇦🇷",
+    "description": "Apasionado sobre las tecnologías web. Mi objetivo es crear experiencias de usuario que sean accesibles, performantes, y complacientes. Siempre estoy buscando aprender nuevas tecnologías y mejorar mis habilidades."
+  },
+  "career-section": {
+    "runas-software": {
+      "company": "Runas Software",
+      "link": "",
+      "title": "Desarrollador de software y Co-fundador",
+      "start": "Agosto 2023",
+      "end": "Presente",
+      "description": "I'm currently working at Runas Software as a side project. I work on the front end, using technologies like React, Next.js, and TypeScript. I also work on the back end, using technologies like Laravel and Node.js."
+    },
+    "universidad-nacional-del-comahue": {
+      "company": "Universidad Nacional del Comahue",
+      "link": "https://www.uncoma.edu.ar/",
+      "title": "Desarrollador full-stack",
+      "start": "Julio 2021",
+      "end": "Deciembre 2023",
+      "description": "While studying for my bachelor's in software and web development, I developed and maintained web applications for my university career. I worked on the front and back end, using technologies like React, Laravel, and MySQL."
+    }
+  }
+}
