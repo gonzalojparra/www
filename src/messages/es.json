@@ -1,4 +1,26 @@
 {
+  "header": {
+    "about": {
+      "title": "Sobre mí",
+      "label": "sobre-mi",
+      "link": "#sobre-mi"
+    },
+    "career": {
+      "title": "Carrera",
+      "label": "carrera",
+      "link": "#carrera"
+    },
+    "projects": {
+      "title": "Proyectos",
+      "label": "proyectos",
+      "link": "#proyectos"
+    },
+    "contact": {
+      "title": "Contacto",
+      "label": "contacto",
+      "link": "#contacto"
+    }
+  },
   "about-section": {
     "title": "Desarrollador front end, creando soluciones innovadoras centradas en los usuarios. De Neuquén, Argentina 🇦🇷",
     "description": "Apasionado sobre las tecnologías web. Mi objetivo es crear experiencias de usuario que sean accesibles, performantes, y complacientes. Siempre estoy buscando aprender nuevas tecnologías y mejorar mis habilidades."

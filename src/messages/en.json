@@ -1,4 +1,26 @@
 {
+  "header": {
+    "about": {
+      "title": "About",
+      "label": "about",
+      "link": "#about"
+    },
+    "career": {
+      "title": "Career",
+      "label": "career",
+      "link": "#career"
+    },
+    "projects": {
+      "title": "Projects",
+      "label": "projects",
+      "link": "#projects"
+    },
+    "contact": {
+      "title": "Contact",
+      "label": "contact",
+      "link": "#contact"
+    }
+  },
   "about-section": {
     "title": "Front end developer, committed to creating innovative and user-centered solutions. Based in Neuquén, Argentina 🇦🇷",
     "description": "Passionate about web technologies. I aim to create accessible, performant, and delightful experiences for users. I'm always looking to learn new things and improve my skills."

@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react';
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
 import { ThemeToggle } from '@/components/theme-toggle';
@@ -10,6 +11,7 @@ import { cn } from '@/lib/utils';
 
 export function Header() {
   const [currentSection, setCurrentSection] = useState('');
+  const t = useTranslations();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,10 +40,10 @@ export function Header() {
   }, []);
 
   const navItems = [
-    { title: 'About', label: 'about', url: '#about' },
-    { title: 'Career', label: 'career', url: '#career' },
-    { title: 'Projects', label: 'projects', url: '#projects' },
-    { title: 'Contact', label: 'contact', url: '#contact' },
+    { title: t('header.about.title'), label: t('header.about.label'), url: t('header.about.link') },
+    { title: t('header.career.title'), label: t('header.career.label'), url: t('header.career.link') },
+    { title: t('header.projects.title'), label: t('header.projects.label'), url: t('header.projects.link') },
+    { title: t('header.contact.title'), label: t('header.contact.label'), url: t('header.contact.link') },
   ];
 
   return (
