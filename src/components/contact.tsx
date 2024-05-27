@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 
-import { ContactForm } from './contact-form';
+import { ContactForm } from '@/components/contact-form';
 import { MailIcon } from 'lucide-react';
 
 export function Contact() {

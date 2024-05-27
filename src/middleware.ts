@@ -1,6 +1,6 @@
-import { type Locale, locales } from '@/i18n';
 import createMiddleware from 'next-intl/middleware';
 import { type NextRequest, type NextResponse } from 'next/server';
+import { type Locale, locales } from '@/i18n';
 
 const nextIntlMiddleware = createMiddleware({
   locales,

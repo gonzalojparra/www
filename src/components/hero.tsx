@@ -1,13 +1,13 @@
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
-import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
-import { Badge } from './ui/badge';
-import { Button } from './ui/button';
-import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
+import { BadgeCheckIcon } from 'lucide-react';
 
 import { data } from '@/constants';
-import { BadgeCheckIcon } from 'lucide-react';
 
 export function Hero() {
   const { avatar, links } = data;

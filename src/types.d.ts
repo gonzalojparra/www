@@ -29,6 +29,11 @@ export interface TagsProps {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
 }
 
+export interface StackProps {
+  name: string,
+  Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
+}
+
 export interface ProjectLinkProps {
   github?: string
   preview?: string

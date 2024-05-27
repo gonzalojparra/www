@@ -1,9 +1,9 @@
 import { useTranslations } from 'next-intl';
 
+import { ProjectItem } from '@/components/project-item';
 import { CodeIcon } from 'lucide-react';
 
 import { data } from '@/constants';
-import { ProjectItem } from './project-item';
 
 export function Projects() {
   let { projects } = data;

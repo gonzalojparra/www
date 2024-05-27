@@ -45,6 +45,7 @@ export function Header() {
 
   const navItems = [
     { title: t('header.about.title'), label: t('header.about.label'), url: t('header.about.link') },
+    { title: t('header.tech-stack.title'), label: t('header.tech-stack.label'), url: t('header.tech-stack.link') },
     { title: t('header.career.title'), label: t('header.career.label'), url: t('header.career.link') },
     { title: t('header.projects.title'), label: t('header.projects.label'), url: t('header.projects.link') },
     { title: t('header.contact.title'), label: t('header.contact.label'), url: t('header.contact.link') },

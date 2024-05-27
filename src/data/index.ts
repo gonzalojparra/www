@@ -78,6 +78,18 @@ const TAGS = {
   },
 };
 
+export const STACK = [
+  { name: 'React', Icon: ReactIcon },
+  { name: 'NextJS', Icon: NextJSIcon },
+  { name: 'Laravel', Icon: LaravelIcon },
+  { name: 'Typescript', Icon: TypeScriptIcon },
+  { name: 'JavaScript', Icon: JavaScriptIcon},
+  { name: 'PHP', Icon: PHPIcon },
+  { name: 'NodeJS', Icon: NodeJSIcon },
+  { name: 'HTML', Icon: HTMLIcon },
+  { name: 'CSS', Icon: CSSIcon }
+];
+
 export const PROJECTS = [
   {
     title: 'Jotter',

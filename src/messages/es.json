@@ -5,6 +5,11 @@
       "label": "sobre-mi",
       "link": "#sobre-mi"
     },
+    "tech-stack": {
+      "title": "Stack de tecnologías",
+      "label": "stack-tecnologias",
+      "link": "#stack-tecnologias"
+    },
     "career": {
       "title": "Carrera",
       "label": "carrera",
@@ -20,6 +25,10 @@
       "label": "contacto",
       "link": "#contacto"
     }
+  },
+  "tech-stack": {
+    "title": "Stack de tecnologías",
+    "description": "En mi camino como desarrollador web y de software, he adquirido un grupo de habilidades que me permiten trabajar en diversos proyectos. Mi área abarca el desarrollo front end, utilizando lenguajes como TypeScript, JavaScript, HTML y CSS, y frameworks tales como React y Next.js"
   },
   "about-section": {
     "title": "Desarrollador front end, creando soluciones innovadoras centradas en los usuarios. De Neuquén, Argentina 🇦🇷",
