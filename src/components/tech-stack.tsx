@@ -22,7 +22,7 @@ export function TechStack() {
       <div className='grid grid-cols-3 gap-8'>
         {stack.map(({ name, Icon }) => (
           <div key={name} className='group'>
-            <Card className='flex flex-col items-center justify-center p-6 border rounded-lg transition-transform duration-300 ease-in-out group-hover:-translate-y-2 group-hover:shadow-lg group-hover:cursor-pointer'>
+            <Card className='flex flex-col items-center justify-center p-6 border rounded-lg transition-transform duration-300 ease-in-out group-hover:-translate-y-2 group-hover:shadow-lg'>
               <Icon className='mb-4 h-12 w-12' />
               <div className='text-center'>{name}</div>
             </Card>
