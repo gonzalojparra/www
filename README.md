@@ -23,13 +23,11 @@ npm run dev
 # Run the development server of the project.
 ```
 
-
-
 ## 💻 Technologies
 
 The project is being developed with the following tech-stack:
 
-- NextJS
+- Next.js
 - TypeScript
 - TailwindCSS
 - Shadcn/ui

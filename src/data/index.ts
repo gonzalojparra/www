@@ -13,7 +13,7 @@ import { NodeJSIcon } from '@/components/icons/tags/nodejs';
 import { GitHubIcon } from '@/components/icons/github';
 import { LinkedInIcon } from '@/components/icons/linkedin';
 import { DiscordIcon } from '@/components/icons/discord';
-import { MailIcon } from 'lucide-react';
+import { FileTextIcon, MailIcon } from 'lucide-react';
 
 export const AVATAR = {
   name: 'Gonzalo Parra',
@@ -23,6 +23,7 @@ export const AVATAR = {
 export const LINKS = [
   { title: 'GitHub', url: 'https://github.com/gonzalojparra', icon: GitHubIcon },
   { title: 'LinkedIn', url: 'https://www.linkedin.com/in/gonzalojparra/', icon: LinkedInIcon },
+  { title: 'Resume', url: '/assets/resume.pdf', icon: FileTextIcon },
   { title: 'Email', url: 'mailto:gonzzaparra@gmail.com', icon: MailIcon },
   { title: 'Discord', url: 'https://discordapp.com/users/654163755797577747', icon: DiscordIcon}
 ];
@@ -80,12 +81,12 @@ const TAGS = {
 
 export const STACK = [
   { name: 'React', Icon: ReactIcon },
-  { name: 'NextJS', Icon: NextJSIcon },
+  { name: 'Next.js', Icon: NextJSIcon },
   { name: 'Laravel', Icon: LaravelIcon },
+  { name: 'Node.js', Icon: NodeJSIcon },
   { name: 'Typescript', Icon: TypeScriptIcon },
   { name: 'JavaScript', Icon: JavaScriptIcon},
   { name: 'PHP', Icon: PHPIcon },
-  { name: 'NodeJS', Icon: NodeJSIcon },
   { name: 'HTML', Icon: HTMLIcon },
   { name: 'CSS', Icon: CSSIcon }
 ];
