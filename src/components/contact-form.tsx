@@ -20,7 +20,7 @@ import {
   FormItem,
   FormLabel,
   FormMessage
-} from './ui/form';
+} from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
@@ -34,9 +34,18 @@ export function ContactForm() {
   });
 
   const { handleSubmit, formState, control } = form;
-  const { isSubmitting } = formState;
+  const { isSubmitting, errors } = formState;
 
   async function onSubmit(data: FormValues) {
+    if (data.honeypot) {
+      toast({
+        title: t('contact-section.form.spam-detected-title'),
+        description: t('contact-section.form.spam-detected-description'),
+        variant: 'destructive',
+      });
+      return;
+    }
+
     const formData = new FormData();
     Object.entries(data).forEach(([key, value]) => {
       if (value) {
@@ -45,28 +54,28 @@ export function ContactForm() {
     });
 
     try {
-      await fetch('/api/send', {
+      const response = await fetch('/api/send', {
         method: 'POST',
         body: JSON.stringify({
           firstName: data.firstName,
           lastName: data.lastName,
           email: data.email,
-          message: data.message
-        })
-      })
-        .then(response => response.json())
-        .then(data => {
-          toast({
-            title: t('contact-section.form.toast-success-title'),
-            description: t('contact-section.form.toast-success-description'),
-            variant: 'default'
-          });
-        });
+          message: data.message,
+        }),
+      });
+
+      const result = await response.json();
+      toast({
+        title: t('contact-section.form.toast-success-title'),
+        description: t('contact-section.form.toast-success-description'),
+        variant: 'default',
+      });
+      form.reset();
     } catch (error) {
       toast({
         title: t('contact-section.form.toast-error-title'),
         description: t('contact-section.form.toast-error-description'),
-        variant: 'destructive'
+        variant: 'destructive',
       });
     }
   }
@@ -81,10 +90,7 @@ export function ContactForm() {
         </CardHeader>
         <CardContent>
           <Form {...form}>
-            <form
-              noValidate
-              onSubmit={handleSubmit(onSubmit)}
-            >
+            <form noValidate onSubmit={handleSubmit(onSubmit)}>
               <div className='space-y-4'>
                 <div className='grid grid-cols-2 gap-4'>
                   <div className='space-y-2'>
@@ -168,6 +174,23 @@ export function ContactForm() {
                           />
                         </FormControl>
                         <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+                {/* Honeypot Field */}
+                <div style={{ display: 'none' }}>
+                  <FormField
+                    control={control}
+                    name='honeypot'
+                    render={({ field }) => (
+                      <FormItem>
+                        <Input
+                          {...field}
+                          id='honeypot'
+                          tabIndex={-1}
+                          autoComplete='off'
+                        />
                       </FormItem>
                     )}
                   />

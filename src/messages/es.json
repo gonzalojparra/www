@@ -87,7 +87,9 @@
       "toast-success-title": "Email enviado",
       "toast-success-description": "Me pondré en contacto con vos lo antes posible!",
       "toast-error-title": "Error",
-      "toast-error-description": "Hubo un error al enviar el email. Por favor, intentá nuevamente más tarde."
+      "toast-error-description": "Hubo un error al enviar el email. Por favor, intentá nuevamente más tarde.",
+      "spam-detected-title": "Spam detectado",
+      "spam-detected-description": "Por favor, completá el formulario correctamente y sin spam. Gracias!"
     }
   },
   "footer": {

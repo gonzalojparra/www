@@ -18,6 +18,7 @@ export const formSchema = z.object({
   message: z.string()
     .min(10, 'Message must be at least 10 characters')
     .max(500, 'Message must be less than 500 characters'),
+  honeypot: z.string().optional(),
 });
 
 export type FormValues = z.infer<typeof formSchema>;
