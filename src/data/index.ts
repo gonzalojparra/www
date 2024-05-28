@@ -23,9 +23,9 @@ export const AVATAR = {
 export const LINKS = [
   { title: 'GitHub', url: 'https://github.com/gonzalojparra', icon: GitHubIcon },
   { title: 'LinkedIn', url: 'https://www.linkedin.com/in/gonzalojparra/', icon: LinkedInIcon },
-  { title: 'Resume', url: 'https://portfolio-gonzalojparra.vercel.app/assets/resume.pdf', icon: FileTextIcon },
+  { title: 'Resume', url: '/assets/resume.pdf', icon: FileTextIcon },
   { title: 'Email', url: 'mailto:gonzzaparra@gmail.com', icon: MailIcon },
-  { title: 'Discord', url: 'https://discordapp.com/users/654163755797577747', icon: DiscordIcon}
+  { title: 'Discord', url: 'https://discordapp.com/users/654163755797577747', icon: DiscordIcon }
 ];
 
 const TAGS = {
@@ -85,7 +85,7 @@ export const STACK = [
   { name: 'Laravel', Icon: LaravelIcon },
   { name: 'Node.js', Icon: NodeJSIcon },
   { name: 'Typescript', Icon: TypeScriptIcon },
-  { name: 'JavaScript', Icon: JavaScriptIcon},
+  { name: 'JavaScript', Icon: JavaScriptIcon },
   { name: 'PHP', Icon: PHPIcon },
   { name: 'HTML', Icon: HTMLIcon },
   { name: 'CSS', Icon: CSSIcon }
