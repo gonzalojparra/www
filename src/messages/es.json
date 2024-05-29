@@ -37,13 +37,13 @@
   "career-section": {
     "title": "Carrera y Trabajos",
     "works": {
-      "runas-software": {
-        "company": "Runas Software",
+      "runesoft": {
+        "company": "Runesoft",
         "link": "",
         "title": "Desarrollador de software y Co-fundador",
         "start": "Agosto 2023",
         "end": "Presente",
-        "description": "Actualmente me encuentro trabajando en Runas Software como un side project. Trabajo en el front end utilizando tecnologías como React, Next.js y TypeScript. También trabajo en el back end, usando tecnologías como Laravel y Node.js."
+        "description": "Actualmente me encuentro desarrollando Runesoft como un side project. Trabajo en el front end utilizando tecnologías como React, Next.js y TypeScript. También trabajo en el back end, usando tecnologías como Laravel y Node.js."
       },
       "universidad-nacional-del-comahue": {
         "company": "Universidad Nacional del Comahue",

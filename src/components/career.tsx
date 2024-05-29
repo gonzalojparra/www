@@ -6,7 +6,7 @@ import { LaptopIcon } from 'lucide-react';
 export function Career() {
   const t = useTranslations();
   const careerItems = useTranslations('career-section.works');
-  const keys = ['runas-software', 'universidad-nacional-del-comahue'] as const;
+  const keys = ['runesoft', 'universidad-nacional-del-comahue'] as const;
 
   return (
     <>
