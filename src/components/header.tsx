@@ -78,7 +78,7 @@ export function Header() {
         <div className='flex items-start'>
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant='outline'>
+              <Button variant='ghost' className='w-full'>
                 <MenuIcon className='h-[1.2rem] w-[1.2rem]' />
               </Button>
             </SheetTrigger>
