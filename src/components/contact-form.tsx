@@ -1,36 +1,28 @@
 'use client'
 
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from 'next-intl';
 
-import { FormValues, formSchema } from '@/lib/validation';
-
 import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-} from '@/components/ui/card';
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage
-} from '@/components/ui/form';
+import { Card, CardContent, CardDescription, CardHeader } from '@/components/ui/card';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
 import { Loader2 } from 'lucide-react';
 
+import { getFormSchema, FormValues } from '@/lib/validation';
+
 export function ContactForm() {
   const { toast } = useToast();
   const t = useTranslations();
+  const formSchema = getFormSchema(t);
+
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
+    mode: 'onChange',
     defaultValues: {
       firstName: '',
       lastName: '',
@@ -40,8 +32,31 @@ export function ContactForm() {
     }
   });
 
-  const { handleSubmit, formState, control } = form;
-  const { isSubmitting, errors } = formState;
+  const {
+    handleSubmit,
+    formState,
+    control,
+    watch,
+    setError,
+    clearErrors
+  } = form;
+  const { isSubmitting } = formState;
+
+  /* Watches for changes in the form fields and checks if the message field contains any URLs.
+  If a URL is found, it sets an error message for the message field. */
+  useEffect(() => {
+    const subscription = watch((value, { name }) => {
+      if (name === 'message' && /http|www|href/.test(value.message ?? '')) {
+        setError('message', {
+          type: 'manual',
+          message: 'Message must not contain URLs',
+        });
+      } else {
+        clearErrors('message');
+      }
+    });
+    return () => subscription.unsubscribe();
+  }, [watch, setError, clearErrors]);
 
   async function onSubmit(data: FormValues) {
     if (data.honeypot) {

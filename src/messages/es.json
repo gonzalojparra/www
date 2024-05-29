@@ -89,7 +89,29 @@
       "toast-error-title": "Error",
       "toast-error-description": "Hubo un error al enviar el email. Por favor, intentá nuevamente más tarde.",
       "spam-detected-title": "Spam detectado",
-      "spam-detected-description": "Por favor, completá el formulario correctamente y sin spam. Gracias!"
+      "spam-detected-description": "Por favor, completá el formulario correctamente y sin spam. Gracias!",
+      "errors": {
+        "first-name": {
+          "min": "El nombre debe tener al menos 2 caracteres",
+          "max": "El nombre debe tener menos de 50 caracteres",
+          "regex": "El nombre debe contener solo letras"
+        },
+        "last-name": {
+          "min": "El apellido debe tener al menos 2 caracteres",
+          "max": "El apellido debe tener menos de 50 caracteres",
+          "regex": "El apellido debe contener solo letras"
+        },
+        "email": {
+          "email": "Email inválido",
+          "min": "El email debe tener al menos 5 caracteres",
+          "max": "El email debe tener menos de 100 caracteres"
+        },
+        "message": {
+          "min": "El mensaje debe tener al menos 10 caracteres",
+          "max": "El mensaje debe tener menos de 500 caracteres",
+          "refine": "Por favor, evitá el spam en tu mensaje. Gracias!"
+        }
+      }
     }
   },
   "footer": {

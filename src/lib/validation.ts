@@ -2,23 +2,26 @@ import { z } from 'zod';
 
 const nameRegex = /^[A-Za-zÀ-ÿ' -]{2,}$/;
 
-export const formSchema = z.object({
+export const getFormSchema = (t: any) => z.object({
   firstName: z.string()
-    .min(2, 'First name must be at least 2 characters')
-    .max(50, 'First name must be less than 50 characters')
-    .regex(nameRegex, 'First name must be a valid name'),
+    .min(2, t('contact-section.form.errors.first-name.min'))
+    .max(50, t('contact-section.form.errors.first-name.max'))
+    .regex(nameRegex, t('contact-section.form.errors.first-name.regex')),
   lastName: z.string()
-    .min(2, 'Last name must be at least 2 characters')
-    .max(50, 'Last name must be less than 50 characters')
-    .regex(nameRegex, 'Last name must be a valid name'),
+    .min(2, t('contact-section.form.errors.last-name.min'))
+    .max(50, t('contact-section.form.errors.last-name.max'))
+    .regex(nameRegex, t('contact-section.form.errors.last-name.regex')),
   email: z.string()
-    .email('Email must be a valid email address')
-    .min(5, 'Email must be at least 5 characters')
-    .max(100, 'Email must be less than 100 characters'),
+    .email(t('contact-section.form.errors.email.email'))
+    .min(5, t('contact-section.form.errors.email.min'))
+    .max(100, t('contact-section.form.errors.email.max')),
   message: z.string()
-    .min(10, 'Message must be at least 10 characters')
-    .max(500, 'Message must be less than 500 characters'),
+    .min(10, t('contact-section.form.errors.message.min'))
+    .max(500, t('contact-section.form.errors.message.max'))
+    .refine(value => !/http|www|href/.test(value), {
+      message: t('contact-section.form.errors.message.refine'),
+    }),
   honeypot: z.string().optional(),
 });
 
-export type FormValues = z.infer<typeof formSchema>;
+export type FormValues = z.infer<ReturnType<typeof getFormSchema>>;

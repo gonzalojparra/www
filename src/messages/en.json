@@ -89,7 +89,29 @@
       "toast-error-title": "Error",
       "toast-error-description": "There was an error while submitting the email. Please try again later.",
       "spam-detected-title": "Spam detected",
-      "spam-detected-description": "Please, fill out the form correctly and without spam. Thanks!"
+      "spam-detected-description": "Please, fill out the form correctly and without spam. Thanks!",
+      "errors": {
+        "first-name": {
+          "min": "First name must be at least 2 characters",
+          "max": "First name must be less than 50 characters",
+          "regex": "First name must contain only letters"
+        },
+        "last-name": {
+          "min": "Last name must be at least 2 characters",
+          "max": "Last name must be less than 50 characters",
+          "regex": "Last name must contain only letters"
+        },
+        "email": {
+          "email": "Email must be a valid email address",
+          "min": "Email must be at least 5 characters",
+          "max": "Email must be less than 100 characters"
+        },
+        "message": {
+          "min": "Message must be at least 10 characters",
+          "max": "Message must be less than 500 characters",
+          "refine": "Message must not contain spam words"
+        }
+      }
     }
   },
   "footer": {
