@@ -110,7 +110,8 @@
           "min": "El mensaje debe tener al menos 10 caracteres",
           "max": "El mensaje debe tener menos de 500 caracteres",
           "refine": "Por favor, evitá el spam en tu mensaje. Gracias!"
-        }
+        },
+        "urls": "Por favor, evitá incluir URLs en tu mensaje. Gracias!"
       }
     }
   },

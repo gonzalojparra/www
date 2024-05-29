@@ -49,7 +49,7 @@ export function ContactForm() {
       if (name === 'message' && /http|www|href/.test(value.message ?? '')) {
         setError('message', {
           type: 'manual',
-          message: 'Message must not contain URLs',
+          message: t('contact-section.form.errors.urls'),
         });
       } else {
         clearErrors('message');

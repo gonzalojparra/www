@@ -110,7 +110,8 @@
           "min": "Message must be at least 10 characters",
           "max": "Message must be less than 500 characters",
           "refine": "Message must not contain spam words"
-        }
+        },
+        "urls": "Message must not contain URLs"
       }
     }
   },
