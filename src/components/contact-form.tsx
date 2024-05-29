@@ -30,7 +30,14 @@ export function ContactForm() {
   const { toast } = useToast();
   const t = useTranslations();
   const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema)
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      firstName: '',
+      lastName: '',
+      email: '',
+      message: '',
+      honeypot: '',
+    }
   });
 
   const { handleSubmit, formState, control } = form;
