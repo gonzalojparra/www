@@ -36,8 +36,10 @@ The project is being developed with the following tech-stack:
 
 ## Author
 
-**Gonzalo Parra**
+###### **Gonzalo Parra**
 
 - Website: https://portfolio-gonzalojparra.vercel.app/
 - GitHub: [@gonzalojparra](https://github.com/gonzalojparra)
 - LinkedIn: [@gonzalojparra](https://www.linkedin.com/in/gonzalojparra/)
+
+###### 🤝 Special thanks to [@emapeire](https://github.com/emapeire/)
