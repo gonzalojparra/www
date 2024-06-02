@@ -3,27 +3,27 @@
     "about": {
       "title": "Sobre mí",
       "label": "sobre-mi",
-      "link": "#sobre-mi"
+      "link": "/#sobre-mi"
     },
     "tech-stack": {
       "title": "Stack de tecnologías",
       "label": "stack-tecnologias",
-      "link": "#stack-tecnologias"
+      "link": "/#stack-tecnologias"
     },
     "career": {
       "title": "Carrera",
       "label": "carrera",
-      "link": "#carrera"
+      "link": "/#carrera"
     },
     "projects": {
       "title": "Proyectos",
       "label": "proyectos",
-      "link": "#proyectos"
+      "link": "/#proyectos"
     },
     "contact": {
       "title": "Contacto",
       "label": "contacto",
-      "link": "#contacto"
+      "link": "/#contacto"
     }
   },
   "tech-stack": {
@@ -125,5 +125,10 @@
       "en": "Inglés",
       "es": "Español"
     }
+  },
+  "not-found": {
+    "title": "404",
+    "description": "Felicitaciones! Encontraste una página que no existe. 🎉",
+    "button": "Volver al inicio"
   }
 }

@@ -15,6 +15,14 @@ import { Loader2 } from 'lucide-react';
 
 import { getFormSchema, FormValues } from '@/lib/validation';
 
+const formInitialState: FormValues = {
+  firstName: '',
+  lastName: '',
+  email: '',
+  message: '',
+  honeypot: '',
+};
+
 export function ContactForm() {
   const { toast } = useToast();
   const t = useTranslations();
@@ -23,13 +31,7 @@ export function ContactForm() {
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     mode: 'onChange',
-    defaultValues: {
-      firstName: '',
-      lastName: '',
-      email: '',
-      message: '',
-      honeypot: '',
-    }
+    defaultValues: formInitialState
   });
 
   const {
