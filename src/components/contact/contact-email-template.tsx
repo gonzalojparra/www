@@ -1,9 +1,4 @@
-export interface ContactEmailTemplateProps {
-  firstName: string;
-  lastName: string;
-  email: string;
-  message: string;
-};
+import { ContactEmailTemplateProps } from '@/types';
 
 export function ContactEmailTemplate({
   firstName,

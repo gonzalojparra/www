@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 
-import { ProjectItem } from '@/components/project-item';
+import { ProjectItem } from '@/components/projects/project-item';
 import { CodeIcon } from 'lucide-react';
 
 import { data } from '@/constants';

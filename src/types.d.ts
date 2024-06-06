@@ -49,3 +49,10 @@ export interface ProjectProps {
   image?: string
   video?: string
 }
+
+export interface ContactEmailTemplateProps {
+  firstName: string
+  lastName: string
+  email: string
+  message: string
+}

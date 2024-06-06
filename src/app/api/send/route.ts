@@ -1,7 +1,8 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 
-import { ContactEmailTemplate, type ContactEmailTemplateProps } from '@/components/contact-email-template';
+import { ContactEmailTemplate } from '@/components/contact/contact-email-template';
+import { type ContactEmailTemplateProps } from '@/types';
 
 export const runtime = 'edge';
 export const dynamic = 'force-dynamic';

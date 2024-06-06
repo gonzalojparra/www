@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 
-import { CareerItem } from '@/components/career-item';
+import { CareerItem } from '@/components/career/career-item';
 import { LaptopIcon } from 'lucide-react';
 
 export function Career() {
