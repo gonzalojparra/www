@@ -1,7 +1,7 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 
-import { ContactEmailTemplate } from '@/components/contact-email-template';
+import { ContactEmailTemplate, type ContactEmailTemplateProps } from '@/components/contact-email-template';
 
 export const runtime = 'edge';
 export const dynamic = 'force-dynamic';
@@ -9,7 +9,7 @@ export const dynamic = 'force-dynamic';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
-  const { firstName, lastName, email, message } = await request.json();
+  const { firstName, lastName, email, message } = (await request.json()) as ContactEmailTemplateProps;
 
   try {
     const { data, error } = await resend.emails.send({
