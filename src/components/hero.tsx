@@ -41,9 +41,9 @@ export function Hero() {
         >
           <Badge
             variant='default'
-            className='font-mono font-bold text-xs bg-primary hover:scale-105 transition-all ease-in-out duration-300'
+            className='font-mono font-bold text-xs hover:scale-105 transition-all ease-in-out duration-200'
           >
-            Open to work
+            {t('about-section.open-to-work')}
           </Badge>
         </Link>
         <Tooltip>
@@ -52,17 +52,17 @@ export function Hero() {
               href='https://www.linkedin.com/in/gonzalojparra/'
               target='_blank'
               rel='noopener noreferrer'
-              aria-label='Open to work'
+              aria-label={t('about-section.open-to-work')}
               className='md:hidden flex rounded-full hover:scale-105 transition-all ease-in-out duration-300'
             >
               <BadgeCheckIcon className='size-6 fill-secondary' />
             </Link>
           </TooltipTrigger>
           <TooltipContent>
-            <p>Open to work</p>
+            <p>{t('about-section.open-to-work')}</p>
           </TooltipContent>
         </Tooltip>
-      </div>
+      </div >
 
       <div className='flex flex-col font-mono gap-4 dark:text-neutral-200 text-neutral-800 text-pretty'>
         <h2>{t('about-section.title')}</h2>

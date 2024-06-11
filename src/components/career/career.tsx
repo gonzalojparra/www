@@ -20,6 +20,7 @@ export function Career() {
             <CareerItem
               link={careerItems(`${key}.link`)}
               company={careerItems(`${key}.company`)}
+              badges={careerItems(`${key}.badges`)}
               title={careerItems(`${key}.title`)}
               start={careerItems(`${key}.start`)}
               end={careerItems(`${key}.end`)}

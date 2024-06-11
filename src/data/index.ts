@@ -93,6 +93,19 @@ export const STACK = [
 
 export const PROJECTS = [
   {
+    title: 'Create Gonzapp',
+    tags: [
+      TAGS.NODE,
+      TAGS.TYPESCRIPT,
+      TAGS.JAVASCRIPT,
+    ],
+    link: {
+      github: 'https://github.com/gonzalojparra/create-gonzapp',
+      preview: 'https://www.npmjs.com/package/create-gonzapp'
+    },
+    video: '/assets/projects/create-gonzapp.webm',
+  },
+  {
     title: 'Jotter',
     tags: [
       TAGS.REACT,

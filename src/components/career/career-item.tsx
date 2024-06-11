@@ -1,19 +1,21 @@
 import Link from 'next/link';
-
+import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowRightIcon } from 'lucide-react';
-
 import { type CareerProps } from '@/types';
 
 export function CareerItem({
   link,
   company,
+  badges,
   title,
   start,
   end,
   description,
   viewMore
 }: CareerProps) {
+  const badgeArray = badges ? badges.split(',') : [];
+
   return (
     <>
       <div className='absolute size-3 bg-background rounded-full mt-2 -start-1.5 border border-primary' />
@@ -23,6 +25,11 @@ export function CareerItem({
       <h3 className='text-xl mt-1 font-bold text-neutral-900 dark:text-neutral-100'>
         {company}
       </h3>
+      {badgeArray.map((badge) => (
+        <Badge key={badge} variant='outline' className='shadow rounded-md my-2 mr-2 hover:bg-secondary'>
+          {badge}
+        </Badge>
+      ))}
       <h4 className='text-lg mt-2 font-medium dark:text-neutral-100 text-neutral-900'>
         {title}
       </h4>

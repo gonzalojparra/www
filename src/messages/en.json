@@ -31,6 +31,7 @@
     "description": "In my journey as a software and web developer, I've gained a versatile skill set to work on diverse projects. My focus remains in front end development, proficient in languages like TypeScript, JavaScript, HTML and CSS, and frameworks such as React and Next.js."
   },
   "about-section": {
+    "open-to-work": "Open to work",
     "title": "Front end developer, committed to creating innovative and user-centered solutions. Based in Neuquén, Argentina 🇦🇷",
     "description": "Passionate about web technologies. I aim to create accessible, performant, and delightful experiences for users. I'm always looking to learn new things and improve my skills."
   },
@@ -39,6 +40,7 @@
     "works": {
       "runesoft": {
         "company": "Runesoft",
+        "badges": "Remote,Part-time",
         "link": "",
         "title": "Software Developer & Co-Creator",
         "start": "August 2023",
@@ -47,6 +49,7 @@
       },
       "universidad-nacional-del-comahue": {
         "company": "Universidad Nacional del Comahue",
+        "badges": "Hybrid,Full-time",
         "link": "https://www.uncoma.edu.ar/",
         "title": "Full Stack Developer",
         "start": "July 2021",
@@ -59,6 +62,9 @@
   "projects-section": {
     "title": "Projects & Apps",
     "projects": {
+      "Create Gonzapp": {
+        "description": "Template-CLI tool to create projects with my preferred setup and configuration."
+      },
       "Jotter": {
         "description": "A full-stack note-taking app that allows users to create, edit, delete and share notes. It also allows users to categorize notes into notebooks and search for notes."
       },

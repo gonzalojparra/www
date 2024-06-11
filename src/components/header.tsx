@@ -60,7 +60,7 @@ export function Header() {
             aria-label={item.label}
             href={item.url}
             className={cn(
-              'relative block mx-1 transition-colors ease-in-out py-2 md:px-4 px-2 rounded-md text-sm font-semibold hover:bg-secondary',
+              'relative block mx-1 transition-colors ease-in-out py-2 md:px-4 px-2 rounded-md text-sm font-semibold hover:bg-accent',
               {
                 'text-primary': currentSection === item.label,
               }

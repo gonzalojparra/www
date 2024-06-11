@@ -42,7 +42,6 @@ export function ProjectItem({
           <video
             width={1920}
             height={1080}
-            controls
             muted
             autoPlay
             loop
@@ -105,7 +104,7 @@ export function ProjectItem({
                   className='flex items-center gap-1'
                 >
                   <GithubIcon className='size-4' />
-                  <p>GitHub</p>
+                  <p>Code</p>
                 </Link>
               </Button>
             )}
