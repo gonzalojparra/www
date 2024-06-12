@@ -120,7 +120,12 @@
   },
   "footer": {
     "made-with": "Hecho con",
-    "rights": "Todos los derechos reservados."
+    "command-menu": {
+      "placeholder": "Buscar...",
+      "press": "Presioná",
+      "to-explore": "para explorar",
+      "empty": "No se encontraron resultados"
+    }
   },
   "lang-switcher": {
     "label": "Idioma",

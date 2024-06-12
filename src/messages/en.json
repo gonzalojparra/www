@@ -120,7 +120,12 @@
   },
   "footer": {
     "made-with": "Made with",
-    "rights": "All rights reserved."
+    "command-menu": {
+      "placeholder": "Search...",
+      "press": "Press",
+      "to-explore": "to explore",
+      "empty": "No results found"
+    }
   },
   "lang-switcher": {
     "label": "Language",

@@ -1,4 +1,5 @@
 import { useTranslations } from 'next-intl';
+import { CommandMenu } from '@/components/command-menu';
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -12,10 +13,10 @@ export function Footer() {
           <span className='ms-2 me-2'>•</span>
           Gonzalo Parra
           <span className='ms-2 me-2'>—</span>
-          {t('footer.rights')}
+          {t('footer.made-with')} ❤️
         </p>
         <div className='flex flex-wrap items-center justify-center pt-2 md:pt-0'>
-          <p>{t('footer.made-with')} ❤️</p>
+          <CommandMenu />
         </div>
       </div>
     </footer>
