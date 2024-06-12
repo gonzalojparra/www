@@ -62,9 +62,6 @@
   "projects-section": {
     "title": "Projects & Apps",
     "projects": {
-      "Create Gonzapp": {
-        "description": "Template-CLI tool to create projects with my preferred setup and configurations. It includes a custom ESLint configuration, my preferred folder structure, and extra libraries."
-      },
       "Jotter": {
         "description": "A full-stack note-taking app that allows users to create, edit, delete and share notes. It also allows users to categorize notes into notebooks and search for notes."
       },
