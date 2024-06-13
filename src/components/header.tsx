@@ -7,8 +7,12 @@ import Link from 'next/link';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { LangSwitcher } from '@/components/lang-switcher';
 
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuTrigger
+} from './ui/dropdown-menu';
 import { MenuIcon } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
@@ -52,7 +56,10 @@ export function Header() {
   ];
 
   return (
-    <header className='fixed top-0 z-10 flex items-center justify-center w-full mx-auto bg-background border-b py-2'>
+    <header
+      className='flex max-w-fit fixed top-3 inset-x-0 mx-auto border border-transparent dark:border-white/[0.2] rounded-full bg-background/80 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] px-2 py-2 items-center justify-center space-x-4'
+      style={{ backdropFilter: 'blur(8px)' }} // Apply blur effect
+    >
       <nav className='hidden sm:flex justify-center items-center'>
         {navItems.map((item) => (
           <Link
@@ -60,7 +67,7 @@ export function Header() {
             aria-label={item.label}
             href={item.url}
             className={cn(
-              'relative block mx-1 transition-colors ease-in-out py-2 md:px-4 px-2 rounded-md text-sm font-semibold hover:bg-accent',
+              'relative block transition-colors ease-in-out py-2 md:px-4 px-2 rounded-md text-sm font-semibold hover:bg-accent',
               {
                 'text-primary': currentSection === item.label,
               }
@@ -69,20 +76,20 @@ export function Header() {
             {item.title}
           </Link>
         ))}
-        <div className='flex items-center ms-1'>
+        <div className='flex items-center mr-2'>
           <ThemeToggle />
           <LangSwitcher />
         </div>
       </nav>
       <div className='flex sm:hidden justify-between w-full px-2'>
-        <div className='flex items-start'>
-          <Sheet>
-            <SheetTrigger asChild>
+        <div className='flex items-start mr-5'>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
               <Button variant='ghost' className='w-full'>
                 <MenuIcon className='h-[1.2rem] w-[1.2rem]' />
               </Button>
-            </SheetTrigger>
-            <SheetContent side='left'>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className='w-40 mt-2'>
               <div className='grid gap-4 py-4'>
                 {navItems.map((item) => (
                   <Link
@@ -98,12 +105,11 @@ export function Header() {
                   >
                     {item.title}
                   </Link>
+
                 ))}
               </div>
-            </SheetContent>
-          </Sheet>
-        </div>
-        <div className='flex items-start space-x-2'>
+            </DropdownMenuContent>
+          </DropdownMenu>
           <ThemeToggle />
           <LangSwitcher />
         </div>

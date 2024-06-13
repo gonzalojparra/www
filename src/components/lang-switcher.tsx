@@ -15,7 +15,7 @@ import {
 import { EnFlagIcon } from '@/components/icons/en-flag';
 import { ArFlagIcon } from '@/components/icons/ar-flag';
 
-import type { Locale } from '@/i18n';
+import { type Locale } from '@/i18n';
 
 export function LangSwitcher() {
   const locale = useLocale() as Locale;
@@ -41,7 +41,7 @@ export function LangSwitcher() {
           </Button>
         </DropdownMenuTrigger>
 
-        <DropdownMenuContent align='end'>
+        <DropdownMenuContent align='end' className='mt-2'>
           <DropdownMenuLabel>
             {t('lang-switcher.label')}
           </DropdownMenuLabel>
