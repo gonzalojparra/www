@@ -15,7 +15,7 @@ export function Footer() {
           <span className='ms-2 me-2'>—</span>
           {t('footer.made-with')} ❤️
         </p>
-        <div className='flex flex-wrap items-center justify-center pt-2 md:pt-0'>
+        <div className='pt-2 md:pt-0'>
           <CommandMenu />
         </div>
       </div>
