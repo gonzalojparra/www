@@ -31,7 +31,7 @@ export function LangSwitcher() {
     <div className='ml-2'>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant='ghost' size='icon'>
+          <Button variant='ghost' size='icon' className='rounded-full'>
             {locale === 'en' ? (
               <EnFlagIcon className='h-[1.5rem] w-[1.5rem]' />
             ) : (
