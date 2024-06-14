@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { GithubIcon, LinkIcon } from 'lucide-react';
+import { ArrowUpRight, GithubIcon, LinkIcon } from 'lucide-react';
 
 import { ProjectProps } from '@/types';
 
@@ -61,9 +61,10 @@ export function ProjectItem({
                   href={link.github ? link.github : ''}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='inline-flex items-center hover:underline underline-offset-4'
+                  className='group inline-flex items-center hover:underline underline-offset-4'
                 >
                   <h3>{title}</h3>
+                  <ArrowUpRight className='duration-300 group-hover:translate-x-0 group-hover:opacity-100 md:-translate-x-full md:opacity-0 ml-2 h-4 w-4' />
                 </Link>
               ) : (
                 <h3>{title}</h3>
