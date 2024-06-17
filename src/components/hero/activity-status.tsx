@@ -27,7 +27,7 @@ export function ActivityStatus({ data }: ActivityResponse) {
                 <p className='font-bold text-sm uppercase'>
                   {t('listening')}
                 </p>
-                <SpotifyIcon className='h-4 w-4' />
+                <SpotifyIcon className='ml-5 h-4 w-4' />
               </div>
               <Link
                 href={`https://open.spotify.com/track/${data.spotify.track_id}`}
