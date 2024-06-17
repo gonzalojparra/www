@@ -33,7 +33,14 @@
   "about-section": {
     "open-to-work": "Disponible para trabajar",
     "title": "Desarrollador front end, creando soluciones innovadoras centradas en los usuarios. De Neuquén, Argentina 🇦🇷",
-    "description": "Apasionado sobre las tecnologías web. Mi objetivo es crear experiencias de usuario que sean accesibles, performantes, y complacientes. Siempre estoy buscando aprender nuevas tecnologías y mejorar mis habilidades."
+    "description": "Apasionado sobre las tecnologías web. Mi objetivo es crear experiencias de usuario que sean accesibles, performantes, y complacientes. Siempre estoy buscando aprender nuevas tecnologías y mejorar mis habilidades.",
+    "activity": {
+      "listening": "Escuchando en Spotify",
+      "by": "de",
+      "from": "del album",
+      "not-listening": "Nada reproduciendo en Spotify",
+      "offline": "Actualmente estoy desconectado..."
+    }
   },
   "career-section": {
     "title": "Carrera y Trabajos",

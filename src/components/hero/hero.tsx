@@ -1,7 +1,8 @@
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { AvatarProfile } from '@/components/hero/avatar-profile';
+
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
@@ -10,25 +11,13 @@ import { BadgeCheckIcon } from 'lucide-react';
 import { data } from '@/constants';
 
 export function Hero() {
-  const { avatar, links } = data;
+  const { links } = data;
   const t = useTranslations();
 
   return (
     <>
-      <div className='flex flex-row'>
-        <Link
-          href='https://github.com/gonzalojparra'
-          target='_blank'
-          rel='noopener noreferrer'
-          className='rounded-full'
-        >
-          <Avatar className='size-28 shadow border'>
-            <AvatarImage alt={avatar.name} src='/assets/avatar.webp' />
-            <AvatarFallback className='font-mono font-bold'>
-              {avatar.initials}
-            </AvatarFallback>
-          </Avatar>
-        </Link>
+      <div className='flex flex-row items-center'>
+        <AvatarProfile />
       </div>
 
       <div className='flex items-center flex-row gap-4'>
