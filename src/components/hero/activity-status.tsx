@@ -23,9 +23,11 @@ export function ActivityStatus({ data }: ActivityResponse) {
               <img src={data.spotify.album_art_url} className='w-full rounded-md' />
             </div>
             <div className='flex-1'>
-              <div className='flex flex-row items-center'>
-                <p className='font-bold text-sm uppercase'>{t('listening')}</p>
-                <SpotifyIcon className='ml-5 h-4 w-4' />
+              <div className='flex flex-row items-center justify-between'>
+                <p className='font-bold text-sm uppercase'>
+                  {t('listening')}
+                </p>
+                <SpotifyIcon className='h-4 w-4' />
               </div>
               <Link
                 href={`https://open.spotify.com/track/${data.spotify.track_id}`}
