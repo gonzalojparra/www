@@ -118,3 +118,9 @@ export type ActivityResponse = {
   data: ActivityData,
   success?: boolean
 };
+
+export interface Duration {
+  minutes: number;
+  seconds: number;
+  durationMs: number;
+};

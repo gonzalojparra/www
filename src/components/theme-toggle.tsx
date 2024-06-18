@@ -11,6 +11,7 @@ export function ThemeToggle() {
   return (
     <div className='ml-2'>
       <Button
+        name='Toggle theme'
         variant='ghost'
         size='icon'
         onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}

@@ -35,7 +35,7 @@ export function ProjectItem({
             src={image}
             alt={title}
             loading='lazy'
-            className='rounded-md object-fill shadow w-full'
+            className='rounded-md object-fill shadow w-full aspect-auto'
           />
         )}
         {video && (
