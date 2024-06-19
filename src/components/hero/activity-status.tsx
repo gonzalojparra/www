@@ -39,7 +39,11 @@ export function ActivityStatus({ data }: ActivityResponse) {
     )}>
       <div className='bg-background rounded-lg flex items-center space-x-4 max-w-md'>
         <div className='w-[74px] flex items-center justify-center'>
-          <img src={data.spotify.album_art_url} className='w-full rounded-md' />
+          <img
+            src={data.spotify.album_art_url}
+            alt='Album artwork'
+            className='w-full rounded-md'
+          />
         </div>
         <div className='flex-1'>
           <div className='flex flex-row items-center justify-between'>

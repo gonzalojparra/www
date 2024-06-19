@@ -23,8 +23,8 @@ type Props = {
 };
 
 const title = 'Gonzalo Parra | Portfolio';
-const description = 'My personal portfolio, showcasing my work and skills.';
-const openGraphImage = 'https://portfolio-gonzalojparra.vercel.app/opengraph-image.png';
+const description = 'My personal website, showcasing my work and skills.';
+const ogImage = 'https://portfolio-gonzalojparra.vercel.app/og-image.png';
 
 export const metadata: Metadata = {
   title,
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     description,
     images: [
       {
-        url: openGraphImage,
+        url: ogImage,
         width: 1200,
         height: 630,
         alt: title,
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     creator: '@_gonzaparra',
     images: [
       {
-        url: openGraphImage,
+        url: ogImage,
         alt: title,
       }
     ]
