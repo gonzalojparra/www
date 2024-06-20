@@ -64,7 +64,7 @@ export function ActivityStatus({ data }: ActivityResponse) {
             href={`https://open.spotify.com/track/${spotify.track_id}`}
             target='_blank'
             rel='noopener noreferrer'
-            className='text-sm font-medium hover'
+            className='text-sm font-medium hover:underline'
           >
             {spotify.song}
           </Link>
