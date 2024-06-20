@@ -1,3 +1,5 @@
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { type Metadata } from 'next';
@@ -88,6 +90,8 @@ export default async function RootLayout({
               <Toaster />
             </TooltipProvider>
           </ThemeProvider>
+          <Analytics />
+          <SpeedInsights />
         </NextIntlClientProvider>
       </body>
     </html>
