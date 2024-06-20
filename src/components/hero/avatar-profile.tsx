@@ -8,6 +8,7 @@ import { ActivityStatus } from '@/components/hero/activity-status';
 
 import { cn } from '@/lib/utils';
 import { data } from '@/constants';
+import { statusClasses } from '@/data';
 import { type ActivityResponse } from '@/types';
 
 export function AvatarProfile() {
@@ -32,7 +33,7 @@ export function AvatarProfile() {
       <TooltipTrigger asChild>
         <Avatar className={cn(
           'size-28 shadow cursor-pointer hover:border-4 transition-all',
-          status === 'online' ? 'hover:border-green-400' : 'hover:border-gray-400'
+          status && statusClasses[status].border
         )}>
           <AvatarImage alt={avatar.name} src='/assets/avatar.webp' />
           <AvatarFallback className='font-mono font-bold'>

@@ -38,7 +38,9 @@
       "listening": "Listening to Spotify",
       "by": "by",
       "from": "from album",
-      "not-listening": "Nothing playing on Spotify",
+      "online": "I'm currently online",
+      "dnd": "I'm currently busy",
+      "idle": "I'm currently idle",
       "offline": "I'm currently offline... 🌌"
     }
   },

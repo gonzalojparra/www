@@ -38,7 +38,9 @@
       "listening": "Escuchando en Spotify",
       "by": "de",
       "from": "del album",
-      "not-listening": "Nada reproduciendo en Spotify",
+      "online": "Actualmente estoy en línea",
+      "dnd": "Actualmente estoy ocupado",
+      "idle": "Actualmente estoy ausente",
       "offline": "Actualmente estoy desconectado... 🌌"
     }
   },

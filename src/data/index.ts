@@ -137,3 +137,27 @@ export const PROJECTS = [
     image: '/assets/projects/zen-kicks.webp',
   }
 ];
+
+export const statusClasses: {
+  [key: string]: {
+    border: string;
+    text: string
+  }
+} = {
+  online: {
+    border: 'hover:border-green-500',
+    text: 'text-green-600',
+  },
+  dnd: {
+    border: 'hover:border-red-500',
+    text: 'text-red-500',
+  },
+  idle: {
+    border: 'hover:border-amber-200',
+    text: 'dark:text-amber-200 text-yellow-600'
+  },
+  offline: {
+    border: 'hover:border-purple-100',
+    text: 'dark:text-purple-100 text-primary'
+  }
+};
