@@ -1,4 +1,4 @@
-import { ContactEmailTemplateProps } from '@/types';
+import { ContactEmailTemplateProps } from '@/types/components';
 
 export function ContactEmailTemplate({
   firstName,

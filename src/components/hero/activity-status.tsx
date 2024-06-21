@@ -5,9 +5,8 @@ import { SpotifyIcon } from '@/components/icons/spotify';
 
 import { cn } from '@/lib/utils';
 import { statusClasses } from '@/data';
-import { type ActivityResponse } from '@/types';
 
-export function ActivityStatus({ data }: ActivityResponse) {
+export function ActivityStatus({ data }: any) {
   const t = useTranslations('about-section.activity');
   const { discord_status, listening_to_spotify, spotify } = data;
 

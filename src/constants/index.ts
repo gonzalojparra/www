@@ -4,7 +4,7 @@ import type {
   LinksProps,
   ProjectProps,
   StackProps
-} from '@/types';
+} from '@/types/components';
 
 export const data = {
   avatar: AVATAR as AvatarProps,

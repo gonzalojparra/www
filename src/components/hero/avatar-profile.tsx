@@ -1,39 +1,32 @@
 'use client'
 
-import { useEffect, useState } from 'react';
-
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import { ActivityStatus } from '@/components/hero/activity-status';
 
 import { cn } from '@/lib/utils';
 import { data } from '@/constants';
-import { statusClasses } from '@/data';
-import { type ActivityResponse } from '@/types';
+import { discordId, statusClasses } from '@/data';
+import { useLanyardWS } from '@/hooks/use-lanyard';
+import { Data as LanyardData } from '@/types/lanyard';
 
-export function AvatarProfile() {
-  const [status, setStatus] = useState<string>('');
-  const [activity, setActivity] = useState<ActivityResponse | null>(null);
+export interface Props {
+  lanyard: LanyardData,
+};
 
+export function AvatarProfile(props: Props) {
   const { avatar } = data;
 
-  const url = 'https://api.lanyard.rest/v1/users/654163755797577747';
-
-  useEffect(() => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-        setActivity(data);
-        setStatus(data.data.discord_status);
-      });
-  }, [activity]);
+  const lanyard = useLanyardWS(discordId, {
+    initialData: props.lanyard
+  })!;
 
   return (
     <Tooltip>
       <TooltipTrigger asChild>
         <Avatar className={cn(
           'size-28 shadow cursor-pointer hover:border-4 transition-all',
-          status && statusClasses[status].border
+          lanyard.discord_status && statusClasses[lanyard.discord_status].border
         )}>
           <AvatarImage alt={avatar.name} src='/assets/avatar.webp' />
           <AvatarFallback className='font-mono font-bold'>
@@ -43,7 +36,7 @@ export function AvatarProfile() {
       </TooltipTrigger>
       <TooltipContent className='rounded-3xl ml-2' side='right'>
         <div className='flex h-full'>
-          {activity?.data && <ActivityStatus data={activity.data} />}
+          {lanyard && <ActivityStatus data={lanyard} />}
         </div>
       </TooltipContent>
     </Tooltip >

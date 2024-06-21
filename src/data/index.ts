@@ -20,6 +20,8 @@ export const AVATAR = {
   initials: 'GP'
 };
 
+export const discordId = '654163755797577747';
+
 export const LINKS = [
   { title: 'GitHub', url: 'https://github.com/gonzalojparra', icon: GitHubIcon },
   { title: 'LinkedIn', url: 'https://www.linkedin.com/in/gonzalojparra/', icon: LinkedInIcon },

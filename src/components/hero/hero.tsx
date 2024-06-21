@@ -9,19 +9,25 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip
 import { BadgeCheckIcon } from 'lucide-react';
 
 import { data } from '@/constants';
+import { discordId } from '@/data';
+import { getLanyard } from '@/lib/utils';
 
-export function Hero() {
+export async function Hero() {
   const { links } = data;
   const t = useTranslations();
+
+  const lanyard = await getLanyard(discordId);
 
   return (
     <>
       <div className='flex flex-row items-center'>
-        <AvatarProfile />
+        <AvatarProfile lanyard={lanyard} />
       </div>
 
       <div className='flex items-center flex-row gap-4'>
-        <h1 className='flex dark:text-neutral-100 text-neutral-900 text-4xl font-bold text-balance'>Gonzalo Parra</h1>
+        <h1 className='flex dark:text-neutral-100 text-neutral-900 text-4xl font-bold text-balance'>
+          Gonzalo Parra
+        </h1>
         <Link
           href='https://www.linkedin.com/in/gonzalojparra/'
           target='_blank'

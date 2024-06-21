@@ -12,7 +12,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowUpRight, GithubIcon, LinkIcon } from 'lucide-react';
 
-import { ProjectProps } from '@/types';
+import { ProjectProps } from '@/types/components';
 
 export function ProjectItem({
   title,

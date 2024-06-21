@@ -1,7 +1,13 @@
 import { twMerge } from 'tailwind-merge';
 
 import { type ClassValue, clsx } from 'clsx';
-import { type Duration } from '@/types';
+import type {
+  API,
+  Duration,
+  LanyardResponse,
+  Options,
+  Snowflake
+} from '@/types/lanyard';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -19,4 +25,35 @@ export function calculateProgress(start: number, end: number, current: number): 
   const elapsedMs: number = current - start;
   const progress: number = Math.min((elapsedMs / durationMs) * 100, 100);
   return progress;
+};
+
+export interface GetOptions extends Options {
+  controller?: AbortController;
+};
+
+// Lanyard error handling
+export class LanyardError extends Error {
+  public readonly code: number;
+
+  constructor(
+    public readonly request: Request,
+    public readonly response: Response,
+    public readonly body: API.ErroredAPIResponse,
+  ) {
+    super(body.error.message);
+    this.code = this.response.status;
+  }
+}
+
+// Fetch Lanyard API
+export async function getLanyard(id: Snowflake) {
+  const lanyard = await fetch(`https://api.lanyard.rest/v1/users/${id}`).then(
+    res => res.json() as Promise<LanyardResponse>,
+  );
+
+  if (!lanyard.success) {
+    throw new Error('Lanyard API failed');
+  }
+
+  return lanyard.data;
 };
