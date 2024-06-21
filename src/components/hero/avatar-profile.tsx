@@ -37,7 +37,7 @@ export function AvatarProfile(props: Props) {
       </TooltipTrigger>
       <TooltipContent className='rounded-3xl ml-2' side='right'>
         <div className='flex h-full'>
-          {lanyard && <ActivityStatus data={lanyard} />}
+          {lanyard && <ActivityStatus data={lanyard} success={true} />}
         </div>
       </TooltipContent>
     </Tooltip >
