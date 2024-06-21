@@ -5,6 +5,7 @@ import { SpotifyIcon } from '@/components/icons/spotify';
 
 import { cn } from '@/lib/utils';
 import { statusClasses } from '@/data';
+import Image from 'next/image';
 
 export function ActivityStatus({ data }: any) {
   const t = useTranslations('about-section.activity');
@@ -41,15 +42,18 @@ export function ActivityStatus({ data }: any) {
     <div
       className={cn(
         'relative flex h-full items-center gap-3 overflow-hidden px-2',
-        spotify.track_id && 'transition-transform active'
+        spotify.track_id && 'transition-transform active:scale-95'
       )}
     >
       <div className='bg-background rounded-lg flex items-center space-x-4 max-w-md'>
-        <div className='w-[74px] flex items-center justify-center'>
-          <img
-            src={spotify.album_art_url}
+        <div className='flex items-center justify-center'>
+          <Image
             alt='Album artwork'
-            className='w-full rounded-md'
+            className='w-[74px] rounded-md'
+            src={spotify.album_art_url}
+            height={74}
+            width={74}
+            priority={true}
           />
         </div>
         <div className='flex-1'>

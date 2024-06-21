@@ -1,14 +1,15 @@
 'use client'
 
+import { useLanyardWS } from '@/hooks/use-lanyard';
+
+import { ActivityStatus } from '@/components/hero/activity-status';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
-import { ActivityStatus } from '@/components/hero/activity-status';
 
 import { cn } from '@/lib/utils';
 import { data } from '@/constants';
 import { discordId, statusClasses } from '@/data';
-import { useLanyardWS } from '@/hooks/use-lanyard';
-import { Data as LanyardData } from '@/types/lanyard';
+import { type Data as LanyardData } from '@/types/lanyard';
 
 export interface Props {
   lanyard: LanyardData,
