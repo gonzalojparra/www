@@ -2,7 +2,7 @@ import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 
 import { ContactEmailTemplate } from '@/components/contact/contact-email-template';
-import { type ContactEmailTemplateProps } from '@/types';
+import { type ContactEmailTemplateProps } from '@/types/components';
 
 export const runtime = 'edge';
 export const dynamic = 'force-dynamic';
