@@ -40,6 +40,6 @@ export function AvatarProfile(props: Props) {
           {lanyard && <ActivityStatus data={lanyard} success={true} />}
         </div>
       </TooltipContent>
-    </Tooltip >
+    </Tooltip>
   )
 }
