@@ -1,17 +1,8 @@
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useState
-} from 'react';
+import type { Data, Options, Snowflake } from '@/types/lanyard';
+
+import { createContext, useContext, useEffect, useState } from 'react';
 
 import { LanyardError } from '@/lib/utils';
-
-import type {
-  Data,
-  Options,
-  Snowflake
-} from '@/types/lanyard';
 
 // Context to store the state of the Lanyard API
 export type ContextData =
@@ -51,29 +42,28 @@ export const context = createContext<Context>({
   stateMap: new Map(),
 });
 
-
 // Websocket configurations
 export enum SocketOpcode {
   Event,
   Hello,
   Initialize,
   Heartbeat,
-};
+}
 
 export enum SocketEvents {
   INIT_STATE = 'INIT_STATE',
   PRESENCE_UPDATE = 'PRESENCE_UPDATE',
-};
+}
 
 export interface SocketData extends Data {
   heartbeat_interval?: number;
-};
+}
 
 export interface SocketMessage {
   op: SocketOpcode;
   t?: SocketEvents;
   d?: SocketData;
-};
+}
 
 export const DEFAULT_OPTIONS: Options = {
   api: {
@@ -83,10 +73,7 @@ export const DEFAULT_OPTIONS: Options = {
 };
 
 // Lanyard WebSocket custom hook
-export function useLanyardWS(
-  snowflake: Snowflake | Snowflake[],
-  _options?: Partial<Options>,
-) {
+export function useLanyardWS(snowflake: Snowflake | Snowflake[], _options?: Partial<Options>) {
   const options = {
     ...DEFAULT_OPTIONS,
     ..._options,
@@ -109,7 +96,7 @@ export function useLanyardWS(
 
     let subscribe_data: {
       subscribe_to_ids?: string[];
-      subscribe_to_id?: string
+      subscribe_to_id?: string;
     };
 
     if (typeof snowflake === 'object') {
@@ -134,7 +121,7 @@ export function useLanyardWS(
 
       socket.addEventListener('close', connect);
 
-      socket.addEventListener('message', event => {
+      socket.addEventListener('message', (event) => {
         const message = JSON.parse(event.data) as SocketMessage;
 
         switch (message.op) {
@@ -190,4 +177,4 @@ export function useLanyardWS(
   }, [url]);
 
   return data ?? options.initialData;
-};
+}

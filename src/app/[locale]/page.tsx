@@ -12,23 +12,23 @@ export default function Home() {
 
   return (
     <div className='flex flex-col'>
-      <Section id={t('header.about.label')} className='pb-24'>
+      <Section className='pb-24' id={t('header.about.label')}>
         <Hero />
       </Section>
 
-      <Section id={t('header.tech-stack.label')} className='pb-24'>
+      <Section className='pb-24' id={t('header.tech-stack.label')}>
         <TechStack />
       </Section>
 
-      <Section id={t('header.career.label')} className='pb-24'>
+      <Section className='pb-24' id={t('header.career.label')}>
         <Career />
       </Section>
 
-      <Section id={t('header.projects.label')} className='pb-24'>
+      <Section className='pb-24' id={t('header.projects.label')}>
         <Projects />
       </Section>
 
-      <Section id={t('header.contact.label')} className='pb-24'>
+      <Section className='pb-24' id={t('header.contact.label')}>
         <Contact />
       </Section>
     </div>

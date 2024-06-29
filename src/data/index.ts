@@ -1,3 +1,5 @@
+import { FileTextIcon, MailIcon } from 'lucide-react';
+
 import { NextJSIcon } from '@/components/icons/tags/nextjs';
 import { ReactIcon } from '@/components/icons/tags/react';
 import { LaravelIcon } from '@/components/icons/tags/laravel';
@@ -13,11 +15,10 @@ import { NodeJSIcon } from '@/components/icons/tags/nodejs';
 import { GitHubIcon } from '@/components/icons/github';
 import { LinkedInIcon } from '@/components/icons/linkedin';
 import { DiscordIcon } from '@/components/icons/discord';
-import { FileTextIcon, MailIcon } from 'lucide-react';
 
 export const AVATAR = {
   name: 'Gonzalo Parra',
-  initials: 'GP'
+  initials: 'GP',
 };
 
 export const discordId = '654163755797577747';
@@ -25,59 +26,63 @@ export const discordId = '654163755797577747';
 export const LINKS = [
   { title: 'GitHub', url: 'https://github.com/gonzalojparra', icon: GitHubIcon },
   { title: 'LinkedIn', url: 'https://www.linkedin.com/in/gonzalojparra/', icon: LinkedInIcon },
-  { title: 'Resume', url: 'https://drive.google.com/file/d/1YYNfQh3dKk6Uk9PdL3M_xp5PfDygQZZR/view', icon: FileTextIcon },
+  {
+    title: 'Resume',
+    url: 'https://drive.google.com/file/d/1YYNfQh3dKk6Uk9PdL3M_xp5PfDygQZZR/view',
+    icon: FileTextIcon,
+  },
   { title: 'Email', url: 'mailto:gonzzaparra@gmail.com', icon: MailIcon },
-  { title: 'Discord', url: 'https://discordapp.com/users/654163755797577747', icon: DiscordIcon }
+  { title: 'Discord', url: 'https://discordapp.com/users/654163755797577747', icon: DiscordIcon },
 ];
 
 const TAGS = {
   NEXT: {
     name: 'Next.js',
-    icon: NextJSIcon
+    icon: NextJSIcon,
   },
   REACT: {
     name: 'React',
-    icon: ReactIcon
+    icon: ReactIcon,
   },
   LARAVEL: {
     name: 'Laravel',
-    icon: LaravelIcon
+    icon: LaravelIcon,
   },
   TYPESCRIPT: {
     name: 'TypeScript',
-    icon: TypeScriptIcon
+    icon: TypeScriptIcon,
   },
   JAVASCRIPT: {
     name: 'JavaScript',
-    icon: JavaScriptIcon
+    icon: JavaScriptIcon,
   },
   PHP: {
     name: 'PHP',
-    icon: PHPIcon
+    icon: PHPIcon,
   },
   HTML: {
     name: 'HTML',
-    icon: HTMLIcon
+    icon: HTMLIcon,
   },
   CSS: {
     name: 'CSS',
-    icon: CSSIcon
+    icon: CSSIcon,
   },
   VITE: {
     name: 'Vite',
-    icon: ViteIcon
+    icon: ViteIcon,
   },
   TAILWIND: {
     name: 'Tailwind CSS',
-    icon: TailwindCSSIcon
+    icon: TailwindCSSIcon,
   },
   SHADCN: {
     name: 'Shadcn/ui',
-    icon: ShadcnIcon
+    icon: ShadcnIcon,
   },
   NODE: {
     name: 'Node.js',
-    icon: NodeJSIcon
+    icon: NodeJSIcon,
   },
 };
 
@@ -90,23 +95,16 @@ export const STACK = [
   { name: 'JavaScript', Icon: JavaScriptIcon },
   { name: 'PHP', Icon: PHPIcon },
   { name: 'HTML', Icon: HTMLIcon },
-  { name: 'CSS', Icon: CSSIcon }
+  { name: 'CSS', Icon: CSSIcon },
 ];
 
 export const PROJECTS = [
   {
     title: 'Jotter',
-    tags: [
-      TAGS.REACT,
-      TAGS.NEXT,
-      TAGS.NODE,
-      TAGS.TYPESCRIPT,
-      TAGS.TAILWIND,
-      TAGS.SHADCN,
-    ],
+    tags: [TAGS.REACT, TAGS.NEXT, TAGS.NODE, TAGS.TYPESCRIPT, TAGS.TAILWIND, TAGS.SHADCN],
     link: {
       github: 'https://github.com/gonzalojparra/jotter',
-      preview: 'https://jotter-gonzalojparra.vercel.app/'
+      preview: 'https://jotter-gonzalojparra.vercel.app/',
     },
     image: '/assets/projects/jotter.webp',
   },
@@ -122,29 +120,25 @@ export const PROJECTS = [
       TAGS.SHADCN,
     ],
     link: {
-      github: 'https://github.com/gonzalojparra/ehwaz-front'
+      github: 'https://github.com/gonzalojparra/ehwaz-front',
     },
     image: '/assets/projects/ehwaz.webp',
   },
   {
     title: 'Zen-Kicks',
-    tags: [
-      TAGS.LARAVEL,
-      TAGS.PHP,
-      TAGS.TAILWIND
-    ],
+    tags: [TAGS.LARAVEL, TAGS.PHP, TAGS.TAILWIND],
     link: {
-      github: 'https://github.com/gonzalojparra/zen-kicks'
+      github: 'https://github.com/gonzalojparra/zen-kicks',
     },
     image: '/assets/projects/zen-kicks.webp',
-  }
+  },
 ];
 
 export const statusClasses: {
   [key: string]: {
     border: string;
-    text: string
-  }
+    text: string;
+  };
 } = {
   online: {
     border: 'hover:border-green-500',
@@ -156,10 +150,10 @@ export const statusClasses: {
   },
   idle: {
     border: 'hover:border-amber-200',
-    text: 'dark:text-amber-200 text-yellow-600'
+    text: 'dark:text-amber-200 text-yellow-600',
   },
   offline: {
     border: 'hover:border-purple-100',
-    text: 'dark:text-purple-100 text-primary'
-  }
+    text: 'dark:text-purple-100 text-primary',
+  },
 };

@@ -1,4 +1,5 @@
 import { useTranslations } from 'next-intl';
+
 import { CommandMenu } from '@/components/command-menu';
 
 export function Footer() {
@@ -6,13 +7,13 @@ export function Footer() {
   const t = useTranslations();
 
   return (
-    <footer className='flex justify-center items-center w-full mx-auto md:max-w-3xl container'>
-      <div className='w-full mx-auto md:flex md:items-center md:justify-between text-sm font-medium'>
+    <footer className='container mx-auto flex w-full items-center justify-center md:max-w-3xl'>
+      <div className='mx-auto w-full text-sm font-medium md:flex md:items-center md:justify-between'>
         <p>
           &copy; {year}
-          <span className='ms-2 me-2'>•</span>
+          <span className='me-2 ms-2'>•</span>
           Gonzalo Parra
-          <span className='ms-2 me-2'>—</span>
+          <span className='me-2 ms-2'>—</span>
           {t('footer.made-with')} ❤️
         </p>
         <div className='pt-2 md:pt-0'>
@@ -20,5 +21,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

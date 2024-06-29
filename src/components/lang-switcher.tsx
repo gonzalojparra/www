@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { useRouter } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
@@ -10,11 +10,10 @@ import {
   DropdownMenuContent,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuCheckboxItem
+  DropdownMenuCheckboxItem,
 } from '@/components/ui/dropdown-menu';
 import { EnFlagIcon } from '@/components/icons/en-flag';
 import { ArFlagIcon } from '@/components/icons/ar-flag';
-
 import { type Locale } from '@/i18n';
 
 export function LangSwitcher() {
@@ -32,10 +31,10 @@ export function LangSwitcher() {
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button
-            name='Language switcher'
-            variant='ghost'
-            size='icon'
+            aria-label='Language switcher'
             className='rounded-full'
+            size='icon'
+            variant='ghost'
           >
             {locale === 'en' ? (
               <EnFlagIcon className='h-[1.5rem] w-[1.5rem]' />
@@ -47,9 +46,7 @@ export function LangSwitcher() {
         </DropdownMenuTrigger>
 
         <DropdownMenuContent align='end' className='mt-2'>
-          <DropdownMenuLabel>
-            {t('lang-switcher.label')}
-          </DropdownMenuLabel>
+          <DropdownMenuLabel>{t('lang-switcher.label')}</DropdownMenuLabel>
           <DropdownMenuSeparator />
 
           <DropdownMenuCheckboxItem
@@ -72,4 +69,4 @@ export function LangSwitcher() {
       </DropdownMenu>
     </div>
   );
-};
+}

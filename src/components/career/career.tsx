@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl';
+import { LaptopIcon } from 'lucide-react';
 
 import { CareerItem } from '@/components/career/career-item';
-import { LaptopIcon } from 'lucide-react';
 
 export function Career() {
   const t = useTranslations();
@@ -10,26 +10,26 @@ export function Career() {
 
   return (
     <>
-      <h2 className='flex gap-x-4 items-center text-3xl font-bold text-balance'>
+      <h2 className='flex items-center gap-x-4 text-balance text-3xl font-bold'>
         <LaptopIcon className='size-6' /> {t('career-section.title')}
       </h2>
 
-      <ol className='relative border-s dark:border-neutral-600 border-neutral-400 ml-[11.5px] flex flex-col gap-8'>
+      <ol className='relative ml-[11.5px] flex flex-col gap-8 border-s border-neutral-400 dark:border-neutral-600'>
         {keys.map((key) => (
           <li key={key} className='ms-7'>
             <CareerItem
-              link={careerItems(`${key}.link`)}
-              company={careerItems(`${key}.company`)}
               badges={careerItems(`${key}.badges`)}
-              title={careerItems(`${key}.title`)}
-              start={careerItems(`${key}.start`)}
-              end={careerItems(`${key}.end`)}
+              company={careerItems(`${key}.company`)}
               description={careerItems(`${key}.description`)}
+              end={careerItems(`${key}.end`)}
+              link={careerItems(`${key}.link`)}
+              start={careerItems(`${key}.start`)}
+              title={careerItems(`${key}.title`)}
               viewMore={t('career-section.view-more')}
             />
           </li>
         ))}
       </ol>
     </>
-  )
+  );
 }

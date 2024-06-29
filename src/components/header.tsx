@@ -1,20 +1,18 @@
-'use client'
+'use client';
 
 import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+import { MenuIcon } from 'lucide-react';
 
 import { ThemeToggle } from '@/components/theme-toggle';
 import { LangSwitcher } from '@/components/lang-switcher';
-
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuTrigger
+  DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { MenuIcon } from 'lucide-react';
-
 import { cn } from '@/lib/utils';
 
 export function Header() {
@@ -49,63 +47,78 @@ export function Header() {
 
   const navItems = [
     { title: t('header.about.title'), label: t('header.about.label'), url: t('header.about.link') },
-    { title: t('header.tech-stack.title'), label: t('header.tech-stack.label'), url: t('header.tech-stack.link') },
-    { title: t('header.career.title'), label: t('header.career.label'), url: t('header.career.link') },
-    { title: t('header.projects.title'), label: t('header.projects.label'), url: t('header.projects.link') },
-    { title: t('header.contact.title'), label: t('header.contact.label'), url: t('header.contact.link') },
+    {
+      title: t('header.tech-stack.title'),
+      label: t('header.tech-stack.label'),
+      url: t('header.tech-stack.link'),
+    },
+    {
+      title: t('header.career.title'),
+      label: t('header.career.label'),
+      url: t('header.career.link'),
+    },
+    {
+      title: t('header.projects.title'),
+      label: t('header.projects.label'),
+      url: t('header.projects.link'),
+    },
+    {
+      title: t('header.contact.title'),
+      label: t('header.contact.label'),
+      url: t('header.contact.link'),
+    },
   ];
 
   return (
     <header
-      className='flex max-w-fit fixed top-3 inset-x-0 mx-auto border border-transparent dark:border-white/[0.2] rounded-full bg-background/80 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] px-2 py-2 items-center justify-center space-x-4'
+      className='fixed inset-x-0 top-3 z-[5000] mx-auto flex max-w-fit items-center justify-center space-x-4 rounded-full border border-transparent bg-background/80 px-2 py-2 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] dark:border-white/[0.2]'
       style={{ backdropFilter: 'blur(8px)' }}
     >
-      <nav className='hidden sm:flex justify-center items-center'>
+      <nav className='hidden items-center justify-center sm:flex'>
         {navItems.map((item) => (
           <Link
             key={item.label}
             aria-label={item.label}
-            href={item.url}
             className={cn(
-              'relative block transition-colors ease-in-out py-2 md:px-4 px-2 rounded-full text-sm font-semibold hover:bg-accent',
+              'relative block rounded-full px-2 py-2 text-sm font-semibold transition-colors ease-in-out hover:bg-accent md:px-4',
               {
                 'text-primary': currentSection === item.label,
-              }
+              },
             )}
+            href={item.url}
           >
             {item.title}
           </Link>
         ))}
-        <div className='flex items-center mr-2'>
+        <div className='mr-2 flex items-center'>
           <ThemeToggle />
           <LangSwitcher />
         </div>
       </nav>
-      <div className='flex sm:hidden justify-between w-full px-2'>
-        <div className='flex items-start mr-5'>
+      <div className='flex w-full justify-between px-2 sm:hidden'>
+        <div className='mr-5 flex items-start'>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant='ghost' className='w-full'>
+              <Button className='w-full' variant='ghost'>
                 <MenuIcon className='h-[1.2rem] w-[1.2rem]' />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className='w-40 mt-2'>
+            <DropdownMenuContent className='mt-2 w-40'>
               <div className='grid gap-4 py-4'>
                 {navItems.map((item) => (
                   <Link
                     key={item.label}
                     aria-label={item.label}
-                    href={item.url}
                     className={cn(
-                      'relative block mx-1 transition-colors ease-in-out py-2 md:px-4 px-2 rounded-md text-sm font-semibold hover:bg-secondary',
+                      'relative mx-1 block rounded-md px-2 py-2 text-sm font-semibold transition-colors ease-in-out hover:bg-secondary md:px-4',
                       {
                         'text-primary': currentSection === item.label,
-                      }
+                      },
                     )}
+                    href={item.url}
                   >
                     {item.title}
                   </Link>
-
                 ))}
               </div>
             </DropdownMenuContent>
@@ -115,5 +128,5 @@ export function Header() {
         </div>
       </div>
     </header>
-  )
+  );
 }

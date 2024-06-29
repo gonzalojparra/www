@@ -1,15 +1,13 @@
-export namespace API {
-  export type SuccessfulAPIResponse<T> = {
-    success: true;
-    data: T;
-  };
+export type SuccessfulAPIResponse<T> = {
+  success: true;
+  data: T;
+};
 
-  export type ErroredAPIResponse = {
-    success: false;
-    error: {
-      message: string;
-      code: string;
-    };
+export type ErroredAPIResponse = {
+  success: false;
+  error: {
+    message: string;
+    code: string;
   };
 };
 
@@ -23,9 +21,7 @@ export type Options = {
 
 export type Snowflake = `${bigint}`;
 
-export type LanyardResponse =
-  | API.SuccessfulAPIResponse<Data>
-  | API.ErroredAPIResponse;
+export type LanyardResponse = SuccessfulAPIResponse<Data> | ErroredAPIResponse;
 
 export interface Data {
   spotify: Spotify | null;
@@ -46,12 +42,12 @@ export interface Spotify {
   artist: string;
   album_art_url: string | null;
   album: string;
-};
+}
 
 export interface Timestamps {
   start: number;
   end: number;
-};
+}
 
 export interface DiscordUser {
   username: string;
@@ -66,7 +62,7 @@ export interface DiscordUser {
     sku_id: bigint;
   } | null;
   avatar: string | null;
-};
+}
 
 export interface Activity {
   type: number;
@@ -89,22 +85,22 @@ export interface Emoji {
   name: string;
   id: Snowflake;
   animated: boolean;
-};
+}
 
 export interface Party {
   size: [number, number];
   id: string;
-};
+}
 
 export interface Assets {
   large_image: string;
   large_text: string;
   small_image: string;
   small_text: string;
-};
+}
 
 export interface Duration {
   minutes: number;
   seconds: number;
   durationMs: number;
-};
+}

@@ -15,8 +15,8 @@ const kbdVariants = cva(
     defaultVariants: {
       variant: 'default',
     },
-  }
-)
+  },
+);
 
 export interface KbdProps
   extends React.ComponentPropsWithoutRef<'kbd'>,
@@ -27,28 +27,25 @@ export interface KbdProps
    * @type string | undefined
    * @example title='Command'
    */
-  abbrTitle?: string
+  abbrTitle?: string;
 }
 
 const Kbd = forwardRef<HTMLUnknownElement, KbdProps>(
   ({ abbrTitle, children, className, variant, ...props }, ref) => {
     return (
-      <kbd
-        className={cn(kbdVariants({ variant, className }))}
-        ref={ref}
-        {...props}
-      >
+      <kbd ref={ref} className={cn(kbdVariants({ variant, className }))} {...props}>
         {abbrTitle ? (
-          <abbr title={abbrTitle} className='no-underline'>
+          <abbr className='no-underline' title={abbrTitle}>
             {children}
           </abbr>
         ) : (
           children
         )}
       </kbd>
-    )
-  }
-)
-Kbd.displayName = 'Kbd'
+    );
+  },
+);
 
-export { Kbd }
+Kbd.displayName = 'Kbd';
+
+export { Kbd };

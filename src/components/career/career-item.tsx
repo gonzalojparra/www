@@ -1,7 +1,8 @@
 import Link from 'next/link';
+import { ArrowRightIcon } from 'lucide-react';
+
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ArrowRightIcon } from 'lucide-react';
 import { type CareerProps } from '@/types/components';
 
 export function CareerItem({
@@ -12,48 +13,39 @@ export function CareerItem({
   start,
   end,
   description,
-  viewMore
+  viewMore,
 }: CareerProps) {
   const badgeArray = badges ? badges.split(',') : [];
 
   return (
     <>
-      <div className='absolute size-3 bg-background rounded-full mt-2 -start-1.5 border border-primary' />
-      <time className='text-sm font-mono leading-none text-neutral-800 dark:text-neutral-200'>
+      <div className='absolute -start-1.5 mt-2 size-3 rounded-full border border-primary bg-background' />
+      <time className='font-mono text-sm leading-none text-neutral-800 dark:text-neutral-200'>
         {start} — {end}
       </time>
-      <h3 className='text-xl mt-1 font-bold text-neutral-900 dark:text-neutral-100'>
-        {company}
-      </h3>
+      <h3 className='mt-1 text-xl font-bold text-neutral-900 dark:text-neutral-100'>{company}</h3>
       {badgeArray.map((badge) => (
-        <Badge key={badge} variant='outline' className='shadow rounded-md my-2 mr-2 hover:bg-secondary'>
+        <Badge
+          key={badge}
+          className='my-2 mr-2 rounded-md shadow hover:bg-secondary'
+          variant='outline'
+        >
           {badge}
         </Badge>
       ))}
-      <h4 className='text-lg mt-2 font-medium dark:text-neutral-100 text-neutral-900'>
-        {title}
-      </h4>
-      <p className='mt-1 dark:text-neutral-200 text-neutral-800 text-pretty font-mono'>
+      <h4 className='mt-2 text-lg font-medium text-neutral-900 dark:text-neutral-100'>{title}</h4>
+      <p className='mt-1 text-pretty font-mono text-neutral-800 dark:text-neutral-200'>
         {description}
       </p>
 
-      {link && (
-        <Button
-          variant='default'
-          size='default'
-          className='shadow mt-4 px-2'
-        >
-          <Link
-            href={link}
-            target='_blank'
-            rel='noopener noreferrer'
-            className='flex items-center'
-          >
+      {link ? (
+        <Button className='mt-4 px-3 shadow' size='default' variant='default'>
+          <Link className='flex items-center' href={link} rel='noopener noreferrer' target='_blank'>
             <p className='font-medium'>{viewMore}</p>
-            <ArrowRightIcon className='size-4 ms-2' />
+            <ArrowRightIcon className='ms-2 size-4' />
           </Link>
         </Button>
-      )}
+      ) : null}
     </>
-  )
+  );
 }

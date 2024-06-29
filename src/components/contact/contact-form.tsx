@@ -1,18 +1,24 @@
-'use client'
+'use client';
 
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from 'next-intl';
+import { Loader2 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader } from '@/components/ui/card';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
-import { Loader2 } from 'lucide-react';
-
 import { getFormSchema, FormValues } from '@/lib/validation';
 
 const formInitialState: FormValues = {
@@ -31,17 +37,10 @@ export function ContactForm() {
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     mode: 'onChange',
-    defaultValues: formInitialState
+    defaultValues: formInitialState,
   });
 
-  const {
-    handleSubmit,
-    formState,
-    control,
-    watch,
-    setError,
-    clearErrors
-  } = form;
+  const { handleSubmit, formState, control, watch, setError, clearErrors } = form;
   const { isSubmitting } = formState;
 
   /* Watches for changes in the form fields and checks if the message field contains any URLs.
@@ -57,6 +56,7 @@ export function ContactForm() {
         clearErrors('message');
       }
     });
+
     return () => subscription.unsubscribe();
   }, [watch, setError, clearErrors]);
 
@@ -67,10 +67,12 @@ export function ContactForm() {
         description: t('contact-section.form.spam-detected-description'),
         variant: 'destructive',
       });
+
       return;
     }
 
     const formData = new FormData();
+
     Object.entries(data).forEach(([key, value]) => {
       if (value) {
         formData.append(key, value);
@@ -89,6 +91,7 @@ export function ContactForm() {
       });
 
       const result = await response.json();
+
       toast({
         title: t('contact-section.form.toast-success-title'),
         description: t('contact-section.form.toast-success-description'),
@@ -105,10 +108,10 @@ export function ContactForm() {
   }
 
   return (
-    <div className='flex justify-center items-center'>
+    <div className='flex items-center justify-center'>
       <Card className='w-full max-w-lg'>
         <CardHeader>
-          <CardDescription className='font-mono text-center'>
+          <CardDescription className='text-center font-mono'>
             {t('contact-section.form.form-description')}
           </CardDescription>
         </CardHeader>
@@ -123,9 +126,7 @@ export function ContactForm() {
                       name='firstName'
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>
-                            {t('contact-section.form.first-name-label')}
-                          </FormLabel>
+                          <FormLabel>{t('contact-section.form.first-name-label')}</FormLabel>
                           <FormControl>
                             <Input
                               {...field}
@@ -144,9 +145,7 @@ export function ContactForm() {
                       name='lastName'
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>
-                            {t('contact-section.form.last-name-label')}
-                          </FormLabel>
+                          <FormLabel>{t('contact-section.form.last-name-label')}</FormLabel>
                           <FormControl>
                             <Input
                               {...field}
@@ -166,9 +165,7 @@ export function ContactForm() {
                     name='email'
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>
-                          {t('contact-section.form.email-label')}
-                        </FormLabel>
+                        <FormLabel>{t('contact-section.form.email-label')}</FormLabel>
                         <FormControl>
                           <Input
                             {...field}
@@ -187,9 +184,7 @@ export function ContactForm() {
                     name='message'
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>
-                          {t('contact-section.form.message-label')}
-                        </FormLabel>
+                        <FormLabel>{t('contact-section.form.message-label')}</FormLabel>
                         <FormControl>
                           <Textarea
                             {...field}
@@ -209,25 +204,14 @@ export function ContactForm() {
                     name='honeypot'
                     render={({ field }) => (
                       <FormItem>
-                        <Input
-                          {...field}
-                          id='honeypot'
-                          tabIndex={-1}
-                          autoComplete='off'
-                        />
+                        <Input {...field} autoComplete='off' id='honeypot' tabIndex={-1} />
                       </FormItem>
                     )}
                   />
                 </div>
               </div>
-              <Button
-                type='submit'
-                disabled={isSubmitting}
-                className='w-full mt-6'
-              >
-                {isSubmitting && (
-                  <Loader2 className='mr-2 h-4 w-4 animate-spin' />
-                )}
+              <Button className='mt-6 w-full' disabled={isSubmitting} type='submit'>
+                {isSubmitting ? <Loader2 className='mr-2 h-4 w-4 animate-spin' /> : null}
                 {t('contact-section.form.submit-button')}
               </Button>
             </form>
@@ -235,5 +219,5 @@ export function ContactForm() {
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }

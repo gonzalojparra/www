@@ -1,90 +1,67 @@
 import Image from 'next/image';
 import Link from 'next/link';
-
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle
-} from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { ArrowUpRight, GithubIcon, LinkIcon } from 'lucide-react';
 
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { ProjectProps } from '@/types/components';
 
-export function ProjectItem({
-  title,
-  description,
-  tags,
-  image,
-  video,
-  link
-}: ProjectProps) {
+export function ProjectItem({ title, description, tags, image, video, link }: ProjectProps) {
   return (
-    <Card
-      key={title}
-      className='flex flex-col md:flex-row border shadow w-full'
-    >
-      <div className='flex flex-row w-full md:py-1 md:pl-1 md:pr-0 pt-1 px-1'>
-        {image && (
+    <Card key={title} className='flex w-full flex-col border shadow md:flex-row'>
+      <div className='flex w-full flex-row px-1 pt-1 md:py-1 md:pl-1 md:pr-0'>
+        {image ? (
           <Image
-            width={1920}
-            height={1080}
-            src={image}
             alt={title}
-            loading='lazy'
-            className='rounded-md object-fill shadow w-full aspect-auto'
-          />
-        )}
-        {video && (
-          <video
-            width={1920}
+            className='aspect-auto w-full rounded-md object-fill shadow'
             height={1080}
-            muted
+            loading='lazy'
+            src={image}
+            width={1920}
+          />
+        ) : null}
+        {video ? (
+          <video
             autoPlay
             loop
-            className='rounded-md object-fill shadow w-full'
+            muted
+            className='w-full rounded-md object-fill shadow'
+            height={1080}
+            width={1920}
           >
             <source src={video} type='video/webm' />
           </video>
-        )}
+        ) : null}
       </div>
 
-      <div className='flex flex-col w-full'>
+      <div className='flex w-full flex-col'>
         <CardHeader className='flex p-4'>
           <div className='space-y-2'>
             <CardTitle className='text-xl'>
               {link ? (
                 <Link
+                  className='group inline-flex items-center underline-offset-4 hover:underline'
                   href={link.github ? link.github : ''}
-                  target='_blank'
                   rel='noopener noreferrer'
-                  className='group inline-flex items-center hover:underline underline-offset-4'
+                  target='_blank'
                 >
                   <h3>{title}</h3>
-                  <ArrowUpRight className='duration-300 group-hover:translate-x-0 group-hover:opacity-100 md:-translate-x-full md:opacity-0 ml-2 h-4 w-4' />
+                  <ArrowUpRight className='ml-2 h-4 w-4 duration-300 group-hover:translate-x-0 group-hover:opacity-100 md:-translate-x-full md:opacity-0' />
                 </Link>
               ) : (
                 <h3>{title}</h3>
               )}
             </CardTitle>
 
-            <CardDescription className='font-mono text-sm'>
-              {description}
-            </CardDescription>
+            <CardDescription className='font-mono text-sm'>{description}</CardDescription>
           </div>
         </CardHeader>
 
         <CardContent className='flex flex-col gap-y-4 px-4 pb-4'>
           <div className='flex flex-wrap gap-2'>
             {tags.map((tag) => (
-              <Badge
-                key={tag.name}
-                variant='secondary'
-                className='p-1 gap-1 rounded-md shadow'
-              >
+              <Badge key={tag.name} className='gap-1 rounded-md p-1 shadow' variant='secondary'>
                 <tag.icon className='size-4' />
                 <p className='text-xs'>{tag.name}</p>
               </Badge>
@@ -92,43 +69,35 @@ export function ProjectItem({
           </div>
 
           <div className='flex gap-x-2'>
-            {link.github && (
-              <Button
-                variant='default'
-                size='default'
-                className='px-2 shadow'
-              >
+            {link.github ? (
+              <Button className='px-3 shadow' size='default' variant='default'>
                 <Link
-                  href={link.github}
-                  target='_blank'
-                  rel='noopener noreferrer'
                   className='flex items-center gap-1'
+                  href={link.github}
+                  rel='noopener noreferrer'
+                  target='_blank'
                 >
-                  <GithubIcon className='size-4' />
+                  <GithubIcon className='mr-1 size-4' />
                   <p>Code</p>
                 </Link>
               </Button>
-            )}
-            {link.preview && (
-              <Button
-                variant='default'
-                size='default'
-                className='px-2 shadow'
-              >
+            ) : null}
+            {link.preview ? (
+              <Button className='px-3 shadow' size='default' variant='default'>
                 <Link
-                  href={link.preview}
-                  target='_blank'
-                  rel='noopener noreferrer'
                   className='flex items-center gap-1'
+                  href={link.preview}
+                  rel='noopener noreferrer'
+                  target='_blank'
                 >
-                  <LinkIcon className='size-4' />
+                  <LinkIcon className='mr-1 size-4' />
                   <p>Preview</p>
                 </Link>
               </Button>
-            )}
+            ) : null}
           </div>
         </CardContent>
       </div>
     </Card>
-  )
+  );
 }

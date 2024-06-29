@@ -1,20 +1,18 @@
 import type React from 'react';
+
 import { cn } from '@/lib/utils';
 
 export type BadgeProps = React.HTMLAttributes<HTMLDivElement>;
 
-export function Section({
-  className,
-  ...props
-}: BadgeProps) {
+export function Section({ className, ...props }: BadgeProps) {
   return (
     <section
-      id={props.id}
       className={cn(
-        'flex flex-col min-h-0 gap-y-4 scroll-mt-24 w-full md:max-w-3xl mx-auto',
-        className
+        'mx-auto flex min-h-0 w-full scroll-mt-24 flex-col gap-y-4 md:max-w-3xl',
+        className,
       )}
+      id={props.id}
       {...props}
     />
-  )
+  );
 }
