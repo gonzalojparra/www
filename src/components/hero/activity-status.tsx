@@ -1,4 +1,4 @@
-import type { API, Data } from '@/types/lanyard';
+import type { Data, SuccessfulAPIResponse } from '@/types/lanyard';
 
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
@@ -8,7 +8,7 @@ import { SpotifyIcon } from '@/components/icons/spotify';
 import { cn } from '@/lib/utils';
 import { statusClasses } from '@/data';
 
-export function ActivityStatus({ data }: API.SuccessfulAPIResponse<Data>) {
+export function ActivityStatus({ data }: SuccessfulAPIResponse<Data>) {
   const t = useTranslations('about-section.activity');
   const { discord_status, listening_to_spotify, spotify } = data;
 
