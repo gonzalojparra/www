@@ -9,7 +9,10 @@ import { ProjectProps } from '@/types/components';
 
 export function ProjectItem({ title, description, tags, image, video, link }: ProjectProps) {
   return (
-    <Card key={title} className='flex w-full flex-col border shadow md:flex-row'>
+    <Card
+      key={title}
+      className='flex w-full flex-col border shadow transition-all duration-300 ease-out hover:shadow-lg md:flex-row'
+    >
       <div className='flex w-full flex-row px-1 pt-1 md:py-1 md:pl-1 md:pr-0'>
         {image ? (
           <Image

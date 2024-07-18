@@ -7,26 +7,26 @@ import { LanyardError } from '@/lib/utils';
 // Context to store the state of the Lanyard API
 export type ContextData =
   | {
-    state: 'initial';
-    isLoading: boolean;
-    error: undefined;
+      state: 'initial';
+      isLoading: boolean;
+      error: undefined;
 
-    // Data could exist at this initial stage
-    // because of.initialData in options
-    data: Data | undefined;
-  }
+      // Data could exist at this initial stage
+      // because of.initialData in options
+      data: Data | undefined;
+    }
   | {
-    state: 'loaded';
-    isLoading: boolean;
-    data: Data;
-    error: LanyardError | undefined;
-  }
+      state: 'loaded';
+      isLoading: boolean;
+      data: Data;
+      error: LanyardError | undefined;
+    }
   | {
-    state: 'errored';
-    isLoading: boolean;
-    data: Data | undefined;
-    error: LanyardError | undefined;
-  };
+      state: 'errored';
+      isLoading: boolean;
+      data: Data | undefined;
+      error: LanyardError | undefined;
+    };
 
 export function useLanyardContext() {
   return useContext(context);
@@ -174,7 +174,7 @@ export function useLanyardWS(snowflake: Snowflake | Snowflake[], _options?: Part
       socket.removeEventListener('close', connect);
       socket.close();
     };
-  }, [url]);
+  }, [snowflake, url]);
 
   return data ?? options.initialData;
 }
