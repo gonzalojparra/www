@@ -32,7 +32,7 @@ export const LINKS = [
     icon: FileTextIcon,
   },
   { title: 'Email', url: 'mailto:gonzzaparra@gmail.com', icon: MailIcon },
-  { title: 'Discord', url: 'https://discordapp.com/users/654163755797577747', icon: DiscordIcon },
+  { title: 'Discord', url: 'https://discord.com/users/654163755797577747', icon: DiscordIcon },
 ];
 
 const TAGS = {
