@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
 import { useTheme } from 'next-themes';
@@ -9,10 +10,12 @@ export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
 
   const toggleTheme = () => {
-    if (!document.startViewTransition) {
+    const startViewTransition = (document as any).startViewTransition;
+
+    if (!startViewTransition) {
       setTheme(theme === 'light' ? 'dark' : 'light');
     } else {
-      document.startViewTransition(() => {
+      startViewTransition(() => {
         setTheme(theme === 'light' ? 'dark' : 'light');
       });
     }
