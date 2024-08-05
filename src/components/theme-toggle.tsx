@@ -15,7 +15,7 @@ export function ThemeToggle() {
     if (!startViewTransition) {
       setTheme(theme === 'light' ? 'dark' : 'light');
     } else {
-      startViewTransition(() => {
+      startViewTransition.call(document, () => {
         setTheme(theme === 'light' ? 'dark' : 'light');
       });
     }
