@@ -18,11 +18,11 @@ export async function Hero() {
 
   return (
     <>
-      <div className='flex flex-row items-center'>
+      {/* <div className='flex flex-row items-center'>
         <AvatarProfile lanyard={lanyard} />
-      </div>
+      </div> */}
 
-      <div className='flex flex-row items-center gap-4'>
+      <div className='mt-4 flex flex-row items-center gap-4'>
         <h1 className='flex text-balance text-4xl font-bold text-neutral-900 dark:text-neutral-100'>
           Gonzalo Parra
         </h1>
