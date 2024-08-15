@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { MenuIcon } from 'lucide-react';
 
 import { ThemeToggle } from '@/components/theme-toggle';
@@ -18,6 +19,7 @@ import { cn } from '@/lib/utils';
 export function Header() {
   const [currentSection, setCurrentSection] = useState('');
   const t = useTranslations();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,6 +46,16 @@ export function Header() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  // Play a sound effect when navigating between sections
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const audio = new Audio('/pop.mp3');
+
+    audio.volume = 0.5;
+
+    audio.play().catch(() => null);
+  }, [pathname]);
 
   const navItems = [
     { title: t('header.about.title'), label: t('header.about.label'), url: t('header.about.link') },
