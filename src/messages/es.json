@@ -32,8 +32,12 @@
   },
   "about-section": {
     "open-to-work": "Disponible para trabajar",
-    "title": "Desarrollador front end, creando soluciones centradas en el usuario. De Neuquén, Argentina 🇦🇷",
-    "description": "Apasionado sobre las tecnologías web. Mi objetivo es crear experiencias de usuario que sean accesibles, performantes, y satisfactorias. Siempre estoy buscando aprender nuevas tecnologías y mejorar mis habilidades.",
+    "sub-title": "Trabajando en grandes ideas 💡",
+    "title": "Hola, soy Gonza 👋",
+    "description": "Soy un desarrollador frontend, apasionado sobre las tecnologías web. Actualmente trabajo en",
+    "incubator": "Incubator",
+    "incubator-about": "una empresa que ayuda a startups y otras compañías a desarrollar productos digitales y escalarlos.",
+    "description-2": "Fuera de la programación, me encanta escuchar música. Podes encontrar lo que estoy escuchando ahora mismo en Spotify. También soy un gran fanático del fútbol, y obvio, hincha de Boca Juniors 🇸🇪",
     "activity": {
       "listening": "Escuchando en Spotify",
       "by": "de",

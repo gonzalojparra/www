@@ -32,8 +32,12 @@
   },
   "about-section": {
     "open-to-work": "Open to work",
-    "title": "Front end developer, committed to creating user-centered solutions. Based in Neuquén, Argentina 🇦🇷",
-    "description": "Passionate about web technologies. I aim to create accessible, performant, and delightful experiences for users. I'm always looking to learn new things and improve my skills.",
+    "sub-title": "Working on awesome ideas 💡",
+    "title": "Hey, I'm Gonza 👋",
+    "description": "I'm a frontend developer, passionate about web technologies. I'm currently working at",
+    "incubator": "Incubator",
+    "incubator-about": "a company that helps startups and other enterprises develop digital products and scale them.",
+    "description-2": "Outside of programming, I enjoy listening to music. You can find out what I'm currently listening to in real-time on Spotify. I'm also a huge football fan, and obviously, my team is Boca Juniors 🇸🇪",
     "activity": {
       "listening": "Listening to Spotify",
       "by": "by",

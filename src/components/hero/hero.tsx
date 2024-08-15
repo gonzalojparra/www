@@ -26,7 +26,7 @@ export async function Hero() {
         <h1 className='flex text-balance text-4xl font-bold text-neutral-900 dark:text-neutral-100'>
           Gonzalo Parra
         </h1>
-        <Link
+        {/*         <Link
           className='hidden rounded-full md:flex'
           href='https://www.linkedin.com/in/gonzalojparra/'
           rel='noopener noreferrer'
@@ -54,12 +54,26 @@ export async function Hero() {
           <TooltipContent>
             <p>{t('about-section.open-to-work')}</p>
           </TooltipContent>
-        </Tooltip>
+        </Tooltip> */}
       </div>
 
       <div className='flex flex-col gap-4 text-pretty font-mono text-neutral-800 dark:text-neutral-200'>
+        <p className='-mt-2 mb-4 text-sm font-light'>{t('about-section.sub-title')}</p>
         <h2>{t('about-section.title')}</h2>
-        <p>{t('about-section.description')}</p>
+        <p>
+          {t('about-section.description')}{' '}
+          <Link
+            className='underline underline-offset-2'
+            href='https://incubator.com.ar/'
+            rel='noopener noreferrer'
+            target='_blank'
+          >
+            {t('about-section.incubator')}
+          </Link>
+          {', '}
+          {t('about-section.incubator-about')}
+        </p>
+        <p>{t('about-section.description-2')}</p>
       </div>
 
       <nav className='flex gap-x-4 pt-4'>
