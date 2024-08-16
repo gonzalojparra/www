@@ -16,7 +16,7 @@ export default function Home() {
         <Hero />
       </Section>
 
-      <Section className='pb-24' id={t('header.tech-stack.label')}>
+      {/* <Section className='pb-24' id={t('header.tech-stack.label')}>
         <TechStack />
       </Section>
 
@@ -30,7 +30,7 @@ export default function Home() {
 
       <Section className='pb-24' id={t('header.contact.label')}>
         <Contact />
-      </Section>
+      </Section> */}
     </div>
   );
 }

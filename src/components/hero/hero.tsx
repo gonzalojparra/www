@@ -1,20 +1,15 @@
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
-import { BadgeCheckIcon } from 'lucide-react';
 
-import { AvatarProfile } from '@/components/hero/avatar-profile';
-import { Badge } from '@/components/ui/badge';
+import { Spotify } from './spotify';
+
 import { Button } from '@/components/ui/button';
-import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import { data } from '@/constants';
 import { discordId } from '@/data';
-import { getLanyard } from '@/lib/utils';
 
 export async function Hero() {
   const { links } = data;
   const t = useTranslations();
-
-  const lanyard = await getLanyard(discordId);
 
   return (
     <>
@@ -74,6 +69,10 @@ export async function Hero() {
           {t('about-section.incubator-about')}
         </p>
         <p>{t('about-section.description-2')}</p>
+      </div>
+
+      <div>
+        <Spotify id={discordId} />
       </div>
 
       <nav className='flex gap-x-4 pt-4'>
