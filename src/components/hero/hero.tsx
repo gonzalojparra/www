@@ -44,7 +44,7 @@ export async function Hero() {
         <Spotify id={discordId} />
       </div>
 
-      <nav className='flex gap-x-4 pt-4'>
+      {/* <nav className='flex gap-x-4 pt-4'>
         {Array.isArray(links) &&
           links.map((link) => (
             <Button
@@ -67,7 +67,7 @@ export async function Hero() {
               </Link>
             </Button>
           ))}
-      </nav>
+      </nav> */}
     </>
   );
 }
