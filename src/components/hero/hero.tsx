@@ -1,8 +1,8 @@
+import { JSX, ClassAttributes, AnchorHTMLAttributes } from 'react';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
-import { Spotify } from './spotify';
-
+import { Spotify } from '@/components/hero/spotify';
 import { Button } from '@/components/ui/button';
 import { data } from '@/constants';
 import { discordId } from '@/data';
@@ -13,43 +13,10 @@ export async function Hero() {
 
   return (
     <>
-      {/* <div className='flex flex-row items-center'>
-        <AvatarProfile lanyard={lanyard} />
-      </div> */}
-
       <div className='mt-4 flex flex-row items-center gap-4'>
         <h1 className='flex text-balance text-4xl font-bold text-neutral-900 dark:text-neutral-100'>
           Gonzalo Parra
         </h1>
-        {/*         <Link
-          className='hidden rounded-full md:flex'
-          href='https://www.linkedin.com/in/gonzalojparra/'
-          rel='noopener noreferrer'
-          target='_blank'
-        >
-          <Badge
-            className='font-mono text-xs font-bold transition-all duration-200 ease-in-out hover:scale-105'
-            variant='default'
-          >
-            {t('about-section.open-to-work')}
-          </Badge>
-        </Link>
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <Link
-              aria-label={t('about-section.open-to-work')}
-              className='flex rounded-full transition-all duration-300 ease-in-out hover:scale-105 md:hidden'
-              href='https://www.linkedin.com/in/gonzalojparra/'
-              rel='noopener noreferrer'
-              target='_blank'
-            >
-              <BadgeCheckIcon className='size-6 fill-secondary' />
-            </Link>
-          </TooltipTrigger>
-          <TooltipContent>
-            <p>{t('about-section.open-to-work')}</p>
-          </TooltipContent>
-        </Tooltip> */}
       </div>
 
       <div className='flex flex-col gap-4 text-pretty font-mono text-neutral-800 dark:text-neutral-200'>
@@ -57,14 +24,16 @@ export async function Hero() {
         <h2>{t('about-section.title')}</h2>
         <p>
           {t('about-section.description')}{' '}
-          <Link
-            className='underline underline-offset-2'
-            href='https://incubator.com.ar/'
-            rel='noopener noreferrer'
-            target='_blank'
-          >
+          <Badge href='https://incubator.com.ar/'>
+            <img
+              aria-label='Incubator logo'
+              className='mr-1 inline-flex'
+              height='11'
+              src='/logo.png'
+              width='13'
+            />
             {t('about-section.incubator')}
-          </Link>
+          </Badge>
           {', '}
           {t('about-section.incubator-about')}
         </p>
@@ -100,5 +69,23 @@ export async function Hero() {
           ))}
       </nav>
     </>
+  );
+}
+
+function Badge(
+  props: JSX.IntrinsicAttributes &
+    ClassAttributes<HTMLAnchorElement> &
+    AnchorHTMLAttributes<HTMLAnchorElement>,
+) {
+  const { children, ...rest } = props;
+
+  return (
+    <a
+      {...rest}
+      className='inline-flex items-center rounded border border-neutral-200 bg-neutral-50 p-1 text-sm leading-4 text-neutral-900 no-underline dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100'
+      target='_blank'
+    >
+      {children}
+    </a>
   );
 }
