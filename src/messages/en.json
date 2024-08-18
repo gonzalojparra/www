@@ -1,14 +1,9 @@
 {
   "header": {
-    "about": {
-      "title": "About",
-      "label": "about",
-      "link": "/#about"
-    },
-    "tech-stack": {
-      "title": "Tech Stack",
-      "label": "tech-stack",
-      "link": "/#tech-stack"
+    "home": {
+      "title": "Home",
+      "label": "home",
+      "link": "/"
     },
     "career": {
       "title": "Career",

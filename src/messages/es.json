@@ -1,14 +1,9 @@
 {
   "header": {
-    "about": {
-      "title": "Sobre mí",
-      "label": "sobre-mi",
-      "link": "/#sobre-mi"
-    },
-    "tech-stack": {
-      "title": "Stack de tecnologías",
-      "label": "stack-tecnologias",
-      "link": "/#stack-tecnologias"
+    "home": {
+      "title": "Inicio",
+      "label": "inicio",
+      "link": "/"
     },
     "career": {
       "title": "Carrera",

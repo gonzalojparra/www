@@ -58,11 +58,10 @@ export function Header() {
   }, [pathname]);
 
   const navItems = [
-    { title: t('header.about.title'), label: t('header.about.label'), url: t('header.about.link') },
     {
-      title: t('header.tech-stack.title'),
-      label: t('header.tech-stack.label'),
-      url: t('header.tech-stack.link'),
+      title: t('header.home.title'),
+      label: t('header.home.label'),
+      url: t('header.home.link'),
     },
     {
       title: t('header.career.title'),
