@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -17,37 +17,10 @@ import {
 import { cn } from '@/lib/utils';
 
 export function Header() {
-  const [currentSection, setCurrentSection] = useState('');
   const t = useTranslations();
   const pathname = usePathname();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = document.querySelectorAll('section');
-      let currentId = '';
-
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-
-        if (window.scrollY >= sectionTop - sectionHeight / 2) {
-          currentId = section.id;
-        }
-      });
-
-      setCurrentSection(currentId);
-    };
-
-    handleScroll();
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  // Play a sound effect when navigating between sections
+  // Play a sound effect when navigating between links
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const audio = new Audio('/pop.mp3');
@@ -69,11 +42,6 @@ export function Header() {
       url: t('header.career.link'),
     },
     {
-      title: t('header.projects.title'),
-      label: t('header.projects.label'),
-      url: t('header.projects.link'),
-    },
-    {
       title: t('header.contact.title'),
       label: t('header.contact.label'),
       url: t('header.contact.link'),
@@ -93,7 +61,7 @@ export function Header() {
             className={cn(
               'relative block rounded-full px-2 py-2 text-sm font-semibold transition-colors ease-in-out hover:bg-accent md:px-4',
               {
-                'text-primary': currentSection === item.label,
+                'text-primary': pathname === item.url,
               },
             )}
             href={item.url}
@@ -123,7 +91,7 @@ export function Header() {
                     className={cn(
                       'relative mx-1 block rounded-md px-2 py-2 text-sm font-semibold transition-colors ease-in-out hover:bg-secondary md:px-4',
                       {
-                        'text-primary': currentSection === item.label,
+                        'text-primary': pathname === item.url,
                       },
                     )}
                     href={item.url}

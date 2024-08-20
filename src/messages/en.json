@@ -8,12 +8,7 @@
     "career": {
       "title": "Career",
       "label": "career",
-      "link": "/#career"
-    },
-    "projects": {
-      "title": "Projects",
-      "label": "projects",
-      "link": "/#projects"
+      "link": "/career"
     },
     "contact": {
       "title": "Contact",
@@ -29,7 +24,7 @@
     "open-to-work": "Open to work",
     "sub-title": "Working on awesome ideas 💡",
     "title": "Hey, I'm Gonza 👋",
-    "description": "I'm a frontend developer, passionate about web technologies. I'm currently working at",
+    "description": "Software developer, passionate about web technologies. I am currently working at",
     "incubator": "Incubator",
     "incubator-about": "a company that helps startups and other enterprises develop digital products and scale them.",
     "description-2": "Outside of programming, I enjoy listening to music. You can find out what I'm currently listening to in real-time on Spotify. I'm also a huge football fan, and obviously, my team is Boca Juniors 🇸🇪",
