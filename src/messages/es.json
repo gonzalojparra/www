@@ -36,14 +36,14 @@
   "career-section": {
     "title": "Carrera y Trabajos",
     "works": {
-      "runesoft": {
-        "company": "Runesoft",
-        "badges": "Remoto,Part-time",
-        "link": "https://github.com/rune-soft",
-        "title": "Desarrollador de software y Co-fundador",
-        "start": "Agosto 2023",
+      "incubator": {
+        "company": "Incubator",
+        "badges": "Remoto,Full-time",
+        "link": "https://incubator.com.ar",
+        "title": "Desarrollador frontend",
+        "start": "Julio 2024",
         "end": "Presente",
-        "description": "Actualmente me encuentro desarrollando Runesoft como un side project. Trabajo en el front end utilizando tecnologías como React, Next.js y TypeScript. También trabajo en el back end, usando tecnologías como Laravel y Node.js."
+        "description": ""
       },
       "universidad-nacional-del-comahue": {
         "company": "Universidad Nacional del Comahue",

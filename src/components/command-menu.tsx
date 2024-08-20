@@ -64,7 +64,7 @@ export function CommandMenu() {
         <kbd className='pointer-events-none mx-2 hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex'>
           ⌘ K
         </kbd>
-        <span className='inline md:hidden'>Click</span>
+        <span className='inline md:hidden'>Click </span>
         <span className='mr-2'>{t('footer.command-menu.to-explore')}</span>
         <ArrowRight
           className='duration-300 group-hover:translate-x-0 group-hover:opacity-100 md:-translate-x-full md:opacity-0'

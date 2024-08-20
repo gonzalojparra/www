@@ -6,7 +6,7 @@ import { CareerItem } from '@/components/career/career-item';
 export function Career() {
   const t = useTranslations();
   const careerItems = useTranslations('career-section.works');
-  const keys = ['runesoft', 'universidad-nacional-del-comahue'] as const;
+  const keys = ['incubator', 'universidad-nacional-del-comahue'] as const;
 
   return (
     <>
