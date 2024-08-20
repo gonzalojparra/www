@@ -13,15 +13,10 @@
     "contact": {
       "title": "Contacto",
       "label": "contacto",
-      "link": "/#contacto"
+      "link": "/contact"
     }
   },
-  "tech-stack": {
-    "title": "Stack de tecnologías",
-    "description": "En mi camino como desarrollador web y de software, he adquirido un grupo de habilidades que me permiten trabajar en diversos proyectos. Mi área abarca el desarrollo front end, utilizando lenguajes como TypeScript, JavaScript, HTML y CSS, y frameworks tales como React y Next.js"
-  },
   "about-section": {
-    "open-to-work": "Disponible para trabajar",
     "sub-title": "Trabajando en grandes ideas 💡",
     "title": "Hola, soy Gonza 👋",
     "description": "Desarrollador de software, apasionado sobre las tecnologías web. Actualmente trabajo en",
@@ -61,20 +56,6 @@
       }
     },
     "view-more": "Ver más"
-  },
-  "projects-section": {
-    "title": "Proyectos & Apps",
-    "projects": {
-      "Jotter": {
-        "description": "Una aplicación full-stack que permite a los usuarios crear, editar, eliminar y compartir notas. También permite a los usuarios categorizar sus notas y buscarlas por título y contenido."
-      },
-      "Ehwaz": {
-        "description": "Un sistema full-stack para personal trainers que les permite llevar a cabo la administración, asignar entrenamientos y planes de alimentación a sus alumnos. También lesp permite a los alumnos trackear su progreso y comunicarse con sus entrenadores."
-      },
-      "Zen-Kicks": {
-        "description": "Una aplicación full-stack para administrar competencias y torneos de taekwondo. Les permite a los administradores organizar categorias, competidores y jueces."
-      }
-    }
   },
   "contact-section": {
     "title": "Contacto",

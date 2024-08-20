@@ -2,6 +2,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
+import { ViewTransitions } from 'next-view-transitions';
 import { type Metadata } from 'next';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
@@ -71,18 +72,20 @@ export default async function RootLayout({ children, params: { locale } }: Reado
     >
       <body>
         <NextIntlClientProvider messages={messages}>
-          <ThemeProvider enableSystem attribute='class' defaultTheme='system'>
-            <TooltipProvider>
-              <main className='flex min-h-screen flex-col items-center justify-center px-4 pb-8 pt-24'>
-                <Header />
-                {children}
-                <Footer />
-              </main>
-              <Toaster />
-            </TooltipProvider>
-          </ThemeProvider>
-          <Analytics />
-          <SpeedInsights />
+          <ViewTransitions>
+            <ThemeProvider enableSystem attribute='class' defaultTheme='system'>
+              <TooltipProvider>
+                <main className='flex min-h-screen flex-col items-center justify-center px-4 pb-8 pt-24'>
+                  <Header />
+                  {children}
+                  <Footer />
+                </main>
+                <Toaster />
+              </TooltipProvider>
+            </ThemeProvider>
+            <Analytics />
+            <SpeedInsights />
+          </ViewTransitions>
         </NextIntlClientProvider>
       </body>
     </html>

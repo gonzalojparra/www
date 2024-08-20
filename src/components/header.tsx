@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import { useTranslations } from 'next-intl';
-import Link from 'next/link';
+import { Link } from 'next-view-transitions';
 import { usePathname } from 'next/navigation';
 import { MenuIcon } from 'lucide-react';
 
