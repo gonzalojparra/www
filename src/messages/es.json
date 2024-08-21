@@ -59,48 +59,7 @@
   },
   "contact-section": {
     "title": "Contacto",
-    "description": "Sentite libre de contactarme si tenés alguna pregunta, propuesta de proyecto, o si simplemente querés charlar! Siempre estoy abierto a nuevas oportunidades y desafíos.",
-    "form": {
-      "form-description": "Por favor, completá el siguiente formulario y me pondré en contacto con vos lo antes posible.",
-      "first-name-label": "Nombre",
-      "first-name-placeholder": "Tu nombre",
-      "last-name-label": "Apellido",
-      "last-name-placeholder": "Tu apellido",
-      "email-label": "Email",
-      "email-placeholder": "Tu email",
-      "message-label": "Mensaje",
-      "message-placeholder": "Ingresa tu mensaje aquí",
-      "submit-button": "Enviar",
-      "toast-success-title": "Email enviado",
-      "toast-success-description": "Me pondré en contacto con vos lo antes posible!",
-      "toast-error-title": "Error",
-      "toast-error-description": "Hubo un error al enviar el email. Por favor, intentá nuevamente más tarde.",
-      "spam-detected-title": "Spam detectado",
-      "spam-detected-description": "Por favor, completá el formulario correctamente y sin spam. Gracias!",
-      "errors": {
-        "first-name": {
-          "min": "El nombre debe tener al menos 2 caracteres",
-          "max": "El nombre debe tener menos de 50 caracteres",
-          "regex": "El nombre debe contener solo letras"
-        },
-        "last-name": {
-          "min": "El apellido debe tener al menos 2 caracteres",
-          "max": "El apellido debe tener menos de 50 caracteres",
-          "regex": "El apellido debe contener solo letras"
-        },
-        "email": {
-          "email": "Email inválido",
-          "min": "El email debe tener al menos 5 caracteres",
-          "max": "El email debe tener menos de 100 caracteres"
-        },
-        "message": {
-          "min": "El mensaje debe tener al menos 10 caracteres",
-          "max": "El mensaje debe tener menos de 500 caracteres",
-          "refine": "Por favor, evitá el spam en tu mensaje. Gracias!"
-        },
-        "urls": "Por favor, evitá incluir URLs en tu mensaje. Gracias!"
-      }
-    }
+    "description": "Sentite libre de contactarme por mail o mediante mis redes sociales si tenés alguna pregunta, propuesta de proyecto, o simplemente querés charlar! Siempre estoy abierto a nuevas oportunidades y desafíos."
   },
   "footer": {
     "made-with": "Hecho con",
