@@ -1,14 +1,10 @@
 import { JSX, ClassAttributes, AnchorHTMLAttributes } from 'react';
 import { useTranslations } from 'next-intl';
-import Link from 'next/link';
 
 import { Spotify } from '@/components/hero/spotify';
-import { Button } from '@/components/ui/button';
-import { data } from '@/constants';
 import { discordId } from '@/data';
 
 export async function Hero() {
-  const { links } = data;
   const t = useTranslations();
 
   return (
