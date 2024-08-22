@@ -23,7 +23,7 @@ type Props = {
   };
 };
 
-const title = 'Gonzalo Parra | Portfolio';
+const title = 'Gonzalo Parra';
 const description = 'My personal website, showcasing my work and skills.';
 const ogImage = 'https://portfolio-gonzalojparra.vercel.app/og-image.png';
 

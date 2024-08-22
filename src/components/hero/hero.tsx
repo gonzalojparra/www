@@ -20,7 +20,7 @@ export async function Hero() {
       <div className='flex flex-col gap-4 text-pretty font-mono text-neutral-800 dark:text-neutral-200'>
         <p className='-mt-2 mb-4 text-sm font-light'>{t('about-section.sub-title')}</p>
         <h2>{t('about-section.title')}</h2>
-        <p>
+        <div>
           {t('about-section.description')}{' '}
           <Badge className='rounded-md shadow hover:bg-secondary' variant='outline'>
             <Link href='https://incubator.com.ar/'>
@@ -36,7 +36,7 @@ export async function Hero() {
           </Badge>
           {', '}
           {t('about-section.incubator-about')}
-        </p>
+        </div>
         <p>{t('about-section.description-2')}</p>
       </div>
 
