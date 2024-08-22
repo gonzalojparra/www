@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 import { SpotifyIcon } from '@/components/icons/spotify';
 import { useLanyardWS } from '@/hooks/use-lanyard';
@@ -14,6 +15,7 @@ interface SpotifyProps {
 
 export function Spotify({ id }: SpotifyProps) {
   const data = useThrottle(useLanyardWS(id));
+  const t = useTranslations();
 
   useEffect(() => {
     if (!data || !data.spotify) return;
@@ -45,16 +47,19 @@ export function Spotify({ id }: SpotifyProps) {
           <div className='relative z-10 flex items-center space-x-4 pr-8'>
             <img
               alt='Album art'
-              className='size-14 rounded-md border-2'
+              className='size-16 rounded-md border-2'
               src={data.spotify.album_art_url ?? ''}
             />
 
-            <div className='space-y-1'>
+            <div className='space-y-0 text-sm'>
               <p className='line-clamp-1'>
                 <strong>{data.spotify.song}</strong>
               </p>
               <p className='line-clamp-1 text-neutral-800 dark:text-white/60'>
-                {data.spotify.artist.split('; ').join(', ')}
+                {t('about-section.activity.by')} {data.spotify.artist.split('; ').join(', ')}
+              </p>
+              <p className='line-clamp-1 text-neutral-600 dark:text-white/40'>
+                {t('about-section.activity.from')} {data.spotify.album}
               </p>
             </div>
           </div>

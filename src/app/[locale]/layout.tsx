@@ -64,7 +64,7 @@ export default async function RootLayout({ children, params: { locale } }: Reado
     <html
       suppressHydrationWarning
       className={cn(
-        'min-h-screen overflow-y-scroll scroll-smooth bg-background font-sans antialiased',
+        'min-h-screen scroll-smooth bg-background font-sans antialiased',
         GeistSans.variable,
         GeistMono.variable,
       )}
