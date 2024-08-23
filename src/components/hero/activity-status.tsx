@@ -1,12 +1,14 @@
+'use client';
+
 import type { Data, SuccessfulAPIResponse } from '@/types/lanyard';
 
-import { useTranslations } from 'next-intl';
-import Image from 'next/image';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { motion } from 'framer-motion';
 
 import { SpotifyIcon } from '@/components/icons/spotify';
-import { cn } from '@/lib/utils';
 import { statusClasses } from '@/data';
+import { cn } from '@/lib/utils';
 
 export function ActivityStatus({ data }: SuccessfulAPIResponse<Data>) {
   const t = useTranslations('about-section.activity');
@@ -38,40 +40,52 @@ export function ActivityStatus({ data }: SuccessfulAPIResponse<Data>) {
   }
 
   return (
-    <div className='relative flex h-full items-center gap-3 overflow-hidden px-2'>
-      <div className='flex max-w-md items-center space-x-4 rounded-lg bg-background'>
-        <div className='flex items-center justify-center'>
-          <Image
-            priority
-            alt={`${spotify?.song}`}
-            className='w-[74px] rounded-md'
-            height={74}
-            quality={100}
-            src={spotify?.album_art_url || '/assets/album-placeholder.webp'}
-            width={74}
-          />
-        </div>
-        <div className='flex-1'>
-          <div className='flex flex-row items-center justify-between'>
-            <p className='text-sm font-bold uppercase text-green-600'>{t('listening')}</p>
-            <SpotifyIcon className='ml-5 h-4 w-4' />
+    <motion.div animate={{ opacity: 1 }} initial={{ opacity: 0 }}>
+      <div className='space-y-3'>
+        <p className='-mb-2 font-sans text-sm font-bold'>{t('listening')}</p>
+        <Link
+          className='group relative !mb-1 block w-fit min-w-[300px] overflow-hidden rounded-xl rounded-bl-md p-3'
+          href={`https://open.spotify.com/track/${spotify?.track_id}`}
+          rel='noopener noreferrer'
+          target='_blank'
+        >
+          <div className='absolute -inset-[1px] z-20 rounded-xl rounded-bl-md border-[3px] border-black/10 dark:border-white/20' />
+
+          <div className='absolute inset-0'>
+            <div className='absolute inset-0 z-10 bg-white/70 transition-all group-hover:bg-white/80 dark:bg-neutral-800/80 dark:group-hover:bg-neutral-800/90' />
+            <img
+              aria-hidden
+              alt='Album art'
+              className='absolute top-1/2 -translate-y-1/2 scale-[3] blur-3xl saturate-[15] dark:saturate-[10]'
+              src={spotify?.album_art_url ?? ''}
+            />
           </div>
-          <Link
-            className='text-sm font-medium hover:underline'
-            href={`https://open.spotify.com/track/${spotify?.track_id}`}
-            rel='noopener noreferrer'
-            target='_blank'
-          >
-            {spotify?.song}
-          </Link>
-          <p className='text-xs opacity-90'>
-            {t('by')} {spotify?.artist}
-          </p>
-          <p className='text-xs opacity-70'>
-            {t('from')} {spotify?.album}
-          </p>
-        </div>
+
+          <div className='relative z-10 flex items-center space-x-4 pr-8'>
+            <img
+              alt='Album art'
+              className='size-16 rounded-md border-2'
+              src={spotify?.album_art_url ?? ''}
+            />
+
+            <div className='space-y-0 text-sm'>
+              <p className='line-clamp-1'>
+                <strong>{spotify?.song}</strong>
+              </p>
+              <p className='line-clamp-1 text-neutral-800 dark:text-white/60'>
+                {t('by')} {spotify?.artist.split('; ').join(', ')}
+              </p>
+              <p className='line-clamp-1 text-neutral-600 dark:text-white/40'>
+                {t('from')} {spotify?.album}
+              </p>
+            </div>
+          </div>
+
+          <div className='absolute right-4 top-4 z-10'>
+            <SpotifyIcon className='size-4' />
+          </div>
+        </Link>
       </div>
-    </div>
+    </motion.div>
   );
 }

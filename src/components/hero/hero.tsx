@@ -1,9 +1,8 @@
-import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
-import { Spotify } from '@/components/hero/spotify';
+import { Activity } from '@/components/hero/activity';
 import { Badge } from '@/components/ui/badge';
-import { discordId } from '@/data';
 
 export async function Hero() {
   const t = useTranslations();
@@ -40,7 +39,7 @@ export async function Hero() {
       </div>
 
       <div>
-        <Spotify id={discordId} />
+        <Activity />
       </div>
     </>
   );
