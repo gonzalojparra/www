@@ -42,7 +42,7 @@ export function ActivityStatus({ data }: SuccessfulAPIResponse<Data>) {
   return (
     <motion.div animate={{ opacity: 1 }} initial={{ opacity: 0 }}>
       <div className='space-y-3'>
-        <p className='-mb-2 font-sans text-sm font-bold'>{t('listening')}</p>
+        <p className='-mb-2 font-mono text-sm font-bold'>{t('listening')}</p>
         <Link
           className='group relative !mb-1 block w-fit min-w-[300px] overflow-hidden rounded-xl rounded-bl-md p-3'
           href={`https://open.spotify.com/track/${spotify?.track_id}`}

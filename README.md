@@ -31,7 +31,6 @@ The project is being developed with the following tech stack:
 - TypeScript
 - TailwindCSS
 - Shadcn/ui
-- Resend
 - And more
 
 ## Author
