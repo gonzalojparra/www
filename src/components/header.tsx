@@ -61,7 +61,7 @@ export function Header() {
             className={cn(
               'relative block rounded-full px-2 py-2 text-sm font-semibold transition-colors ease-in-out hover:bg-accent md:px-4',
               {
-                'text-primary': pathname === item.url,
+                'text-primary dark:text-[#c973ff]': pathname === item.url,
               },
             )}
             href={item.url}
@@ -91,7 +91,7 @@ export function Header() {
                     className={cn(
                       'relative mx-1 block rounded-md px-2 py-2 text-sm font-semibold transition-colors ease-in-out hover:bg-secondary md:px-4',
                       {
-                        'text-primary': pathname === item.url,
+                        'text-green-400': pathname === item.url,
                       },
                     )}
                     href={item.url}
