@@ -1,9 +1,8 @@
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
-import { Badge } from '../ui/badge';
-
 import { Spotify } from '@/components/hero/spotify';
+import { Badge } from '@/components/ui/badge';
 import { discordId } from '@/data';
 
 export async function Hero() {
