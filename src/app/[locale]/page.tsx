@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 import { Section } from '@/components/ui/section';
 import { Hero } from '@/components/hero/hero';
 
-export default function Home() {
+export default function HomePage() {
   const t = useTranslations();
 
   return (

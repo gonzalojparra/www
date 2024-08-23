@@ -2,14 +2,14 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 import eslintPluginReact from 'eslint-plugin-react';
 import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
-import { fixupPluginRules } from '@eslint/compat';
+import eslintPluginJsxA11y from 'eslint-plugin-jsx-a11y';
 import eslintPluginPrettier from 'eslint-plugin-prettier/recommended';
 import eslintPluginImport from 'eslint-plugin-import';
 import eslintPluginNext from '@next/eslint-plugin-next';
-import eslintPluginJsxA11y from 'eslint-plugin-jsx-a11y';
 import vercelStyleGuideTypescript from '@vercel/style-guide/eslint/typescript';
 import vercelStyleGuideReact from '@vercel/style-guide/eslint/rules/react';
 import vercelStyleGuideNext from '@vercel/style-guide/eslint/next';
+import { fixupPluginRules } from '@eslint/compat';
 
 export default [
   // Ignores configuration
