@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to my Portfolio 🫡</h1>
+<h1 align="center">Welcome to my Website 🫡</h1>
 
 <div align="center">
 <img alt="Gonzalo Parra" src="public/readme.png" />
@@ -6,7 +6,7 @@
 
 ## 🧉 About
 
-A developer portfolio designed to showcase projects, experience and skills that I achieved during my career.
+A website designed to showcase my experience and skills that I achieved during my career.
 
 ## 🚀 Installation
 
