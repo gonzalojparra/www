@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import { useTranslations } from 'next-intl';
+import { motion } from 'framer-motion';
 import { Link } from 'next-view-transitions';
 import { usePathname } from 'next/navigation';
 import { MenuIcon } from 'lucide-react';
@@ -54,20 +55,25 @@ export function Header() {
       style={{ backdropFilter: 'blur(8px)' }}
     >
       <nav className='hidden items-center justify-center sm:flex'>
-        {navItems.map((item) => (
-          <Link
-            key={item.label}
-            aria-label={item.label}
-            className={cn(
-              'relative block rounded-full px-2 py-2 text-sm font-semibold transition-colors ease-in-out hover:bg-accent md:px-4',
-              {
-                'text-primary dark:text-[#c973ff]': pathname === item.url,
-              },
-            )}
-            href={item.url}
-          >
-            {item.title}
-          </Link>
+        {navItems.map(({ title, label, url }) => (
+          <div key={label}>
+            <Link
+              className={cn(
+                'relative block transform-gpu rounded-full px-3 py-2 text-sm transition-all',
+                pathname == url ? '' : 'hover:opacity-50',
+              )}
+              href={url}
+            >
+              {pathname == url && (
+                <motion.div
+                  className='absolute inset-0 rounded-full bg-accent backdrop-blur-sm dark:bg-primary'
+                  layoutId='active'
+                  transition={{ type: 'spring', duration: '0.8' }}
+                />
+              )}
+              <span className='relative z-10'>{title}</span>
+            </Link>
+          </div>
         ))}
         <div className='mr-2 flex items-center'>
           <ThemeToggle />

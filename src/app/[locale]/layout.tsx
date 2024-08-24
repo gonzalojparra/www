@@ -75,9 +75,11 @@ export default async function RootLayout({ children, params: { locale } }: Reado
           <ViewTransitions>
             <ThemeProvider enableSystem attribute='class' defaultTheme='system'>
               <TooltipProvider>
-                <main className='flex min-h-screen flex-col items-center justify-center px-4 pb-8 pt-24'>
-                  <Header />
-                  {children}
+                <main className='flex min-h-screen flex-col px-4 pb-8 pt-24'>
+                  <div className='flex flex-1 items-center justify-center'>
+                    <Header />
+                    {children}
+                  </div>
                   <Footer />
                 </main>
                 <Toaster />

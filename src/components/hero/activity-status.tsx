@@ -30,17 +30,21 @@ export function ActivityStatus({ data }: SuccessfulAPIResponse<Data>) {
 
     if (statusMessage) {
       return (
-        <div className='flex flex-row items-center'>
+        <motion.div
+          animate={{ opacity: 3 }}
+          className='flex flex-row items-center'
+          initial={{ opacity: 0 }}
+        >
           <p className={cn('font-mono text-sm font-medium', statusClasses[discord_status].text)}>
             {statusMessage}
           </p>
-        </div>
+        </motion.div>
       );
     }
   }
 
   return (
-    <motion.div animate={{ opacity: 1 }} initial={{ opacity: 0 }}>
+    <motion.div animate={{ opacity: 3 }} initial={{ opacity: 0 }}>
       <div className='space-y-3'>
         <p className='-mb-2 font-mono text-sm font-bold'>{t('listening')}</p>
         <Link
