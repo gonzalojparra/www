@@ -9,7 +9,7 @@ A website designed to showcase my experience and skills that I achieved during m
 To get started on this project you need to follow the next steps:
 
 ```bash
-git clone https://github.com/gonzalojparra/ww
+git clone https://github.com/gonzalojparra/www
 # First clone the repo in your folder of choice.
 cd www
 # Move into the recently cloned repo.

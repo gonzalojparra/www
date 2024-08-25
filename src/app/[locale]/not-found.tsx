@@ -1,15 +1,16 @@
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
+import PixelStars from '@/components/pixel-stars';
+
 export default function NotFoundPage() {
   const t = useTranslations();
 
   return (
     <>
-      <video autoPlay loop muted className='absolute left-0 top-0 h-full w-full object-cover'>
-        <source src='/assets/404.webm' type='video/webm' />
-      </video>
-      <div className='absolute left-0 top-0 h-full w-full bg-black opacity-75' />
+      <div className='absolute left-0 top-0 h-full w-full object-cover'>
+        <PixelStars />
+      </div>
 
       <div className='z-10 flex flex-col items-center'>
         <h1 className='flex items-center gap-x-4 text-balance text-5xl font-bold text-white'>
