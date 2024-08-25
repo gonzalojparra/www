@@ -67,7 +67,7 @@ function PixelStarField() {
     scene.add(group);
 
     // Load star texture
-    const starTexture = new THREE.TextureLoader().load('/asset.png'); // Replace with the actual path to your star texture
+    const starTexture = new THREE.TextureLoader().load('/asset.png');
     const starMaterial = new THREE.SpriteMaterial({ map: starTexture });
 
     // Create stars

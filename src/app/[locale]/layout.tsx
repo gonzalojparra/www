@@ -41,6 +41,8 @@ export const metadata: Metadata = {
         alt: title,
       },
     ],
+    siteName: title,
+    url: 'https://portfolio-gonzalojparra.vercel.app',
   },
   twitter: {
     title,
