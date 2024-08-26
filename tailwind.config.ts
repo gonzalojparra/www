@@ -67,10 +67,20 @@ const config = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
         },
+        moveUp: {
+          '0%': { transform: 'translateY(5%)', opacity: '0' },
+          '100%': { transform: 'translateY(0%)', opacity: '1' },
+        },
+        appear: {
+          from: { opacity: '0' },
+          to: { opacity: '1' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        moveUp: 'moveUp 1.4s ease forwards',
+        appear: 'appear 1s 1s forwards',
       },
       fontFamily: {
         sans: ['var(--font-geist-sans)'],

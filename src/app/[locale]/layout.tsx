@@ -15,6 +15,7 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 import '@/app/globals.css';
+import Lights from '@/components/ui/lights';
 
 type Props = {
   children: React.ReactNode;
@@ -78,7 +79,10 @@ export default async function RootLayout({ children, params: { locale } }: Reado
             <ThemeProvider enableSystem attribute='class' defaultTheme='system'>
               <TooltipProvider>
                 <main className='flex min-h-screen flex-col px-4 pb-8 pt-24'>
-                  <div className='flex flex-1 items-center justify-center'>
+                  <div className='animate-appear absolute bottom-0 left-0 z-0 h-full w-full opacity-0'>
+                    <Lights />
+                  </div>
+                  <div className='relative flex flex-1 items-center justify-center'>
                     <Header />
                     {children}
                   </div>

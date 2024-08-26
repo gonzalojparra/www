@@ -121,3 +121,9 @@ body::-webkit-scrollbar-thumb {
     clip-path: polygon(171% 50%, 50% 171%, -50% 71%, 50% -71%);
   }
 }
+
+.conic-gradient-bg {
+  background: conic-gradient(from 180deg at 50% 50%, #3b82f6 0deg, #06b6d4 180deg, #b115fa 1turn);
+  filter: blur(75px);
+  opacity: 0.1;
+}
