@@ -48,7 +48,7 @@ export function ActivityStatus({ data }: SuccessfulAPIResponse<Data>) {
       <div className='space-y-3'>
         <p className='-mb-2 font-mono text-sm font-bold'>{t('listening')}</p>
         <Link
-          className='group relative !mb-1 block w-fit min-w-[300px] overflow-hidden rounded-xl rounded-bl-md p-3'
+          className='group relative !mb-1 block w-fit min-w-[300px] max-w-[400px] overflow-hidden rounded-xl rounded-bl-md p-3'
           href={`https://open.spotify.com/track/${spotify?.track_id}`}
           rel='noopener noreferrer'
           target='_blank'
@@ -76,11 +76,8 @@ export function ActivityStatus({ data }: SuccessfulAPIResponse<Data>) {
               <p className='line-clamp-1'>
                 <strong>{spotify?.song}</strong>
               </p>
-              <p className='line-clamp-1 text-neutral-800 dark:text-white/60'>
+              <p className='break-before-all text-neutral-800 dark:text-white/60'>
                 {t('by')} {spotify?.artist.split('; ').join(', ')}
-              </p>
-              <p className='line-clamp-1 text-neutral-600 dark:text-white/40'>
-                {t('from')} {spotify?.album}
               </p>
             </div>
           </div>
