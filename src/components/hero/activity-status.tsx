@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { SpotifyIcon } from '@/components/icons/spotify';
 import { statusClasses } from '@/data';
 import { cn } from '@/lib/utils';
@@ -65,12 +66,21 @@ export function ActivityStatus({ data }: SuccessfulAPIResponse<Data>) {
             />
           </div>
 
-          <div className='relative z-10 flex items-center space-x-4 pr-8'>
-            <img
-              alt='Album art'
-              className='size-16 rounded-md border-2'
-              src={spotify?.album_art_url ?? ''}
-            />
+          <div className='relative z-50 flex items-center space-x-4 pr-8'>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <img
+                    alt='Album art'
+                    className='size-16 rounded-md border-2'
+                    src={spotify?.album_art_url ?? ''}
+                  />
+                </TooltipTrigger>
+                <TooltipContent className='mr-[34px]'>
+                  <p className='text-neutral-800 dark:text-white/60'>{spotify?.album}</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
 
             <div className='space-y-0 text-sm'>
               <p className='line-clamp-1'>
