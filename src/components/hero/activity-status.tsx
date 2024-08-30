@@ -67,7 +67,7 @@ export function ActivityStatus({ data }: SuccessfulAPIResponse<Data>) {
           </div>
 
           <div className='relative z-50 flex items-center space-x-4 pr-8'>
-            <TooltipProvider>
+            <TooltipProvider delayDuration={100}>
               <Tooltip>
                 <TooltipTrigger asChild>
                   <img
