@@ -22,20 +22,30 @@ export function Activity() {
 function useThrottle<T>(value: T, limit: number = 1000): T {
   const [throttledValue, setThrottledValue] = useState(value);
   const lastRan = useRef(Date.now());
+  const timeoutRef = useRef<NodeJS.Timeout>();
 
   useEffect(() => {
-    const handler = setTimeout(
-      () => {
-        if (Date.now() - lastRan.current >= limit) {
-          setThrottledValue(value);
-          lastRan.current = Date.now();
-        }
-      },
-      limit - (Date.now() - lastRan.current),
-    );
+    const currentTime = Date.now();
+    const timeSinceLastRun = currentTime - lastRan.current;
+
+    if (timeSinceLastRun >= limit) {
+      setThrottledValue(value);
+      lastRan.current = currentTime;
+    } else {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+
+      timeoutRef.current = setTimeout(() => {
+        setThrottledValue(value);
+        lastRan.current = Date.now();
+      }, limit - timeSinceLastRun);
+    }
 
     return () => {
-      clearTimeout(handler);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
     };
   }, [value, limit]);
 

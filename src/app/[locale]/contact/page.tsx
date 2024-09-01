@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 
-import { Contact } from '@/components/contact/contact';
+import { Contact } from '@/components/contact';
 import { Section } from '@/components/ui/section';
 
 export default function ContactPage() {

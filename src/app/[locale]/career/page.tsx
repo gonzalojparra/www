@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl';
 
 import { Section } from '@/components/ui/section';
-import { Career } from '@/components/career/career';
+import { Career } from '@/components/career';
 
 export default function CareerPage() {
   const t = useTranslations();

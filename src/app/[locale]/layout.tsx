@@ -1,20 +1,22 @@
+import type { Locale } from '@/i18n';
+import type { Metadata } from 'next';
+
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { ViewTransitions } from 'next-view-transitions';
-import { type Metadata } from 'next';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 
-import { type Locale } from '@/i18n';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
+import { Lights } from '@/components/ui/lights';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
+
 import '@/app/globals.css';
-import Lights from '@/components/ui/lights';
 
 type Props = {
   children: React.ReactNode;

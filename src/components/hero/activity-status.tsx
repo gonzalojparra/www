@@ -22,7 +22,7 @@ export function ActivityStatus({ data, isLoading }: ActivityStatusProps) {
   if (isLoading) {
     return (
       <div className='mt-1 flex flex-col'>
-        <div className='h-4 w-24 animate-pulse rounded-md bg-zinc-200 dark:bg-zinc-700' />
+        <div className='h-4 w-24 animate-pulse rounded-md bg-muted' />
       </div>
     );
   }

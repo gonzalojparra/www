@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl';
 
 import { Section } from '@/components/ui/section';
-import { Hero } from '@/components/hero/hero';
+import { Hero } from '@/components/hero';
 
 export default function HomePage() {
   const t = useTranslations();
