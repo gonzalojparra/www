@@ -1,6 +1,6 @@
 import type { Data, Options, Snowflake } from '@/types/lanyard';
 
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState, useMemo } from 'react';
 
 import { LanyardError } from '@/lib/utils';
 
@@ -74,107 +74,77 @@ export const DEFAULT_OPTIONS: Options = {
 
 // Lanyard WebSocket custom hook
 export function useLanyardWS(snowflake: Snowflake | Snowflake[], _options?: Partial<Options>) {
-  const options = {
-    ...DEFAULT_OPTIONS,
-    ..._options,
-  };
+  const options = useMemo(() => ({ ...DEFAULT_OPTIONS, ..._options }), [_options]);
+  const [data, setData] = useState<Data | undefined>(options.initialData);
 
-  const [data, setData] = useState<Data>();
+  const url = useMemo(() => {
+    const protocol = options.api.secure ? 'wss' : 'ws';
 
-  const protocol = options.api.secure ? 'wss' : 'ws';
-  const url = `${protocol}://${options.api.hostname}/socket`;
+    return `${protocol}://${options.api.hostname}/socket`;
+  }, [options.api.secure, options.api.hostname]);
 
   useEffect(() => {
-    // Don't try to connect on server
-    if (typeof window === 'undefined') {
-      return;
-    }
+    if (typeof window === 'undefined') return;
 
-    if (!('WebSocket' in window || 'MozWebSocket' in window)) {
+    if (!('WebSocket' in window)) {
       throw new Error('WebSocket connections not supported in this browser.');
     }
 
-    let subscribe_data: {
-      subscribe_to_ids?: string[];
-      subscribe_to_id?: string;
-    };
+    const subscribe_data = Array.isArray(snowflake)
+      ? { subscribe_to_ids: snowflake }
+      : { subscribe_to_id: snowflake };
 
-    if (typeof snowflake === 'object') {
-      subscribe_data = { subscribe_to_ids: snowflake };
-    } else {
-      subscribe_data = { subscribe_to_id: snowflake };
-    }
-
-    let heartbeat: ReturnType<typeof setTimeout>;
+    let heartbeat: NodeJS.Timeout;
     let socket: WebSocket;
 
-    function connect() {
-      if (heartbeat) {
-        clearInterval(heartbeat);
+    const handleMessage = (event: MessageEvent) => {
+      const message = JSON.parse(event.data) as SocketMessage;
+
+      switch (message.op) {
+        case SocketOpcode.Hello:
+          heartbeat = setInterval(() => {
+            if (socket.readyState === WebSocket.OPEN) {
+              socket.send(JSON.stringify({ op: SocketOpcode.Heartbeat }));
+            }
+          }, message.d?.heartbeat_interval);
+
+          if (socket.readyState === WebSocket.OPEN) {
+            socket.send(
+              JSON.stringify({
+                op: SocketOpcode.Initialize,
+                d: subscribe_data,
+              }),
+            );
+          }
+          break;
+
+        case SocketOpcode.Event:
+          if (message.t === SocketEvents.INIT_STATE || message.t === SocketEvents.PRESENCE_UPDATE) {
+            message.d && setData(message.d);
+          }
+          break;
       }
+    };
 
+    const connect = () => {
+      clearInterval(heartbeat);
       socket = new WebSocket(url);
-
-      socket.addEventListener('open', () => {
-        console.log('Lanyard: Socket connection opened');
-      });
-
+      socket.addEventListener('open', () => console.log('Lanyard: Socket connection opened'));
       socket.addEventListener('close', connect);
-
-      socket.addEventListener('message', (event) => {
-        const message = JSON.parse(event.data) as SocketMessage;
-
-        switch (message.op) {
-          case SocketOpcode.Hello: {
-            heartbeat = setInterval(() => {
-              if (socket.readyState === socket.OPEN) {
-                socket.send(JSON.stringify({ op: SocketOpcode.Heartbeat }));
-              }
-            }, message.d?.heartbeat_interval);
-
-            if (socket.readyState === socket.OPEN) {
-              socket.send(
-                JSON.stringify({
-                  op: SocketOpcode.Initialize,
-                  d: subscribe_data,
-                }),
-              );
-            }
-
-            break;
-          }
-
-          case SocketOpcode.Event: {
-            switch (message.t) {
-              case SocketEvents.INIT_STATE:
-              case SocketEvents.PRESENCE_UPDATE: {
-                if (message.d) {
-                  setData(message.d);
-                }
-                break;
-              }
-              default: {
-                break;
-              }
-            }
-            break;
-          }
-          default: {
-            break;
-          }
-        }
-      });
-    }
+      socket.addEventListener('message', handleMessage);
+    };
 
     connect();
 
     return () => {
       clearInterval(heartbeat);
-
-      socket.removeEventListener('close', connect);
-      socket.close();
+      if (socket) {
+        socket.removeEventListener('close', connect);
+        socket.removeEventListener('message', handleMessage);
+        socket.close();
+      }
     };
   }, [snowflake, url]);
 
-  return data ?? options.initialData;
+  return data;
 }
