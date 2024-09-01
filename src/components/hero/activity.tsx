@@ -9,7 +9,7 @@ import { discordId } from '@/data';
 export function Activity() {
   const lanyard = useThrottle(useLanyardWS(discordId));
 
-  return <>{lanyard ? <ActivityStatus success data={lanyard} /> : null}</>;
+  return <ActivityStatus data={lanyard} isLoading={!lanyard} />;
 }
 
 /**

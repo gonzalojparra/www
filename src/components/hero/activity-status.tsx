@@ -11,8 +11,24 @@ import { SpotifyIcon } from '@/components/icons/spotify';
 import { statusClasses } from '@/data';
 import { cn } from '@/lib/utils';
 
-export function ActivityStatus({ data }: SuccessfulAPIResponse<Data>) {
+interface ActivityStatusProps {
+  data?: SuccessfulAPIResponse<Data>['data'];
+  isLoading?: boolean;
+}
+
+export function ActivityStatus({ data, isLoading }: ActivityStatusProps) {
   const t = useTranslations('about-section.activity');
+
+  if (isLoading) {
+    return (
+      <div className='mt-1 flex flex-col'>
+        <div className='h-4 w-24 animate-pulse rounded-md bg-zinc-200 dark:bg-zinc-700' />
+      </div>
+    );
+  }
+
+  if (!data) return null;
+
   const { discord_status, listening_to_spotify, spotify } = data;
 
   // Map each discord status to its corresponding translation
