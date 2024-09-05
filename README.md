@@ -33,7 +33,7 @@ The project is being developed with the following tech stack:
 
 ###### **Gonzalo Parra**
 
-- Website: https://portfolio-gonzalojparra.vercel.app/
+- Website: https://gonzalojparra.vercel.app/
 - GitHub: [@gonzalojparra](https://github.com/gonzalojparra)
 - LinkedIn: [@gonzalojparra](https://www.linkedin.com/in/gonzalojparra/)
 
