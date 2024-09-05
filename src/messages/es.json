@@ -1,39 +1,28 @@
 {
   "header": {
-    "about": {
-      "title": "Sobre mí",
-      "label": "sobre-mi",
-      "link": "/#sobre-mi"
-    },
-    "tech-stack": {
-      "title": "Stack de tecnologías",
-      "label": "stack-tecnologias",
-      "link": "/#stack-tecnologias"
+    "home": {
+      "title": "@",
+      "label": "inicio",
+      "link": "/"
     },
     "career": {
       "title": "Carrera",
       "label": "carrera",
-      "link": "/#carrera"
-    },
-    "projects": {
-      "title": "Proyectos",
-      "label": "proyectos",
-      "link": "/#proyectos"
+      "link": "/career"
     },
     "contact": {
       "title": "Contacto",
       "label": "contacto",
-      "link": "/#contacto"
+      "link": "/contact"
     }
   },
-  "tech-stack": {
-    "title": "Stack de tecnologías",
-    "description": "En mi camino como desarrollador web y de software, he adquirido un grupo de habilidades que me permiten trabajar en diversos proyectos. Mi área abarca el desarrollo front end, utilizando lenguajes como TypeScript, JavaScript, HTML y CSS, y frameworks tales como React y Next.js"
-  },
   "about-section": {
-    "open-to-work": "Disponible para trabajar",
-    "title": "Desarrollador front end, creando soluciones centradas en el usuario. De Neuquén, Argentina 🇦🇷",
-    "description": "Apasionado sobre las tecnologías web. Mi objetivo es crear experiencias de usuario que sean accesibles, performantes, y satisfactorias. Siempre estoy buscando aprender nuevas tecnologías y mejorar mis habilidades.",
+    "sub-title": "Trabajando en grandes ideas 💡",
+    "title": "Hola, soy Gonza 👋",
+    "description": "Desarrollador de software, apasionado sobre las tecnologías web. Actualmente trabajo en",
+    "incubator": "Incubator",
+    "incubator-about": "una empresa que ayuda a startups y otras compañías a desarrollar productos digitales y escalarlos.",
+    "description-2": "Fuera de la programación, me encanta escuchar música. Puede que encuentres lo que estoy escuchando ahora mismo en Spotify. También soy un gran fanático del fútbol, y obvio, hincha de Boca Juniors 🇸🇪",
     "activity": {
       "listening": "Escuchando en Spotify",
       "by": "de",
@@ -47,14 +36,14 @@
   "career-section": {
     "title": "Carrera y Trabajos",
     "works": {
-      "runesoft": {
-        "company": "Runesoft",
-        "badges": "Remoto,Part-time",
-        "link": "https://github.com/rune-soft",
-        "title": "Desarrollador de software y Co-fundador",
-        "start": "Agosto 2023",
+      "incubator": {
+        "company": "Incubator",
+        "badges": "Remoto,Full-time",
+        "link": "https://incubator.com.ar",
+        "title": "Desarrollador frontend",
+        "start": "Julio 2024",
         "end": "Presente",
-        "description": "Actualmente me encuentro desarrollando Runesoft como un side project. Trabajo en el front end utilizando tecnologías como React, Next.js y TypeScript. También trabajo en el back end, usando tecnologías como Laravel y Node.js."
+        "description": ""
       },
       "universidad-nacional-del-comahue": {
         "company": "Universidad Nacional del Comahue",
@@ -68,64 +57,9 @@
     },
     "view-more": "Ver más"
   },
-  "projects-section": {
-    "title": "Proyectos & Apps",
-    "projects": {
-      "Jotter": {
-        "description": "Una aplicación full-stack que permite a los usuarios crear, editar, eliminar y compartir notas. También permite a los usuarios categorizar sus notas y buscarlas por título y contenido."
-      },
-      "Ehwaz": {
-        "description": "Un sistema full-stack para personal trainers que les permite llevar a cabo la administración, asignar entrenamientos y planes de alimentación a sus alumnos. También lesp permite a los alumnos trackear su progreso y comunicarse con sus entrenadores."
-      },
-      "Zen-Kicks": {
-        "description": "Una aplicación full-stack para administrar competencias y torneos de taekwondo. Les permite a los administradores organizar categorias, competidores y jueces."
-      }
-    }
-  },
   "contact-section": {
     "title": "Contacto",
-    "description": "Sentite libre de contactarme si tenés alguna pregunta, propuesta de proyecto, o si simplemente querés charlar! Siempre estoy abierto a nuevas oportunidades y desafíos.",
-    "form": {
-      "form-description": "Por favor, completá el siguiente formulario y me pondré en contacto con vos lo antes posible.",
-      "first-name-label": "Nombre",
-      "first-name-placeholder": "Tu nombre",
-      "last-name-label": "Apellido",
-      "last-name-placeholder": "Tu apellido",
-      "email-label": "Email",
-      "email-placeholder": "Tu email",
-      "message-label": "Mensaje",
-      "message-placeholder": "Ingresa tu mensaje aquí",
-      "submit-button": "Enviar",
-      "toast-success-title": "Email enviado",
-      "toast-success-description": "Me pondré en contacto con vos lo antes posible!",
-      "toast-error-title": "Error",
-      "toast-error-description": "Hubo un error al enviar el email. Por favor, intentá nuevamente más tarde.",
-      "spam-detected-title": "Spam detectado",
-      "spam-detected-description": "Por favor, completá el formulario correctamente y sin spam. Gracias!",
-      "errors": {
-        "first-name": {
-          "min": "El nombre debe tener al menos 2 caracteres",
-          "max": "El nombre debe tener menos de 50 caracteres",
-          "regex": "El nombre debe contener solo letras"
-        },
-        "last-name": {
-          "min": "El apellido debe tener al menos 2 caracteres",
-          "max": "El apellido debe tener menos de 50 caracteres",
-          "regex": "El apellido debe contener solo letras"
-        },
-        "email": {
-          "email": "Email inválido",
-          "min": "El email debe tener al menos 5 caracteres",
-          "max": "El email debe tener menos de 100 caracteres"
-        },
-        "message": {
-          "min": "El mensaje debe tener al menos 10 caracteres",
-          "max": "El mensaje debe tener menos de 500 caracteres",
-          "refine": "Por favor, evitá el spam en tu mensaje. Gracias!"
-        },
-        "urls": "Por favor, evitá incluir URLs en tu mensaje. Gracias!"
-      }
-    }
+    "description": "Sentite libre de contactarme por mail o mediante mis redes sociales si tenés alguna pregunta, propuesta de proyecto, o simplemente querés charlar! Siempre estoy abierto a nuevas oportunidades y desafíos."
   },
   "footer": {
     "made-with": "Hecho con",

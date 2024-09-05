@@ -1,21 +1,17 @@
-<h1 align="center">Welcome to my Portfolio 🫡</h1>
-
-<div align="center">
-<img alt="Gonzalo Parra" src="public/readme.png" />
-</div>
+<h1 align="center">Welcome to my website 🫡</h1>
 
 ## 🧉 About
 
-A developer portfolio designed to showcase projects, experience and skills that I achieved during my career.
+A website designed to showcase my experience and skills that I achieved during my career.
 
 ## 🚀 Installation
 
 To get started on this project you need to follow the next steps:
 
 ```bash
-git clone https://github.com/gonzalojparra/portfolio
+git clone https://github.com/gonzalojparra/www
 # First clone the repo in your folder of choice.
-cd portfolio
+cd www
 # Move into the recently cloned repo.
 pnpm install
 # Install dependencies using pnpm or your preferred package manager.
@@ -31,7 +27,6 @@ The project is being developed with the following tech stack:
 - TypeScript
 - TailwindCSS
 - Shadcn/ui
-- Resend
 - And more
 
 ## Author

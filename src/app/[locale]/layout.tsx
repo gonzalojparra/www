@@ -1,18 +1,21 @@
+import type { Locale } from '@/i18n';
+import type { Metadata } from 'next';
+
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
-import { type Metadata } from 'next';
+import { ViewTransitions } from 'next-view-transitions';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 
-import { type Locale } from '@/i18n';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { TooltipProvider } from '@/components/ui/tooltip';
+import { Lights } from '@/components/ui/lights';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
+
 import '@/app/globals.css';
 
 type Props = {
@@ -22,7 +25,7 @@ type Props = {
   };
 };
 
-const title = 'Gonzalo Parra | Portfolio';
+const title = 'Gonzalo Parra';
 const description = 'My personal website, showcasing my work and skills.';
 const ogImage = 'https://portfolio-gonzalojparra.vercel.app/og-image.png';
 
@@ -40,6 +43,8 @@ export const metadata: Metadata = {
         alt: title,
       },
     ],
+    siteName: title,
+    url: 'https://portfolio-gonzalojparra.vercel.app',
   },
   twitter: {
     title,
@@ -63,7 +68,7 @@ export default async function RootLayout({ children, params: { locale } }: Reado
     <html
       suppressHydrationWarning
       className={cn(
-        'min-h-screen overflow-y-scroll scroll-smooth bg-background font-sans antialiased',
+        'min-h-screen scroll-smooth bg-background font-sans antialiased',
         GeistSans.variable,
         GeistMono.variable,
       )}
@@ -71,18 +76,23 @@ export default async function RootLayout({ children, params: { locale } }: Reado
     >
       <body>
         <NextIntlClientProvider messages={messages}>
-          <ThemeProvider enableSystem attribute='class' defaultTheme='system'>
-            <TooltipProvider>
-              <main className='flex min-h-screen flex-col items-center justify-center px-4 pb-8 pt-24'>
-                <Header />
-                {children}
+          <ViewTransitions>
+            <ThemeProvider enableSystem attribute='class' defaultTheme='system'>
+              <main className='flex min-h-screen flex-col px-4 pb-8 pt-24'>
+                <div className='absolute bottom-0 left-0 z-0 h-full w-full animate-appear opacity-0'>
+                  <Lights />
+                </div>
+                <div className='relative flex flex-1 items-center justify-center'>
+                  <Header />
+                  {children}
+                </div>
                 <Footer />
               </main>
               <Toaster />
-            </TooltipProvider>
-          </ThemeProvider>
-          <Analytics />
-          <SpeedInsights />
+            </ThemeProvider>
+            <Analytics />
+            <SpeedInsights />
+          </ViewTransitions>
         </NextIntlClientProvider>
       </body>
     </html>

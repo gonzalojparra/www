@@ -59,31 +59,71 @@
   }
 }
 
-::view-transition-group(root) {
-  animation-timing-function: var(--expo-in);
+body {
+  --sb-track-color: #293c46;
+  --sb-thumb-color: #5d32f5;
+  --sb-size: 12px;
 }
 
+body::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 5px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color)
+      var(--sb-track-color);
+  }
+}
+
+::view-transition-group(root) {
+  animation-duration: 0.7s;
+  animation-timing-function: var(--expo-out);
+}
+      
 ::view-transition-new(root) {
-  mask: url('https://media.tenor.com/aEwgOcd8UVwAAAAi/ftd1.gif') center / 0 no-repeat;
-  animation: scale 2s;
+  animation-name: reveal-light;
 }
 
 ::view-transition-old(root),
 .dark::view-transition-old(root) {
-  animation: scale 2s;
+  animation: none;
+  z-index: -1;
+}
+.dark::view-transition-new(root) {
+  animation-name: reveal-dark;
 }
 
-@keyframes scale {
-  0% {
-    mask-size: 0;
+@keyframes reveal-dark {
+  from {
+    clip-path: polygon(50% -71%, -50% 71%, -50% 71%, 50% -71%);
   }
-  10% {
-    mask-size: 50vmax;
+  to {
+    clip-path: polygon(50% -71%, -50% 71%, 50% 171%, 171% 50%);
   }
-  90% {
-    mask-size: 50vmax;
+}
+
+@keyframes reveal-light {
+  from {
+    clip-path: polygon(171% 50%, 50% 171%, 50% 171%, 171% 50%);
   }
-  100% {
-    mask-size: 2000vmax;
+  to {
+    clip-path: polygon(171% 50%, 50% 171%, -50% 71%, 50% -71%);
   }
+}
+
+.conic-gradient-bg {
+  background: conic-gradient(from 180deg at 50% 50%, #3b82f6 0deg, #06b6d4 180deg, #b115fa 1turn);
+  filter: blur(75px);
+  opacity: 0.1;
 }

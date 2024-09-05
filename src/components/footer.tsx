@@ -7,9 +7,9 @@ export function Footer() {
   const t = useTranslations();
 
   return (
-    <footer className='container mx-auto flex w-full items-center justify-center md:max-w-3xl'>
+    <footer className='container z-50 mx-auto flex w-full items-center justify-center md:max-w-3xl'>
       <div className='mx-auto w-full text-sm font-medium md:flex md:items-center md:justify-between'>
-        <p>
+        <p className='text-center'>
           &copy; {year}
           <span className='me-2 ms-2'>•</span>
           Gonzalo Parra
