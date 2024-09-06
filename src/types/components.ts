@@ -30,27 +30,6 @@ export interface TagsProps {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 }
 
-export interface StackProps {
-  name: string;
-  Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-}
-
-export interface ProjectLinkProps {
-  github?: string;
-  preview?: string;
-}
-
-type ProjectTitle = 'Jotter' | 'Ehwaz' | 'Zen-Kicks';
-
-export interface ProjectProps {
-  title: ProjectTitle;
-  tags: TagsProps[];
-  description: string;
-  link: ProjectLinkProps;
-  image?: string;
-  video?: string;
-}
-
 export interface ContactEmailTemplateProps {
   firstName: string;
   lastName: string;

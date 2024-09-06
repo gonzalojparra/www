@@ -1,13 +1,13 @@
+import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { MailIcon } from 'lucide-react';
-import Link from 'next/link';
 
 import { data } from '@/constants';
 import { Button } from '@/components/ui/button';
 
 export function Contact() {
-  const { links } = data;
   const t = useTranslations();
+  const { links } = data;
 
   return (
     <>

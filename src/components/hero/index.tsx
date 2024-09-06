@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 import { Activity } from '@/components/hero/activity';
 import { Badge } from '@/components/ui/badge';
 
-export async function Hero() {
+export function Hero() {
   const t = useTranslations();
 
   return (

@@ -1,9 +1,10 @@
+import type { CareerProps } from '@/types/components';
+
 import Link from 'next/link';
 import { ArrowRightIcon } from 'lucide-react';
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { type CareerProps } from '@/types/components';
 
 export function CareerItem({
   link,
