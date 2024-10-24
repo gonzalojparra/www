@@ -40,7 +40,7 @@
         "company": "Incubator",
         "badges": "Remote,Full-time",
         "link": "https://incubator.com.ar",
-        "title": "Frontend Developer",
+        "title": "Full Stack Developer",
         "start": "July 2024",
         "end": "Present",
         "description": ""
@@ -49,7 +49,7 @@
         "company": "Universidad Nacional del Comahue",
         "badges": "Hybrid,Full-time",
         "link": "https://www.uncoma.edu.ar/",
-        "title": "Full Stack Developer",
+        "title": "Software development student",
         "start": "July 2021",
         "end": "December 2023",
         "description": "While studying for my bachelor's in software and web development, I developed and maintained web applications for my university career. I worked on the front and back end, using technologies like React, Laravel, and MySQL."
@@ -59,7 +59,7 @@
   },
   "contact-section": {
     "title": "Contact",
-    "description": "Feel free to get in touch with me through mail or my social media if you have any questions, project inquiries, or if you just want to talk!. I'm always open to new opportunities and challenges."
+    "description": "Feel free to get in touch with me through any of my social media if you have any questions, project inquiries, or if you just want to talk!. I'm always open to new opportunities and challenges."
   },
   "footer": {
     "made-with": "Made with",

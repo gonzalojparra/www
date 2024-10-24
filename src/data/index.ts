@@ -1,5 +1,3 @@
-import { MailIcon } from 'lucide-react';
-
 import { GitHubIcon } from '@/components/icons/github';
 import { LinkedInIcon } from '@/components/icons/linkedin';
 import { DiscordIcon } from '@/components/icons/discord';
@@ -14,7 +12,6 @@ export const AVATAR = {
 export const discordId = '654163755797577747';
 
 export const LINKS = [
-  { title: 'Email', url: 'mailto:gonzzaparra@gmail.com', icon: MailIcon },
   { title: 'Instagram', url: 'https://www.instagram.com/gonzaparra_/', icon: InstagramIcon },
   { title: 'X (Twitter)', url: 'https://x.com/_gonzaparra', icon: XIcon },
   { title: 'LinkedIn', url: 'https://www.linkedin.com/in/gonzalojparra/', icon: LinkedInIcon },

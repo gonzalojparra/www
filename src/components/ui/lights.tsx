@@ -1,9 +1,9 @@
 import { cn } from '@/lib/utils';
 
-export function Lights({ className }: { className?: React.ReactNode }) {
+export function Lights({ className }: { className?: string }) {
   return (
-    <div className={cn('h-full w-full overflow-hidden', className)}>
-      <div className='conic-gradient-bg relative bottom-[-400px] h-full w-full' />
+    <div className={cn('fixed inset-0 z-0', className)}>
+      <div className='conic-gradient-bg absolute inset-0' />
     </div>
   );
 }

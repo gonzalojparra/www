@@ -40,7 +40,7 @@
         "company": "Incubator",
         "badges": "Remoto,Full-time",
         "link": "https://incubator.com.ar",
-        "title": "Desarrollador frontend",
+        "title": "Desarrollador full-stack",
         "start": "Julio 2024",
         "end": "Presente",
         "description": ""
@@ -49,7 +49,7 @@
         "company": "Universidad Nacional del Comahue",
         "badges": "Híbrido,Full-time",
         "link": "https://www.uncoma.edu.ar/",
-        "title": "Desarrollador full-stack",
+        "title": "Estudiante de desarrollo de software",
         "start": "Julio 2021",
         "end": "Diciembre 2023",
         "description": "Mientras estudiaba en mi Tecnicatura Universitaria en Desarrollo Web, desarrollé y mantuve aplicaciones web para mi carrera universitaria. Realicé proyectos full-stack, desarrollando en front y back end con tecnologías como React, Laravel y MySQL."
@@ -59,7 +59,7 @@
   },
   "contact-section": {
     "title": "Contacto",
-    "description": "Sentite libre de contactarme por mail o mediante mis redes sociales si tenés alguna pregunta, propuesta de proyecto, o simplemente querés charlar! Siempre estoy abierto a nuevas oportunidades y desafíos."
+    "description": "Sentite libre de contactarme por cualquiera de mis redes sociales si tenés alguna pregunta, propuesta de proyecto, o simplemente querés charlar! Siempre estoy abierto a nuevas oportunidades y desafíos."
   },
   "footer": {
     "made-with": "Hecho con",
