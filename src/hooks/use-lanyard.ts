@@ -120,7 +120,9 @@ export function useLanyardWS(snowflake: Snowflake | Snowflake[], _options?: Part
 
         case SocketOpcode.Event:
           if (message.t === SocketEvents.INIT_STATE || message.t === SocketEvents.PRESENCE_UPDATE) {
-            message.d && setData(message.d);
+            if (message.d) {
+              setData(message.d);
+            }
           }
           break;
       }
@@ -129,7 +131,7 @@ export function useLanyardWS(snowflake: Snowflake | Snowflake[], _options?: Part
     const connect = () => {
       clearInterval(heartbeat);
       socket = new WebSocket(url);
-      socket.addEventListener('open', () => console.log('Lanyard: Socket connection opened'));
+      socket.addEventListener('open', () => {});
       socket.addEventListener('close', connect);
       socket.addEventListener('message', handleMessage);
     };
