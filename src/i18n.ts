@@ -7,7 +7,10 @@ export const locales = ['en', 'es'];
 
 export const defaultLocale = 'en' satisfies Locale;
 
-export default getRequestConfig(async ({ locale }) => {
+export default getRequestConfig(async ({ requestLocale }) => {
+  const locale = await requestLocale;
+
+  if (!locale) notFound();
   const baseLocale = new Intl.Locale(locale).baseName;
 
   // Validate that the incoming `locale` parameter is valid

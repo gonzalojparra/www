@@ -61,7 +61,8 @@ export const metadata: Metadata = {
   creator: 'Gonzalo Parra',
 };
 
-export default async function RootLayout({ children, params: { locale } }: Readonly<Props>) {
+export default async function RootLayout({ children, params }: Readonly<Props>) {
+  const { locale } = await params;
   const messages = await getMessages();
 
   return (
