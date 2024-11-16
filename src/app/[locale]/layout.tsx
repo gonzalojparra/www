@@ -80,7 +80,7 @@ export default async function RootLayout({ children, params }: Readonly<Props>) 
         <NextIntlClientProvider messages={messages}>
           <ViewTransitions>
             <ThemeProvider enableSystem attribute='class' defaultTheme='system'>
-              <HiddenSurprise />
+              <EasterEgg />
               <Lights className='animate-appear opacity-0' />
               <main className='relative flex min-h-screen flex-col px-4 pb-8 pt-24'>
                 <div className='flex flex-1 items-center justify-center'>
