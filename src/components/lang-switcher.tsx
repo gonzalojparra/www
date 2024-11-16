@@ -14,7 +14,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { EnFlagIcon } from '@/components/icons/en-flag';
 import { ArFlagIcon } from '@/components/icons/ar-flag';
-import { type Locale } from '@/i18n';
+import { type Locale } from '@/i18n/request';
 
 export function LangSwitcher() {
   const locale = useLocale() as Locale;

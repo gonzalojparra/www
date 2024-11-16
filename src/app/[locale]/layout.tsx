@@ -1,4 +1,4 @@
-import type { Locale } from '@/i18n';
+import type { Locale } from '@/i18n/request';
 import type { Metadata } from 'next';
 
 import { Analytics } from '@vercel/analytics/react';
@@ -10,9 +10,10 @@ import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 
 import { ThemeProvider } from '@/components/theme-provider';
+import { HiddenSurprise } from '@/components/hidden-surprise';
+import { Lights } from '@/components/ui/lights';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { Lights } from '@/components/ui/lights';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 
@@ -79,6 +80,7 @@ export default async function RootLayout({ children, params }: Readonly<Props>) 
         <NextIntlClientProvider messages={messages}>
           <ViewTransitions>
             <ThemeProvider enableSystem attribute='class' defaultTheme='system'>
+              <HiddenSurprise />
               <Lights className='animate-appear opacity-0' />
               <main className='relative flex min-h-screen flex-col px-4 pb-8 pt-24'>
                 <div className='flex flex-1 items-center justify-center'>
