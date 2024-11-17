@@ -27,7 +27,7 @@ type Props = {
 };
 
 const title = 'Gonzalo Parra';
-const description = 'My personal website, showcasing my work and skills.';
+const description = 'My personal website.';
 const ogImage = 'https://gonzalojparra.vercel.app/og-image.png';
 
 export const metadata: Metadata = {
