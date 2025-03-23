@@ -40,10 +40,9 @@ const useKonamiCode = (
   // Memoize the target sequence based on matchMode and case sensitivity
   const targetSequence = useMemo(() => {
     if (matchMode === 'key' || matchMode === 'codeOrKey') {
-      return caseInsensitive
-        ? sequence.map((key) => key.toLowerCase())
-        : sequence;
+      return caseInsensitive ? sequence.map((key) => key.toLowerCase()) : sequence;
     }
+
     return sequence;
   }, [sequence, matchMode, caseInsensitive]);
 
@@ -57,10 +56,7 @@ const useKonamiCode = (
       } else if (matchMode === 'key') {
         identifier = [caseInsensitive ? event.key.toLowerCase() : event.key];
       } else if (matchMode === 'codeOrKey') {
-        identifier = [
-          event.code,
-          caseInsensitive ? event.key.toLowerCase() : event.key,
-        ];
+        identifier = [event.code, caseInsensitive ? event.key.toLowerCase() : event.key];
       }
 
       setCurrentSequence((prevSequence) => {
@@ -77,9 +73,7 @@ const useKonamiCode = (
           // Check if the updated sequence matches the target sequence
           const isMatch =
             updatedSequence.length === targetSequence.length &&
-            targetSequence.every(
-              (target, index) => target === updatedSequence[index],
-            );
+            targetSequence.every((target, index) => target === updatedSequence[index]);
 
           if (isMatch) {
             callback();
