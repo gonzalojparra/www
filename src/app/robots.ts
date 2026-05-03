@@ -1,13 +1,11 @@
-import { MetadataRoute } from 'next';
+import type { MetadataRoute } from "next";
+
+const BASE_URL = "https://gonzalojparra.vercel.app";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: '/api',
-    },
-    sitemap: 'https://gonzalojparra.vercel.app/sitemap.xml',
-    host: 'https://gonzalojparra.vercel.app',
+    rules: [{ userAgent: "*", allow: "/" }],
+    sitemap: `${BASE_URL}/sitemap.xml`,
+    host: BASE_URL,
   };
 }

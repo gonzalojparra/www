@@ -1,152 +1,147 @@
-import type { Data, Options, Snowflake } from '@/types/lanyard';
+import type { Data, Snowflake } from '@/types/lanyard';
 
-import { createContext, useContext, useEffect, useState, useMemo } from 'react';
+import { useCallback, useSyncExternalStore } from 'react';
 
-import { LanyardError } from '@/lib/utils';
+const HOST = 'wss://api.lanyard.rest/socket';
+const DEFAULT_HEARTBEAT_MS = 30_000;
+const RECONNECT_BASE_MS = 1_000;
+const RECONNECT_MAX_MS = 60_000;
 
-// Context to store the state of the Lanyard API
-export type ContextData =
-  | {
-      state: 'initial';
-      isLoading: boolean;
-      error: undefined;
-
-      // Data could exist at this initial stage
-      // because of.initialData in options
-      data: Data | undefined;
-    }
-  | {
-      state: 'loaded';
-      isLoading: boolean;
-      data: Data;
-      error: LanyardError | undefined;
-    }
-  | {
-      state: 'errored';
-      isLoading: boolean;
-      data: Data | undefined;
-      error: LanyardError | undefined;
-    };
-
-export function useLanyardContext() {
-  return useContext(context);
+enum Op {
+  Event = 0,
+  Hello = 1,
+  Initialize = 2,
+  Heartbeat = 3,
 }
 
-export type Context = {
+type SocketMessage = {
+  op: Op;
+  t?: 'INIT_STATE' | 'PRESENCE_UPDATE';
+  d?: (Data & { heartbeat_interval?: number }) | undefined;
+};
+
+type Connection = {
+  socket: WebSocket | null;
+  data: Data | undefined;
   listeners: Set<() => void>;
-  stateMap: Map<Snowflake, ContextData>;
+  heartbeat: ReturnType<typeof setInterval> | undefined;
+  reconnectTimer: ReturnType<typeof setTimeout> | undefined;
+  retryAttempt: number;
+  closed: boolean;
 };
 
-export const context = createContext<Context>({
-  listeners: new Set(),
-  stateMap: new Map(),
-});
+const connections = new Map<string, Connection>();
 
-// Websocket configurations
-export enum SocketOpcode {
-  Event,
-  Hello,
-  Initialize,
-  Heartbeat,
-}
+function getOrCreateConnection(snowflake: string): Connection {
+  const existing = connections.get(snowflake);
+  if (existing) return existing;
 
-export enum SocketEvents {
-  INIT_STATE = 'INIT_STATE',
-  PRESENCE_UPDATE = 'PRESENCE_UPDATE',
-}
+  const conn: Connection = {
+    socket: null,
+    data: undefined,
+    listeners: new Set(),
+    heartbeat: undefined,
+    reconnectTimer: undefined,
+    retryAttempt: 0,
+    closed: false,
+  };
+  connections.set(snowflake, conn);
 
-export interface SocketData extends Data {
-  heartbeat_interval?: number;
-}
+  const connect = () => {
+    if (typeof window === 'undefined' || !('WebSocket' in window)) return;
+    if (document.visibilityState === 'hidden') return;
 
-export interface SocketMessage {
-  op: SocketOpcode;
-  t?: SocketEvents;
-  d?: SocketData;
-}
+    const socket = new WebSocket(HOST);
+    conn.socket = socket;
 
-export const DEFAULT_OPTIONS: Options = {
-  api: {
-    hostname: 'api.lanyard.rest',
-    secure: true,
-  },
-};
+    socket.addEventListener('open', () => {
+      conn.retryAttempt = 0;
+    });
 
-// Lanyard WebSocket custom hook
-export function useLanyardWS(snowflake: Snowflake | Snowflake[], _options?: Partial<Options>) {
-  const options = useMemo(() => ({ ...DEFAULT_OPTIONS, ..._options }), [_options]);
-  const [data, setData] = useState<Data | undefined>(options.initialData);
+    socket.addEventListener('message', (event: MessageEvent) => {
+      let message: SocketMessage;
+      try {
+        message = JSON.parse(event.data) as SocketMessage;
+      } catch {
+        return;
+      }
 
-  const url = useMemo(() => {
-    const protocol = options.api.secure ? 'wss' : 'ws';
-
-    return `${protocol}://${options.api.hostname}/socket`;
-  }, [options.api.secure, options.api.hostname]);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    if (!('WebSocket' in window)) {
-      throw new Error('WebSocket connections not supported in this browser.');
-    }
-
-    const subscribe_data = Array.isArray(snowflake)
-      ? { subscribe_to_ids: snowflake }
-      : { subscribe_to_id: snowflake };
-
-    let heartbeat: NodeJS.Timeout;
-    let socket: WebSocket;
-
-    const handleMessage = (event: MessageEvent) => {
-      const message = JSON.parse(event.data) as SocketMessage;
-
-      switch (message.op) {
-        case SocketOpcode.Hello:
-          heartbeat = setInterval(() => {
-            if (socket.readyState === WebSocket.OPEN) {
-              socket.send(JSON.stringify({ op: SocketOpcode.Heartbeat }));
-            }
-          }, message.d?.heartbeat_interval);
-
+      if (message.op === Op.Hello) {
+        const interval = message.d?.heartbeat_interval ?? DEFAULT_HEARTBEAT_MS;
+        if (conn.heartbeat) clearInterval(conn.heartbeat);
+        conn.heartbeat = setInterval(() => {
           if (socket.readyState === WebSocket.OPEN) {
-            socket.send(
-              JSON.stringify({
-                op: SocketOpcode.Initialize,
-                d: subscribe_data,
-              }),
-            );
+            socket.send(JSON.stringify({ op: Op.Heartbeat }));
           }
-          break;
+        }, interval);
 
-        case SocketOpcode.Event:
-          if (message.t === SocketEvents.INIT_STATE || message.t === SocketEvents.PRESENCE_UPDATE) {
-            if (message.d) {
-              setData(message.d);
-            }
-          }
-          break;
+        if (socket.readyState === WebSocket.OPEN) {
+          socket.send(
+            JSON.stringify({ op: Op.Initialize, d: { subscribe_to_id: snowflake } }),
+          );
+        }
+        return;
       }
-    };
 
-    const connect = () => {
-      clearInterval(heartbeat);
-      socket = new WebSocket(url);
-      socket.addEventListener('open', () => {});
-      socket.addEventListener('close', connect);
-      socket.addEventListener('message', handleMessage);
-    };
-
-    connect();
-
-    return () => {
-      clearInterval(heartbeat);
-      if (socket) {
-        socket.removeEventListener('close', connect);
-        socket.removeEventListener('message', handleMessage);
-        socket.close();
+      if (
+        message.op === Op.Event &&
+        (message.t === 'INIT_STATE' || message.t === 'PRESENCE_UPDATE') &&
+        message.d
+      ) {
+        conn.data = message.d;
+        conn.listeners.forEach((fn) => fn());
       }
-    };
-  }, [snowflake, url]);
+    });
 
-  return data;
+    socket.addEventListener('close', () => {
+      if (conn.heartbeat) {
+        clearInterval(conn.heartbeat);
+        conn.heartbeat = undefined;
+      }
+      if (conn.closed) return;
+
+      const delay = Math.min(
+        RECONNECT_MAX_MS,
+        RECONNECT_BASE_MS * 2 ** conn.retryAttempt,
+      );
+      conn.retryAttempt += 1;
+      conn.reconnectTimer = setTimeout(connect, delay);
+    });
+  };
+
+  if (typeof document !== 'undefined') {
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible' && conn.socket?.readyState !== WebSocket.OPEN) {
+        if (conn.reconnectTimer) clearTimeout(conn.reconnectTimer);
+        connect();
+      }
+    });
+  }
+
+  connect();
+  return conn;
+}
+
+function getServerSnapshot(): Data | undefined {
+  return undefined;
+}
+
+export function useLanyardWS(snowflake: Snowflake) {
+  const subscribe = useCallback(
+    (onChange: () => void) => {
+      const conn = getOrCreateConnection(snowflake);
+      conn.listeners.add(onChange);
+      return () => {
+        conn.listeners.delete(onChange);
+      };
+    },
+    [snowflake],
+  );
+
+  const getSnapshot = useCallback(
+    () => connections.get(snowflake)?.data,
+    [snowflake],
+  );
+
+  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 }
