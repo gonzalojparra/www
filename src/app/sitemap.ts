@@ -1,10 +1,12 @@
-import { MetadataRoute } from 'next';
+import type { MetadataRoute } from "next";
+
+const BASE_URL = "https://gonzalojparra.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ['/', '/career', '/contact'].map((route) => ({
-    url: `https://gonzalojparra.vercel.app${route}`,
-    lastModified: new Date().toISOString().split('T')[0],
-  }));
-
-  return [...routes];
+  const lastModified = new Date();
+  return [
+    { url: `${BASE_URL}/`, lastModified, changeFrequency: "monthly", priority: 1 },
+    { url: `${BASE_URL}/career`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/contact`, lastModified, changeFrequency: "yearly", priority: 0.6 },
+  ];
 }
