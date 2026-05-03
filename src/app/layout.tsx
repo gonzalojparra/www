@@ -7,7 +7,7 @@ import { SunRays } from "@/components/sun-rays";
 import { AnimatedFavicon } from "@/components/animated-favicon";
 import "./globals.css";
 
-const SITE_URL = "https://gonzaloparra.com";
+const SITE_URL = "https://gonzalojparra.vercel.app";
 const SITE_DESCRIPTION = "Software engineer, passionate about web technologies";
 const inter = Inter({
   subsets: ["latin"],
