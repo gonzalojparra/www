@@ -10,7 +10,7 @@ type Role = {
 
 const roles: Role[] = [
   {
-    company: "incubator",
+    company: "incu",
     title: "software engineer",
     start: "jul 2024",
     end: "present",

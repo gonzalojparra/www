@@ -29,12 +29,12 @@ export default function HomePage() {
       <p className="m-0 mb-4 text-(--ink-2)">
         {"software engineer, passionate about web technologies. currently working at "}
         <a
-          href="https://incubator.com.ar"
+          href="https://incu.tech/en"
           target="_blank"
           rel="noopener noreferrer"
           className="text-(--ink) no-underline border-b border-(--rule) [transition:border-color_var(--t-fast),color_var(--t-fast)] hover:border-(--accent) hover:text-(--accent)"
         >
-          incubator
+          incu
         </a>
         {", a company that helps startups and other enterprises develop digital products and scale them."}
       </p>
